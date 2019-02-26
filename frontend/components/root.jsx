@@ -1,18 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+
 import { HashRouter } from 'react-router-dom';
-
-import App from './app';
-// import PostIndexContainer from './posts/post_index_container';
-// import PostShowContainer from './posts/post_show_container';
-
+import App from './App';
 
 const Root = ({ store }) => (
-  <Provider store={store}>
+  <Provider store={ store }>
     <HashRouter>
-      <App store={store}/>
+      <App />
     </HashRouter>
   </Provider>
 );
 
-export default Root;
+export default Root; 
