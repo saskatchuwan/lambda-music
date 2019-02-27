@@ -11,6 +11,7 @@ class LeftSideNavBar extends React.Component {
           <NavLink to='/library/playlists'>Your Library</NavLink>
           <NavLink to='/browse/featured'>Home</NavLink>
           <NavLink to='/search'>Search</NavLink>
+          <NavLink to='/playlist'>Temp playlist link</NavLink>
         </div>
       </div>
     );
