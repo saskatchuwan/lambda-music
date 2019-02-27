@@ -1,5 +1,18 @@
+//structure the in-app-body container (with nvabar and main) and the in-app-footer (music player)
+
+.in-app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; //set to 100% of viewport - bottom comp will still be in view when browser size decreases
+
+  //TEMP background color
+  background: bisque;
+}
+
 .in-app-body {
   display: flex;
-  background: salmon;
+  height: 100%;
+  width: 100%;
 }
 
