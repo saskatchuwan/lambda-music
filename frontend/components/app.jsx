@@ -23,7 +23,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <Route path="/library/playlists" component={LibraryPlaylistContainer} />
+      <ProtectedRoute path="/library/playlists" component={LibraryPlaylistContainer} />
       <Route path="/" component={Splash} />
     </Switch>
 

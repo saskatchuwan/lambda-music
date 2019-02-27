@@ -11,9 +11,7 @@ const Auth = ({component: Component, path, loggedIn, exact}) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      //redirect to user's library playlist as default once i have the component
       <Redirect to="/library/playlists" />
-      // <Redirect to="/" />
     )
   )}/>
 );
@@ -21,7 +19,6 @@ const Auth = ({component: Component, path, loggedIn, exact}) => (
 const Protected = ({component: Component, path, loggedIn, exact}) => (
   <Route path={path} exact={exact} render={(props) => (
     !loggedIn ? (
-      //changed this to redirect to /login page instead of /signup
       <Redirect to="/login" />
     ) : (
       <Component {...props} />
