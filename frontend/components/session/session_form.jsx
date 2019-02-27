@@ -13,6 +13,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount () {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -26,6 +30,8 @@ class SessionForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
+
+
 
   render () {
 

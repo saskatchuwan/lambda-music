@@ -19,6 +19,11 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
+export const clearErrors = () => ({
+  type: RECEIVE_SESSION_ERRORS,
+  errors: []
+});
+
 export const login = (user) => (dispatch) => (
   SessionApiUtil.login(user).then(user => dispatch(receiveCurrentUser(user)),
     (error) => dispatch(receiveErrors(JSON.parse(error.responseText))))
