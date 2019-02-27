@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
             demoLogin
           } = this.props;
 
-    let renderedErrors = errors.map(error => (<li>{error}</li>));
+    let renderedErrors = errors.map((error, idx) => (<li key={idx}>{error}</li>));
 
     return (
       <div className='session-form-page'>
@@ -74,8 +74,10 @@ class SessionForm extends React.Component {
                   value={this.state.password} 
                   onChange={this.update('password')} />
 
-            <br />
-            <br />
+       
+            <ul className='session-form-errors'>
+              {renderedErrors}
+            </ul>
 
             <input 
                 type='submit' 
@@ -83,14 +85,10 @@ class SessionForm extends React.Component {
                 value={titlelizedFormType} />
 
           </form>
-
-          <br />
-
-          <ul className='session-form-errors'>
-            {renderedErrors}
-          </ul>
+          
         </main>
-
+        <br />
+        <br />
         <p className='session-form-bottom-links'>
           {formTypePrefix} <Link className='session-form-alt-opt react-link' 
                                             to={`/${inverseFormType}`}>

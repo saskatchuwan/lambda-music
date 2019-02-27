@@ -55,6 +55,8 @@
 }
 
 .user-account-submit-button, .user-account-submit-button:visited {
+  position: relative;
+  top: 8px;
   text-decoration: none;
   background-color: #1DB954;
   padding: 15px 55px 15px 55px; 
@@ -74,6 +76,16 @@
   background-color: rgb(35, 201, 93);
   border: 0 transparent;
   cursor: pointer;
+}
+
+.session-form-errors {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  margin-top: 7px;
+  color: #bd3200;
 }
 
 .demo-login-button, .demo-login-button:visited {
