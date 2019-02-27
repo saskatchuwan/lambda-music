@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DemoLoginItem from './demo_login_item';
 
 class SessionForm extends React.Component {
 
@@ -28,8 +29,16 @@ class SessionForm extends React.Component {
 
   render () {
 
+    const { errors,
+            titlelizedFormType,
+            inverseFormType,
+            titlelizedInverseFormType,
+            formTypePrefix,
+            signUpPrompt,
+            demoLogin
+          } = this.props;
 
-    let errors = this.props.errors.map(error => (<li>{error}</li>));
+    let renderedErrors = errors.map(error => (<li>{error}</li>));
 
     return (
       <div className='session-form-page'>
@@ -39,11 +48,14 @@ class SessionForm extends React.Component {
         </header>
 
         <main className='session-form-container'>
-          <Link className='demo-login-button react-link' to={`/${this.props.formType}`}>DEMO LOGIN</Link>
+          <DemoLoginItem
+            demoLogin={demoLogin}
+          />
+          
           <br />
           <h2 id='line-thru'><span id='line-thru-text'>or</span></h2>
        
-          <div id='signup-prompt'>{this.props.signUpPrompt}</div>
+          <div id='signup-prompt'>{signUpPrompt}</div>
           <br />
 
           <form className='session-form' onSubmit={this.handleSubmit}>
@@ -68,21 +80,21 @@ class SessionForm extends React.Component {
             <input 
                 type='submit' 
                 className='user-account-submit-button' 
-                value={this.props.titelizedFormType} />
+                value={titlelizedFormType} />
 
           </form>
 
           <br />
 
           <ul className='session-form-errors'>
-            { errors }
+            {renderedErrors}
           </ul>
         </main>
 
         <p className='session-form-bottom-links'>
-          {this.props.formTypePrefix} <Link className='session-form-alt-opt react-link' 
-                                            to={`/${this.props.inverseFormType}`}>
-                                            {this.props.titlelizedInverseFormType}
+          {formTypePrefix} <Link className='session-form-alt-opt react-link' 
+                                            to={`/${inverseFormType}`}>
+                                            {titlelizedInverseFormType}
                                       </Link>
         </p>
       </div>
