@@ -27,6 +27,7 @@
   font-weight: 900;
   letter-spacing: -0.03em;
   text-decoration: none;
+  padding-right: 15px;
 }
 
 .session-form-logo:visited {
@@ -34,6 +35,11 @@
   color: inherit;
 }
 
+#session-form-lambda-logo {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
 
 //the main session form container
 .session-form-container {

@@ -49,6 +49,17 @@
   align-items: center;
 }
 
+.navbar-logo li {
+  margin: 3px;
+}
+
+#splash-lambda-logo {
+  display: inline-block;
+  width: 40px;
+  height: 45px;
+  object-fit: cover;
+}
+
 .navbar-user-link:hover {
   color: #1ED760;
 }

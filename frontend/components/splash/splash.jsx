@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navink, Link } from 'react-router-dom';
 
+
 class Splash extends React.Component {
  
   render () {
@@ -11,8 +12,8 @@ class Splash extends React.Component {
           <div className='navbar-container'>
 
             <ul className='navbar-logo'>
+              <li><img id='splash-lambda-logo' src={window.images.logo2} /></li>
               <li>lambda</li>
-              <li><img src="../../../app/assets/images/icons/noun_Doppler effect_1460336.svg"></img></li>
             </ul>
 
             <ul className='navbar-user-links'>

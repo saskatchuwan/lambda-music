@@ -1,3 +1,10 @@
+<script type='text/javascript'>
+  window.images = {
+    logo: '<%= image_url('icons/doppler_logo.svg') %>',
+    logo2: '<%= image_url('icons/lambda_logo.svg') %>'
+  }
+</script>
+
 <% if logged_in? %>
   <script type="text/javascript">
     window.currentUser = <%= render(
