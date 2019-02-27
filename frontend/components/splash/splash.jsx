@@ -12,6 +12,7 @@ class Splash extends React.Component {
 
             <ul className='navbar-logo'>
               <li>lambda</li>
+              <li><img src="../../../app/assets/images/icons/noun_Doppler effect_1460336.svg"></img></li>
             </ul>
 
             <ul className='navbar-user-links'>

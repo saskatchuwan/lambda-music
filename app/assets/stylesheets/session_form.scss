@@ -5,8 +5,9 @@
 }
 
 .session-form-page {
-  color: white;
-  background: darksalmon;
+  color: black;
+  // background: darksalmon;
+  background:white;
   position: absolute;
   top: 0;
   right: 0;
@@ -22,10 +23,17 @@
   align-items: center;
   font-weight: bold;
   border-bottom: 1px solid lightgrey;
-  font-size: 25px;
+  font-size: 50px;
   font-weight: 900;
   letter-spacing: -0.03em;
+  text-decoration: none;
 }
+
+.session-form-logo:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 //the main session form container
 .session-form-container {
@@ -51,7 +59,7 @@
   width: 300px;
   letter-spacing: +0.01em;
   box-shadow: none;
-  border: 0 transparent;
+  border: 1px solid lightgrey;
 }
 
 .user-account-submit-button, .user-account-submit-button:visited {
@@ -64,7 +72,7 @@
   font-size: 14px;
   font-weight: bold;
   letter-spacing: +0.13em;
-  color: inherit;
+  color: white;
   width: 260px;
   border: 0 transparent;
   text-transform: uppercase;
@@ -72,7 +80,7 @@
 
 
 .user-account-submit-button:hover {
-  color: inherit;
+  color: white;
   background-color: rgb(35, 201, 93);
   border: 0 transparent;
   cursor: pointer;
@@ -82,10 +90,11 @@
   display: block;
   list-style-type: none;
   padding: 0;
-  margin: 0;
   height: 20px;
-  margin-top: 7px;
+  margin-top: 15px;
+  margin-bottom: 5px;
   color: #bd3200;
+  font-size: 13.5px;
 }
 
 .demo-login-button, .demo-login-button:visited {
@@ -96,14 +105,14 @@
   font-size: 14px;
   font-weight: bold;
   letter-spacing: +0.13em;
-  color: inherit;
+  color: white;
   width: 260px;
   border: 0 transparent;
 }
 
 .demo-login-button:hover {
   text-align: center;
-  color: inherit;
+  color: white;
   background-color: rgb(63, 95, 165);
   border: 0 transparent;
   cursor: pointer;
@@ -118,7 +127,8 @@
 }
 
 #line-thru span {
-  background:darksalmon; 
+  // background:darksalmon; 
+  background:white; 
   padding:0 10px; 
 }
 
