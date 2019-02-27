@@ -15,8 +15,8 @@ class Splash extends React.Component {
             </ul>
 
             <ul className='navbar-user-links'>
-                <li><Link to='/signup' className='react-link'>Sign Up</Link></li>
-                <li><Link to='/login' className='react-link'>Log In</Link></li>
+                <li><Link to='/signup' className='react-link navbar-user-link'>Sign Up</Link></li>
+                <li><Link to='/login' className='react-link navbar-user-link'>Log In</Link></li>
             </ul>
           </div>
         </header>

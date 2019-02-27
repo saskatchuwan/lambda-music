@@ -31,6 +31,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
 }
 
 /* user account links to the right of navbar */
@@ -53,9 +54,11 @@
   align-items: center;
 }
 
-// li:visited, a:visited {
-//   text-decoration: none;
-// }
+.navbar-user-link:hover {
+  color: #1ED760;
+  // text-shadow: black 0.3px 0.3px 100px;
+}
+
 
 //main hero content at center of page
 
@@ -79,6 +82,7 @@
 .hero-header-content h4 {
   font-size: 18px;
   font-weight: 400;
+  letter-spacing: +0.02em;
 }
 
 .get-spotify-button, .get-spotify-button:visited {
