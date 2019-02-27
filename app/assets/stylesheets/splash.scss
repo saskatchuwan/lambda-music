@@ -53,9 +53,9 @@
   align-items: center;
 }
 
-header:visited {
-  text-decoration: none;
-}
+// li:visited, a:visited {
+//   text-decoration: none;
+// }
 
 //main hero content at center of page
 
@@ -81,7 +81,7 @@ header:visited {
   font-weight: 400;
 }
 
-.get-spotify-button {
+.get-spotify-button, .get-spotify-button:visited {
   text-decoration: none;
   background-color: #1DB954;
   padding: 15px 50px 15px 50px; 
@@ -89,7 +89,11 @@ header:visited {
   font-size: 14px;
   font-weight: bold;
   letter-spacing: +0.13em;
+  color: inherit;
 }
+
+
 .get-spotify-button:hover {
+  color: inherit;
   background-color: rgb(37, 218, 100);
 }
