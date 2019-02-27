@@ -6,7 +6,12 @@ const mapStateToProps = (state, ownProps) => {
 
   return ({
     errors: state.errors.session,
-    formType: 'SIGN UP'
+    formType: 'signup',
+    titlelizedFormType: 'Sign up',
+    inverseFormType: 'login',
+    titlelizedInverseFormType: 'Log in',
+    formTypePrefix: "Already have an account?",
+    signUpPrompt: 'Sign up with a username'
   });
 };
 

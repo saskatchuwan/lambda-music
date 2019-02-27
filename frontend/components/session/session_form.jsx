@@ -27,28 +27,24 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    let formType;
-    let formTypePrefix;
-    // const { password, username} = this.state;
-    if (this.props.formType === 'LOG IN') {
-      formType = 'SIGN UP';
-      formTypePrefix = "Don't have an account?";
-    } else {
-      formType = 'LOG IN';
-      formTypePrefix = "Already have an account?";
-    }
+
 
     let errors = this.props.errors.map(error => (<li>{error}</li>));
 
     return (
       <div className='session-form-page'>
+
         <header className='session-form-logo'>
           <h1>lambda</h1>
         </header>
 
         <main className='session-form-container'>
-
-          <h2 className='session-form-type'>{this.props.formType}</h2>
+          <Link className='demo-login-button react-link' to={`/${this.props.formType}`}>DEMO LOGIN</Link>
+          <br />
+          <h2 id='line-thru'><span id='line-thru-text'>or</span></h2>
+       
+          <div id='signup-prompt'>{this.props.signUpPrompt}</div>
+          <br />
 
           <form className='session-form' onSubmit={this.handleSubmit}>
     
@@ -72,7 +68,7 @@ class SessionForm extends React.Component {
             <input 
                 type='submit' 
                 className='user-account-submit-button' 
-                value={this.props.formType} />
+                value={this.props.titelizedFormType} />
 
           </form>
 
@@ -81,11 +77,14 @@ class SessionForm extends React.Component {
           <ul className='session-form-errors'>
             { errors }
           </ul>
-          
-          {formTypePrefix}
-          <br />
-          <Link className='session-form-alt-opt' to={`/${formType}`}>{formType}</Link>
         </main>
+
+        <p className='session-form-bottom-links'>
+          {this.props.formTypePrefix} <Link className='session-form-alt-opt react-link' 
+                                            to={`/${this.props.inverseFormType}`}>
+                                            {this.props.titlelizedInverseFormType}
+                                      </Link>
+        </p>
       </div>
     )
   }

@@ -29,6 +29,8 @@
 
 //the main session form container
 .session-form-container {
+  position: relative;
+  top: 25px;
   display: flex;
   flex-direction:column;
   justify-content: center;
@@ -55,17 +57,78 @@
 .user-account-submit-button, .user-account-submit-button:visited {
   text-decoration: none;
   background-color: #1DB954;
-  padding: 15px 50px 15px 50px; 
+  padding: 15px 55px 15px 55px; 
   border-radius: 50px;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: +0.13em;
   color: inherit;
   width: 260px;
+  border: 0 transparent;
+  text-transform: uppercase;
 }
 
 
 .user-account-submit-button:hover {
   color: inherit;
-  background-color: rgb(37, 218, 100);
+  background-color: rgb(35, 201, 93);
+  border: 0 transparent;
+  cursor: pointer;
+}
+
+.demo-login-button, .demo-login-button:visited {
+  text-align: center;
+  background-color: #3B5998;
+  padding: 15px 10px 15px 10px; 
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: +0.13em;
+  color: inherit;
+  width: 260px;
+  border: 0 transparent;
+}
+
+.demo-login-button:hover {
+  text-align: center;
+  color: inherit;
+  background-color: rgb(63, 95, 165);
+  border: 0 transparent;
+  cursor: pointer;
+}
+
+#line-thru {
+  width: 320px; 
+  text-align: center; 
+  border-bottom: 1px solid lightgrey; 
+  line-height: 0.3em;
+  margin: 10px 0 20px; 
+}
+
+#line-thru span {
+  background:darksalmon; 
+  padding:0 10px; 
+}
+
+#line-thru-text {
+  font-size: 14px;
+}
+
+#signup-prompt {
+  font-weight: bold;
+}
+
+//content below main form
+.session-form-bottom-links {
+display: block;
+text-align: center;
+}
+
+
+.session-form-alt-opt, .session-form-alt-opt:visited {
+  color: #1DB954;
+}
+
+.session-form-alt-opt:hover {
+  color: #1ED760;
 }

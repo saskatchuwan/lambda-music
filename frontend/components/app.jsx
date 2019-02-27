@@ -20,7 +20,6 @@ const App = () => (
     </header>
 
     
-
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
