@@ -14,6 +14,13 @@
  *= require_self
  */
 
- /* body {
-   background: green;
- } */
+ /* change to scss */
+ /* reset css should come first */
+
+ 
+ //import css reset
+ @import "reset.scss";
+
+ //import splash styling css
+ @import "splash.scss";
+

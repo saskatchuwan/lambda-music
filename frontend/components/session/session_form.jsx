@@ -60,7 +60,6 @@ class SessionForm extends React.Component {
         <ul>
           { errors }
         </ul>
-
         <Link to={`/${formType}`}>{formType}</Link>
         
       </div>
