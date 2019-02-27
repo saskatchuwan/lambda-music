@@ -28,40 +28,64 @@ class SessionForm extends React.Component {
 
   render () {
     let formType;
+    let formTypePrefix;
     // const { password, username} = this.state;
-    if (this.props.formType === 'login') {
-      formType = 'signup';
+    if (this.props.formType === 'LOG IN') {
+      formType = 'SIGN UP';
+      formTypePrefix = "Don't have an account?";
     } else {
-      formType = 'login';
+      formType = 'LOG IN';
+      formTypePrefix = "Already have an account?";
     }
 
     let errors = this.props.errors.map(error => (<li>{error}</li>));
 
     return (
-      <div>
-        <h2>{this.props.formType}</h2>
+      <div className='session-form-page'>
+        <header className='session-form-logo'>
+          <h1>lambda</h1>
+        </header>
 
-        <form onSubmit={this.handleSubmit}>
-          Username:
-          <br />
-          <input type='text' value={this.state.username} onChange={this.update('username')} />
+        <main className='session-form-container'>
+
+          <h2 className='session-form-type'>{this.props.formType}</h2>
+
+          <form className='session-form' onSubmit={this.handleSubmit}>
+    
+            <input type='text' 
+                  className='account-input'
+                  placeholder="Username" 
+                  value={this.state.username} 
+                  onChange={this.update('username')} />
+            <br />
+
+
+            <input type='password' 
+                  className='account-input'
+                  placeholder="Password" 
+                  value={this.state.password} 
+                  onChange={this.update('password')} />
+
+            <br />
+            <br />
+
+            <input 
+                type='submit' 
+                className='user-account-submit-button' 
+                value={this.props.formType} />
+
+          </form>
+
           <br />
 
-          Password:
-          <br />
-          <input type='password' value={this.state.password} onChange={this.update('password')} />
+          <ul className='session-form-errors'>
+            { errors }
+          </ul>
           
+          {formTypePrefix}
           <br />
-          <input type='submit' value={this.props.formType} />
-        </form>
-
-        <br />
-
-        <ul>
-          { errors }
-        </ul>
-        <Link to={`/${formType}`}>{formType}</Link>
-        
+          <Link className='session-form-alt-opt' to={`/${formType}`}>{formType}</Link>
+        </main>
       </div>
     )
   }

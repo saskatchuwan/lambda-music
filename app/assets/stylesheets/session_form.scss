@@ -1,0 +1,71 @@
+//remove underline for all react <Links> with className='react-link'
+.react-link {
+  color: white;
+  text-decoration: none;
+}
+
+.session-form-page {
+  color: white;
+  background: darksalmon;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+//the whole header
+.session-form-logo {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 1px solid lightgrey;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+//the main session form container
+.session-form-container {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form > .account-input {
+  height: 43px;
+  padding: 0 .75em;
+  font-size: 13px;
+  width: 300px;
+  letter-spacing: +0.01em;
+  box-shadow: none;
+  border: 0 transparent;
+}
+
+.user-account-submit-button, .user-account-submit-button:visited {
+  text-decoration: none;
+  background-color: #1DB954;
+  padding: 15px 50px 15px 50px; 
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: +0.13em;
+  color: inherit;
+  width: 260px;
+}
+
+
+.user-account-submit-button:hover {
+  color: inherit;
+  background-color: rgb(37, 218, 100);
+}

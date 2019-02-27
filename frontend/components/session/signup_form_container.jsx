@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return ({
     errors: state.errors.session,
-    formType: 'signup'
+    formType: 'SIGN UP'
   });
 };
 
