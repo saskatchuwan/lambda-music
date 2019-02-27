@@ -6,7 +6,7 @@ class BottomMusicPlayer extends React.Component {
   render () {
     return (
       <div className='bottom-music-player'>
-        <h1>bottom music playa</h1>
+        <h1>bottom music player placeholder</h1>
       </div>
     );
   }

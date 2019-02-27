@@ -12,7 +12,7 @@ class LibraryPlayListIndex extends React.Component {
         <div>
           <h2>Welcome, {currentUser.username}!</h2>
           <br />
-          <h1>this is just a dummy component so that i have a logout button- stay tuned</h1>
+          <h1>library homepage placeholder</h1>
           <br />
           <button onClick={this.props.logout}>Logout</button>
         </div>
@@ -30,7 +30,7 @@ class LibraryPlayListIndex extends React.Component {
     }
 
     return (
-      <div>
+      <div className='in-app-main'>
           {display}
       </div>
     );

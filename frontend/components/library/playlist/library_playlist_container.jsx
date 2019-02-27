@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
-import LibraryPlayListIndex from '../playlist/library_playlist_index';
+import LibraryPlayListIndex from './library_playlist_index';
 import { logout } from '../../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {

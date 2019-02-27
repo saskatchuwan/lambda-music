@@ -1,4 +1,11 @@
 .left-side-nav-bar {
-  height: 300px;
-  // background-color: green;
+  // // height: 300px;
+  background-color: green;
+  width: 240px;
+  height: 100%;
+}
+
+.side-bar-nav-links {
+  display: flex;
+  flex-direction: column;
 }
