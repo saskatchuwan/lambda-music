@@ -1,11 +1,11 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
-import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import Splash from './splash/splash';
-import LibraryPlaylistContainer from './library/playlist/library_playlist_container';
+import ProtectedInApp from './protectedInApp';
+
 
 import {
   AuthRoute,
@@ -14,19 +14,13 @@ import {
 
 const App = () => (
   <div>
-    <header>
-      {/* comment greeting container in and comment out splash page to logout */}
-      {/* <GreetingContainer /> */}
-    </header>
-
-    
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute path="/library/playlists" component={LibraryPlaylistContainer} />
-      <AuthRoute path="/" component={Splash} />
+      <AuthRoute exact path="/" component={Splash} />
+      
+      <ProtectedRoute path="/" component={ProtectedInApp} />
     </Switch>
-
   </div>
 );
 

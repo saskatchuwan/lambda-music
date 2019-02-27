@@ -10,14 +10,15 @@
 
 .splash-page {
   color: white;
-  // background-image: url('../images/splash/robert-katzki-119134-unsplash.jpg');
+  background-image: url('https://images.unsplash.com/photo-1470290449668-02dd93d9420a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80');
   // background-size: cover;
-  background: darksalmon;
+  // background: darksalmon;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  background-repeat: no-repeat;
 }
 
 /* entire top nav bar */
