@@ -5,6 +5,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import Splash from './splash/splash';
+import LibraryPlaylistContainer from './library/playlist/library_playlist_container';
 
 import {
   AuthRoute,
@@ -14,15 +15,18 @@ import {
 const App = () => (
   <div>
     <header>
-      {/* <h1>lambda</h1> */}
+      {/* comment greeting container in and comment out splash page to logout */}
       {/* <GreetingContainer /> */}
     </header>
 
-    <Route exact path="/" component={Splash} />
+    
 
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
-
+    <Switch>
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <Route path="/library/playlists" component={LibraryPlaylistContainer} />
+      <Route path="/" component={Splash} />
+    </Switch>
 
   </div>
 );

@@ -12,8 +12,8 @@ const Auth = ({component: Component, path, loggedIn, exact}) => (
       <Component {...props} />
     ) : (
       //redirect to user's library playlist as default once i have the component
-      // <Redirect to="/library/playlists" />
-      <Redirect to="/" />
+      <Redirect to="/library/playlists" />
+      // <Redirect to="/" />
     )
   )}/>
 );
