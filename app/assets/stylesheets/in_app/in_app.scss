@@ -7,7 +7,9 @@
   height: 100vh; //set to 100% of viewport - bottom comp will still be in view when browser size decreases
 
   //TEMP background color
-  background: bisque;
+  // background: bisque;
+ 
+  background-image: linear-gradient(to bottom right, #ded700d9, #1f1e1e);
 }
 
 .in-app-body {

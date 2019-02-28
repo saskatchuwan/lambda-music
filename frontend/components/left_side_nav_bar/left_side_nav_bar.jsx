@@ -19,10 +19,36 @@ class LeftSideNavBar extends React.Component {
 
   
           <ul className='side-bar-nav-links'>
-            <li><NavLink className='nav-link' to='/browse/featured'>Home</NavLink></li>
-            <li><NavLink className='nav-link' to='/library/playlists'>Your Library</NavLink></li>
-            <li><NavLink className='nav-link' to='/search'>Search</NavLink></li>
-            <li><NavLink className='nav-link' to='/playlist'>Temp playlist link</NavLink></li>
+            <li>
+              <div>
+                <NavLink className='nav-link' to='/browse/featured'>
+                  <img id='nav-icon' src={window.images.home} />
+                  Home
+                </NavLink>
+              </div>
+            </li>
+
+            <li>
+              <NavLink className='nav-link' to='/library/playlists'>
+                <img id='nav-icon' src={window.images.library} />
+                Your Library
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink className='nav-link' to='/search'>
+                <img id='nav-icon-search' src={window.images.search} />
+                Search
+              </NavLink>
+            </li>
+
+            <br />
+
+            <li>
+              <NavLink className='nav-link' to='/playlist'>
+                Temp playlist link
+              </NavLink>
+            </li>
           </ul>
 
         </div>

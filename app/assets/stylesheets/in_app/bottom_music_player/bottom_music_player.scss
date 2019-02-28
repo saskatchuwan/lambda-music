@@ -1,6 +1,9 @@
 .bottom-music-player {
-  display: inline-block;
-  background: orange;
-  border: 2px;
   height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  background-color: #282828;
+  border-top:  1px solid rgba(0, 0, 0, 0.85);
 }
