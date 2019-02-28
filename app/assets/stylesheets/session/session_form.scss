@@ -44,7 +44,7 @@
 //the main session form container
 .session-form-container {
   position: relative;
-  top: 25px;
+  top: 30px;
   display: flex;
   flex-direction:column;
   justify-content: center;
@@ -66,11 +66,13 @@
   letter-spacing: +0.01em;
   box-shadow: none;
   border: 1px solid lightgrey;
+  margin-top: 7px;
+  margin-bottom: 4px;
 }
 
 .user-account-submit-button, .user-account-submit-button:visited {
   position: relative;
-  top: 8px;
+  // top: 7px;
   text-decoration: none;
   background-color: #1DB954;
   padding: 15px 55px 15px 55px; 
@@ -92,16 +94,23 @@
   cursor: pointer;
 }
 
+
 .session-form-errors {
-  display: block;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   list-style-type: none;
   padding: 0;
   height: 20px;
-  margin-top: 15px;
-  margin-bottom: 5px;
+  margin-top: 8px;
+  margin-bottom: 6x;
   color: #bd3200;
   font-size: 13.5px;
+  text-align: center;
 }
+
+
 
 .demo-login-button, .demo-login-button:visited {
   text-align: center;
@@ -114,6 +123,7 @@
   color: white;
   width: 260px;
   border: 0 transparent;
+  margin-bottom: 5px;
 }
 
 .demo-login-button:hover {
@@ -144,12 +154,15 @@
 
 #signup-prompt {
   font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 8px;
 }
 
 //content below main form
 .session-form-bottom-links {
-display: block;
-text-align: center;
+  display: block;
+  text-align: center;
+  margin-top: 13px;
 }
 
 

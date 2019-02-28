@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
                   value={this.state.password} 
                   onChange={this.update('password')} />
 
-       
+
             <ul className='session-form-errors'>
               {renderedErrors}
             </ul>
