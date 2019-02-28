@@ -1,12 +1,64 @@
+//-----------------------------------------
+//entire nav-bar container
+//-----------------------------------------
 .left-side-nav-bar {
-  // // height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: white;
   background-color: rgba(0, 0, 0, 0.9);
   width: 250px;
 }
+//-----------------------------------------
 
+
+//-----------------------------------------
+//section 1: logo + nav links
+//-----------------------------------------
+
+//logo
+.navbar-logo {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.navbar-logo li {
+  margin: 3px;
+
+}
+
+#splash-lambda-logo {
+  display: inline-block;
+  width: 40px;
+  height: 45px;
+  object-fit: cover;
+  -webkit-filter: invert(100%);
+}
+
+//nav links
 .side-bar-nav-links {
-  color: inherit;
   display: flex;
   flex-direction: column;
+  list-style-type: none;
 }
+
+.nav-link {
+  font-size: 13.5px;
+  text-decoration: none;
+  color: #b3b3b3;
+  font-weight: bold; 
+  letter-spacing: +0.01em;
+}
+
+.nav-link:active {
+  color: white;
+}
+
+
+//-----------------------------------------
+//section 2: user account
+//-----------------------------------------

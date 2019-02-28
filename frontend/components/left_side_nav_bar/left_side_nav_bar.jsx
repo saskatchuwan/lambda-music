@@ -30,16 +30,27 @@ class LeftSideNavBar extends React.Component {
     return (
       <div className='left-side-nav-bar'>
 
-        <h1>Nav</h1>
-        <br />
-        <div className='side-bar-nav-links'>
-          <NavLink to='/library/playlists'>Your Library</NavLink>
-          <NavLink to='/browse/featured'>Home</NavLink>
-          <NavLink to='/search'>Search</NavLink>
-          <NavLink to='/playlist'>Temp playlist link</NavLink>
+        <div className='nav-bar-section1'>
+
+          <ul className='navbar-logo'>
+            <li><img id='splash-lambda-logo' src={window.images.logo2} /></li>
+            <li>lambda</li>
+          </ul>
+
+  
+          <ul className='side-bar-nav-links'>
+            <li><NavLink className='nav-link' to='/browse/featured'>Home</NavLink></li>
+            <li><NavLink className='nav-link' to='/library/playlists'>Your Library</NavLink></li>
+            <li><NavLink className='nav-link' to='/search'>Search</NavLink></li>
+            <li><NavLink className='nav-link' to='/playlist'>Temp playlist link</NavLink></li>
+          </ul>
+
+
         </div>
 
-        {display}
+        <div className='nav-bar-section2'>
+          {display}
+        </div>
 
 
       </div>
