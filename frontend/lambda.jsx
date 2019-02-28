@@ -7,7 +7,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 //testing
-import { fetchSongs, fetchSong} from './actions/song_actions'
+import { fetchArtists, fetchArtist} from './actions/artist_actions'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // just for testing
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  // window.fetchSongs = fetchSongs;
-  // window.fetchSong = fetchSong;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchArtists = fetchArtists;
+  window.fetchArtist = fetchArtist;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);
