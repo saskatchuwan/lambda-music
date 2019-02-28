@@ -6,7 +6,8 @@ import LeftSideNavBarContainer from './left_side_nav_bar/left_side_nav_bar_conta
 import BottomMusicPlayerContainer from './bottom_music_player/bottom_music_player_container';
 
 //dynamic main components
-import LibraryPlaylistContainer from './library/playlist/library_playlist_container';
+import Library from './library/library';
+
 import PlaylistContainer from './playlist_spotlight/playlist_container';
 
 import {
@@ -20,7 +21,7 @@ const ProtectedInApp = () => (
       <ProtectedRoute path="/" component={LeftSideNavBarContainer} />
 
       <Switch>
-        <ProtectedRoute path="/library/playlists" component={LibraryPlaylistContainer} />
+        <ProtectedRoute path="/library" component={Library} />
         <ProtectedRoute path="/playlist" component={PlaylistContainer} />
       </Switch>
     </div>
