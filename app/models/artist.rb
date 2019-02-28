@@ -15,10 +15,14 @@ class Artist < ApplicationRecord
     primary_key: :id,
     foreign_key: :artist_id,
     class_name: 'Album'
-    
+
   has_many :songs,
     primary_key: :id,
     foreign_key: :artist_id,
     class_name: 'Song'
+
+  def self.get_all_artist_data(artist_id)
+    Artist.includes(:songs, :albums).find(artist_id)
+  end
 
 end

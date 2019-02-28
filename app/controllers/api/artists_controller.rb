@@ -5,7 +5,7 @@ class Api::ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id])
+    @artist = Artist.get_all_artist_data(params[:id])
     render :show
   end
 end
