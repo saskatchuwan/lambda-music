@@ -1,20 +1,20 @@
-// import { connect } from 'react-redux';
-// import LeftSideNavBar from './left_side_nav_bar';
-// import { logout } from '../../actions/session_actions';
+import { connect } from 'react-redux';
+import LibraryTopNav from './library_top_nav';
 
-// const mapStateToProps = (state, ownProps) => {
-//   let currentUserId = state.session.currentUserId;
-//   let currentUser = state.entities.users[currentUserId];
 
-//   return ({
-//     currentUser
-//   });
-// };
+const mapStateToProps = (state, ownProps) => {
+  // let currentUserId = state.session.currentUserId;
+  // let currentUser = state.entities.users[currentUserId];
 
-// const mapDispatchToProps = (dispatch) => {
-//   return ({
-//     logout: () => dispatch(logout()),
-//   });
-// };
+  return ({
+    // currentUser
+  });
+};
 
-// export default connect(mapStateToProps,mapDispatchToProps)(LeftSideNavBar);
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    
+  });
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(LibraryTopNav);
