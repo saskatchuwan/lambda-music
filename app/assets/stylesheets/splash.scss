@@ -21,6 +21,8 @@
   background-repeat: no-repeat;
 }
 
+
+
 /* entire top nav bar */
 .navbar-container {
   height: 80px;
@@ -28,44 +30,46 @@
   display: flex;
   justify-content: space-between;
   font-weight: bold;
+
+  /* user account links to the right of navbar */
+  .navbar-user-links {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-start;
+    align-items: center;
+
+    li {
+      margin: 20px;
+    }
+  }
+
+
+  /* app name and logo elements to the left of navbar */
+  .navbar-logo {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-start;
+    align-items: center;
+
+    li {
+      margin: 3px;
+
+      #splash-lambda-logo {
+        display: inline-block;
+        width: 40px;
+        height: 45px;
+        object-fit: cover;
+        -webkit-filter: invert(100%);
+      }
+    }
+  }
+
+  .navbar-user-link:hover {
+    color: #1ED760;
+  }
+
 }
 
-/* user account links to the right of navbar */
-.navbar-user-links {
-  display: flex;
-  list-style-type: none;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.navbar-user-links > li {
-  margin: 20px;
-}
-
-/* app name and logo elements to the left of navbar */
-.navbar-logo {
-  display: flex;
-  list-style-type: none;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.navbar-logo li {
-  margin: 3px;
-}
-
-#splash-lambda-logo {
-  display: inline-block;
-  width: 40px;
-  height: 45px;
-  object-fit: cover;
-  -webkit-filter: invert(100%);
-  
-}
-
-.navbar-user-link:hover {
-  color: #1ED760;
-}
 
 
 //main hero content at center of page
@@ -77,35 +81,43 @@
   flex-direction: column;
   text-align: center;
   min-height: 70vh;
-}
-
-.hero-header-content h1 {
-  font-size: 68px;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-.hero-header-content h4 {
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: +0.02em;
-}
-
-.get-spotify-button, .get-spotify-button:visited {
-  text-decoration: none;
-  background-color: #1DB954;
-  padding: 15px 50px 15px 50px; 
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: +0.13em;
-  color: inherit;
-}
 
 
-.get-spotify-button:hover {
-  color: inherit;
-  background-color: rgb(35, 201, 93);
+  .hero-header-content {
+    h1 {
+      font-size: 68px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  
+    h4 {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: +0.02em;
+    }
+  }
+  
+  .get-spotify-button, .get-spotify-button:visited {
+    text-decoration: none;
+    background-color: #1DB954;
+    padding: 15px 50px 15px 50px; 
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: +0.13em;
+    color: inherit;
+  }
+  
+  
+  .get-spotify-button:hover {
+    color: inherit;
+    background-color: rgb(35, 201, 93);
+  }
+
 }
+
+
+
