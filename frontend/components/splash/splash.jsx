@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navink, Link } from 'react-router-dom';
-
+// import DemoLoginItem from '../session/demo_login_item';
 
 class Splash extends React.Component {
  

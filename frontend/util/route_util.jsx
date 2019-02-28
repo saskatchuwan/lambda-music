@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import React from 'react';
 
 const mapStateToProps = state => {
-  return {loggedIn: Boolean(state.session.currentUserId)};
+  return {
+    loggedIn: Boolean(state.session.currentUserId),
+  };
 };
 
 const Auth = ({component: Component, path, loggedIn, exact}) => (
