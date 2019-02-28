@@ -47,7 +47,7 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
-
+  
   .nav-link {
     font-size: 13.5px;
     text-decoration: none;
@@ -59,11 +59,54 @@
   .active {
     color: white;
   }
-}
 
+  li {
+    margin-bottom: 14px;
+  }
+
+}
 
 
 
 //-----------------------------------------
 //section 2: user account
 //-----------------------------------------
+.nav-bar-section2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 20px;
+  align-items: center;
+
+  #nav-bar-line-thru {
+    width: 200px; 
+    text-align: center; 
+    border-bottom: 1px solid #b3b3b3; 
+    line-height: 0.3em;
+    margin: 10px 0 10px; 
+  }
+  
+  .nav-bar-logout-button, .nav-bar-logout-button:visited {
+    text-decoration: none;
+    background-color: #1DB954;
+    padding: 10px 20px 10px 20px; 
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: +0.13em;
+    color: white;
+    width: 180px;
+    border: 0 transparent;
+    text-transform: uppercase;
+  }
+  
+  
+  .nav-bar-logout-button:hover {
+    color: white;
+    background-color: rgb(35, 201, 93);
+    border: 0 transparent;
+    cursor: pointer;
+  }
+}
+
+

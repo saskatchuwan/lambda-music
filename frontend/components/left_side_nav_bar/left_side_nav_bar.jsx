@@ -7,26 +7,6 @@ class LeftSideNavBar extends React.Component {
 
     const currentUser = this.props.currentUser;
 
-    let display;
-    if (currentUser) {
-      display = (
-        <div>
-          <h4>Welcome, {currentUser.username}!</h4>
-          <button onClick={this.props.logout}>Logout</button>
-        </div>
-      );
-
-    } else {
-      display = (
-        <div>
-          <Link to='/signup'>Sign up!</Link>
-          <br />
-          <Link to='/login'>Log in!</Link>
-        </div>
-      )
-
-    }
-
     return (
       <div className='left-side-nav-bar'>
 
@@ -45,13 +25,13 @@ class LeftSideNavBar extends React.Component {
             <li><NavLink className='nav-link' to='/playlist'>Temp playlist link</NavLink></li>
           </ul>
 
-
         </div>
 
         <div className='nav-bar-section2'>
-          {display}
+          <span>{currentUser.username}</span>
+          <span id='nav-bar-line-thru'></span>
+          <button className='nav-bar-logout-button' onClick={this.props.logout}>Logout</button>
         </div>
-
 
       </div>
     );
