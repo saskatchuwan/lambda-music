@@ -13,7 +13,7 @@ json.artists do
   @songs.each do |song|
     json.set! song.artist.id do
       json.id song.artist.id
-      json.title song.artist.name
+      json.name song.artist.name
     end
   end
 end
