@@ -3,6 +3,7 @@ import { RECEIVE_SONGS,
 
 import { RECEIVE_PLAYLISTS,
           RECEIVE_PLAYLIST,
+          REMOVE_PLAYLIST,
            } from '../actions/playlist_actions';
 
 const songsReducer = (state={}, action) => {
@@ -27,6 +28,9 @@ const songsReducer = (state={}, action) => {
       });
 
       return newState;
+
+      //do we need one for REMOVE_PLAYLIST?
+      
     default:
       return state;
   }
