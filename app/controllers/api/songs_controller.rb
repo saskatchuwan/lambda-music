@@ -11,7 +11,7 @@ class Api::SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find(params[:id])
+    @song = Song.get_all_song_data(params[:id])
     render :show
   end
 

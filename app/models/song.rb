@@ -24,7 +24,7 @@ class Song < ApplicationRecord
     class_name: 'Artist'
 
   def self.get_all_song_data(song_id)
-    Artist.includes(:artist, :song).find(song_id)
+    Song.includes(:artist, :album).find(song_id)
   end
 
 
