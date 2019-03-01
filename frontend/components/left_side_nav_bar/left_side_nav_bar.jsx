@@ -40,13 +40,6 @@ class LeftSideNavBar extends React.Component {
               </NavLink>
             </li>
 
-            <br />
-
-            <li>
-              <NavLink className='nav-link' to='/playlist'>
-                Temp playlist link
-              </NavLink>
-            </li>
           </ul>
 
         </div>
