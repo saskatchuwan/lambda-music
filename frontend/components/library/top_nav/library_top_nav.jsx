@@ -6,33 +6,28 @@ class LibraryTopNav extends React.Component {
   render () {
     return (
       <div className='library-top-nav-container'>
-
         <ul className='library-top-nav-links'>
           <li>
             <NavLink className='nav-link' to='/library/playlists'>
-              Playlists
+              PLAYLISTS
             </NavLink>
           </li>
-
           <li>
             <NavLink className='nav-link' to='/library/songs'>
-              Songs
+              SONGS
             </NavLink>
           </li>
-
           <li>
             <NavLink className='nav-link' to='library/artists'>
-              Artists
+              ARTISTS
             </NavLink>
           </li>
-
           <li>
             <NavLink className='nav-link' to='library/albums'>
-              Albums
+              ALBUMS
             </NavLink>
           </li>
         </ul>
-
     </div>
     );
   }

@@ -6,7 +6,8 @@ const mapStateToProps = (state, ownProps) => {
   let currentUser = state.entities.users[currentUserId];
 
   return ({
-    currentUser
+    currentUser,
+    test: 'testing',
   });
 };
 

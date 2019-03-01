@@ -20,7 +20,7 @@ class BrowseTopNav extends React.Component {
           </li>
           <li>
             <NavLink className='nav-link' to='/browse/genres'>
-              GENRES
+              GENRES & MOODS
             </NavLink>
           </li>
         </ul>

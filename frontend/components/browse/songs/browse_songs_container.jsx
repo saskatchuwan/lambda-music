@@ -7,11 +7,15 @@ const mapStateToProps = (state, ownProps) => {
   let songs = Object.values(state.entities.songs);
   let artists = Object.values(state.entities.artists);
   let albums = Object.values(state.entities.albums);
+
+  let currentUserId = state.session.currentUserId;
+  let currentUser = state.entities.users[currentUserId];
   
   return ({
     songs,
     artists,
     albums,
+    currentUser,
   });
 };
 

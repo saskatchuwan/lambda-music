@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import LibraryPlayListIndex from './library_playlist_index';
-import { logout } from '../../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let currentUserId = state.session.currentUserId;
@@ -13,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    logout: () => dispatch(logout()),
+
   });
 };
 

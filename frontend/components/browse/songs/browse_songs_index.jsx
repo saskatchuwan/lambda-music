@@ -6,7 +6,7 @@ class BrowseSongsIndex extends React.Component {
   //   super(props);
   //   this.state = this.props.songs;
   // }
-  
+
   componentDidMount() {
     this.props.fetchSongs();
   }
@@ -33,7 +33,7 @@ class BrowseSongsIndex extends React.Component {
     return (
 
       <div className='content-index-display-container'>
-          <h1>browse/songs placeholder</h1>
+          <h1>Curated for {this.props.currentUser.username}</h1>
           <ul>
             {songItems}
           </ul>

@@ -1,0 +1,13 @@
+// see example: browse_songs_index.jsx
+.content-index-display-container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  
+  h1 {
+    letter-spacing: .015em;
+  }
+}
