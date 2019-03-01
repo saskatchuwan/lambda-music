@@ -4,9 +4,14 @@ import BrowseSongsIndex from './browse_songs_index';
 import { fetchSongs } from '../../../actions/song_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let songs = Object.values(state.entities.songs); //array
+  let songs = Object.values(state.entities.songs);
+  let artists = Object.values(state.entities.artists);
+  let albums = Object.values(state.entities.albums);
+  
   return ({
-    songs
+    songs,
+    artists,
+    albums,
   });
 };
 

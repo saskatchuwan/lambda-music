@@ -11,11 +11,11 @@ import {
 } from '../../util/route_util';
 
 const BrowseContainer = () => (
-  <div className='browse-container'>
+  <div className='in-app-main-component-container'>
     <ProtectedRoute path="/browse" component={BrowseTopNav} />
 
     <Switch>
-      <ProtectedRoute path="/browse/songs" component={BrowseSongsContainer} />
+      <ProtectedRoute path="/browse/featured" component={BrowseSongsContainer} />
     </Switch>
 
   </div>

@@ -5,7 +5,7 @@ class LibraryPlayListIndex extends React.Component {
  
   render () {
     return (
-      <div className='in-app-main'>
+      <div className='library-index-container'>
           <h1>library/playlists placeholder</h1>
       </div>
     );
