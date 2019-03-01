@@ -1,8 +1,10 @@
 .browse-top-nav-container {
-  // width: 100vw;
-  background-color: orange;
+ 
+  // background-color: orange;
   display: flex;
   justify-content: center;
+  height: 80px;
+  align-items: center;
 
   .browse-top-nav-links {
     display: flex;
@@ -12,11 +14,11 @@
     
     .nav-link {
       padding-left: 25px;
-      font-size: 13.5px;
+      font-size: 12.5px;
       text-decoration: none;
-      color: #423f3f;
+      color: #b3b3b3;
       font-weight: bold; 
-      letter-spacing: +0.01em;
+      letter-spacing: +0.18em;
       display: flex;
       align-items: center;
       -webkit-transition: color 0.2s;

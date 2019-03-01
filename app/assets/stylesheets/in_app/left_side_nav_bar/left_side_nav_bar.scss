@@ -1,4 +1,13 @@
 //-----------------------------------------
+//nav-bar foundational layer (for background coloring and container spacing)
+//-----------------------------------------
+
+.left-side-nav-bar-foundation {
+  background-image: linear-gradient(to bottom right,  #7C2109, #1f1e1e);
+}
+
+
+//-----------------------------------------
 //entire nav-bar container
 //-----------------------------------------
 .left-side-nav-bar {
@@ -8,9 +17,9 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.85);
   width: 250px;
+  height: 100%;
 }
 //-----------------------------------------
-
 
 //-----------------------------------------
 //section 1: logo + nav links

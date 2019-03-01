@@ -5,16 +5,13 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh; //set to 100% of viewport - bottom comp will still be in view when browser size decreases
-  // width: 100vw;
-  //TEMP background color
-  // background: bisque;
+
  
-  background-image: linear-gradient(to bottom right, #ded700d9, #1f1e1e);
+  // background-image: linear-gradient(to bottom right,  #7C2109, #1f1e1e);
 }
 
 .in-app-body {
   display: flex;
   height: 100%;
-  // width: 100%;
 }
 

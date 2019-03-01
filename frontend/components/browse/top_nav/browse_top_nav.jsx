@@ -9,21 +9,20 @@ class BrowseTopNav extends React.Component {
         <ul className='browse-top-nav-links'>
           <li>
             <NavLink className='nav-link' to='/browse/featured'>
-              Featured
+              FEATURED
             </NavLink>
           </li>
           <li>
             <NavLink className='nav-link' to='/browse/newreleases'>
-              New Releases
+              NEW RELEASES
             </NavLink>
           </li>
           <li>
             <NavLink className='nav-link' to='/browse/genres'>
-              Genres
+              GENRES
             </NavLink>
           </li>
         </ul>
-
     </div>
     );
   }
