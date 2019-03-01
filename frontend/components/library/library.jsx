@@ -12,7 +12,7 @@ import {
 } from '../../util/route_util';
 
 const LibraryContainer = () => (
-  <div className='in-app-main-component-container'>
+  <div className='main-view-body-central-container'>
     <ProtectedRoute path="/library" component={LibraryTopNav} />
 
     <Switch>

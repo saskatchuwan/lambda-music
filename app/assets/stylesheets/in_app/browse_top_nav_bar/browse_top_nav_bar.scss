@@ -14,6 +14,7 @@
     
     .nav-link {
       padding-left: 25px;
+      padding-right: 25px;
       font-size: 12.5px;
       text-decoration: none;
       color: #b3b3b3;
@@ -27,7 +28,8 @@
     
     .active {
       color: white;
-      // border-left: 3.5px solid #1DB954;
+      //how to make this smaller ?!??!!?!?
+      border-bottom: 2px solid #1DB954;
     }
   
     .nav-link:hover {
@@ -35,8 +37,13 @@
     }
   
     li {
-      // margin-bottom: 14px;
+      display: block;
+      height: 50px;
+      //hack to center text within li
+      line-height: 30px;
     }
+
+
   }
 }
 

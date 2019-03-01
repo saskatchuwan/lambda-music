@@ -11,7 +11,7 @@ import {
 } from '../../util/route_util';
 
 const BrowseContainer = () => (
-  <div className='in-app-main-component-container'>
+  <div className='main-view-body-central-container'>
     <ProtectedRoute path="/browse" component={BrowseTopNav} />
 
     <Switch>

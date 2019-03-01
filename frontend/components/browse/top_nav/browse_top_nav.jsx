@@ -11,6 +11,7 @@ class BrowseTopNav extends React.Component {
             <NavLink className='nav-link' to='/browse/featured'>
               FEATURED
             </NavLink>
+
           </li>
           <li>
             <NavLink className='nav-link' to='/browse/newreleases'>

@@ -1,6 +1,10 @@
-//structure the in-app-body container (with nvabar and main) and the in-app-footer (music player)
 
-.in-app-container {
+//-----------------------------------------
+// can be found in protectedInApp.jsx
+//-----------------------------------------
+
+//structure the in-app-body container (with nvabar and main) and the in-app-footer (music player)
+.main-view-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,8 +14,19 @@
   // background-image: linear-gradient(to bottom right,  #7C2109, #1f1e1e);
 }
 
-.in-app-body {
+.main-view-body-container {
   display: flex;
   height: 100%;
+}
+
+//-----------------------------------------
+// can be found in browse.jsx, library.jsx, etc
+//-----------------------------------------
+
+.main-view-body-central-container {
+  background-image: linear-gradient(to bottom right,  #7C2109, #1f1e1e);
+  display:flex;
+  flex-direction: column;
+  width: 100%;
 }
 

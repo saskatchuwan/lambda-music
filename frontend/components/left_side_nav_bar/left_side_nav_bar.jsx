@@ -10,6 +10,7 @@ class LeftSideNavBar extends React.Component {
     return (
       <div className='left-side-nav-bar-foundation'>
         <div className='left-side-nav-bar'>
+        
           <div className='nav-bar-section1'>
 
             <ul className='navbar-logo'>

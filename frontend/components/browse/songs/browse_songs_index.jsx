@@ -6,15 +6,13 @@ class BrowseSongsIndex extends React.Component {
   //   super(props);
   //   this.state = this.props.songs;
   // }
-
+  
   componentDidMount() {
     this.props.fetchSongs();
   }
  
   render () {
-    
     let {songs, artists, albums } = this.props;
-
 
     let albumItems = albums.map(album => {
       return (
@@ -32,17 +30,13 @@ class BrowseSongsIndex extends React.Component {
       )
     });
 
-
-
-
     return (
 
-      <div className='browse-index-container'>
+      <div className='content-index-display-container'>
           <h1>browse/songs placeholder</h1>
           <ul>
             {songItems}
           </ul>
-
       </div>
     );
   }

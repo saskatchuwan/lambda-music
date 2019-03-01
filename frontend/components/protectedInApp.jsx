@@ -15,9 +15,9 @@ import {
 } from '../util/route_util';
 
 const ProtectedInApp = () => (
-  <div className='in-app-container'>
+  <div className='main-view-container'>
 
-    <div className='in-app-body'>
+    <div className='main-view-body-container'>
       <ProtectedRoute path="/" component={LeftSideNavBarContainer} />
 
       <Switch>
@@ -26,7 +26,7 @@ const ProtectedInApp = () => (
       </Switch>
     </div>
 
-    <div className='in-app-footer'>
+    <div className='main-view-footer'>
       <ProtectedRoute path="/" component={BottomMusicPlayerContainer} />
     </div>
   </div>
