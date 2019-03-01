@@ -7,7 +7,6 @@ const mapStateToProps = (state, ownProps) => {
 
   return ({
     currentUser,
-    test: 'testing',
   });
 };
 

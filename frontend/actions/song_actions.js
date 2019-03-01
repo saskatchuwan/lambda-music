@@ -1,14 +1,12 @@
 import * as SongApiUtil from '../util/song_api_util';
-import { receiveArtists, receiveArtist } from './artist_actions';
-import { receiveAlbums, receiveAlbum } from './album_actions';
 
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
 export const RECEIVE_SONG = 'RECEIVE_SONG';
 
 
-const receiveSongs = (songs) => ({
+const receiveSongs = (payload) => ({
   type: RECEIVE_SONGS,
-  songs
+  payload
 });
 
 const receiveSong = (song) => ({
@@ -18,11 +16,9 @@ const receiveSong = (song) => ({
 
 
 export const fetchSongs = () => dispatch => (
-  SongApiUtil.fetchSongs().then(payload => {
-    dispatch(receiveSongs(payload.songs));
-    dispatch(receiveArtists(payload.artists));
-    dispatch(receiveAlbums(payload.albums));
-  })
+  SongApiUtil.fetchSongs().then(payload => 
+    dispatch(receiveSongs(payload))
+  )
 );
 
 

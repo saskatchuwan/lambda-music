@@ -8,7 +8,7 @@ const songsReducer = (state={}, action) => {
   switch(action.type) {
     case RECEIVE_SONGS:
       //currently will overwrite all songs
-      return action.songs;
+      return action.payload.songs;
     case RECEIVE_SONG:
       newState[action.song.id] = action.song;
       return newState;
