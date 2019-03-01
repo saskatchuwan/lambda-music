@@ -26,7 +26,9 @@ class BrowseSongsIndex extends React.Component {
 
       return (
         <li key={song.id}>
-          {song.title} - {album.title} - {artist.name}
+          <strong>{song.title}</strong>
+          <br/>
+          {artist.name} - {album.title}
         </li>
       )
     });
@@ -35,8 +37,9 @@ class BrowseSongsIndex extends React.Component {
     return (
 
       <div className='content-index-display-container'>
-          <h1>Curated for {this.props.currentUser.username}</h1>
-          <ul>
+          {/* <h1>Songs curated for {this.props.currentUser.username}</h1> */}
+
+          <ul className='songs-list'>
             {songItems}
           </ul>
       </div>

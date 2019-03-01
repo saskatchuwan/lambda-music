@@ -6,8 +6,34 @@
   height: 100%;
   padding-left: 32px;
   padding-right: 32px;
-  
+  font-size: 16px;
+
+
   h1 {
     letter-spacing: .015em;
+  }
+
+  .songs-list {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      height: 30px;
+      padding: 18px;
+
+      strong {
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      font-size: 13px;
+      color: #b3b3b3;
+    }
+
+    li:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      -webkit-transition: background-color 0.5s ease-out;
+    }
   }
 }
