@@ -1,0 +1,39 @@
+.library-top-nav-container {
+  // width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  .library-top-nav-links {
+    display: flex;
+    list-style-type: none;
+    //comment this in to fix padding
+    padding: 0px;
+    
+    .nav-link {
+      padding-left: 25px;
+      font-size: 13.5px;
+      text-decoration: none;
+      color: #423f3f;
+      font-weight: bold; 
+      letter-spacing: +0.01em;
+      display: flex;
+      align-items: center;
+      -webkit-transition: color 0.2s;
+      
+    }
+    
+    .active {
+      color: white;
+      // border-left: 3.5px solid #1DB954;
+    }
+  
+    .nav-link:hover {
+      color: white;
+    }
+  
+    li {
+      // margin-bottom: 14px;
+    }
+  }
+}
+

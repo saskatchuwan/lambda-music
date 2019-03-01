@@ -20,12 +20,10 @@ class LeftSideNavBar extends React.Component {
   
           <ul className='side-bar-nav-links'>
             <li>
-              <div>
-                <NavLink className='nav-link' to='/browse/featured'>
-                  <img id='nav-icon' src={window.images.home} />
-                  Home
-                </NavLink>
-              </div>
+              <NavLink className='nav-link' to='/browse/featured'>
+                <img id='nav-icon' src={window.images.home} />
+                Home
+              </NavLink>
             </li>
 
             <li>

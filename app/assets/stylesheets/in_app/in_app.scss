@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh; //set to 100% of viewport - bottom comp will still be in view when browser size decreases
-
+  // width: 100vw;
   //TEMP background color
   // background: bisque;
  
@@ -15,6 +15,6 @@
 .in-app-body {
   display: flex;
   height: 100%;
-  width: 100%;
+  // width: 100%;
 }
 

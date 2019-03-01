@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 
 //dynamic main components
-import LibraryTopNavContainer from './top_nav/library_top_nav_container';
+import LibraryTopNav from './top_nav/library_top_nav';
 import LibraryPlaylistContainer from './playlist/library_playlist_container';
 import LibrarySongsContainer from './songs/library_songs_index';
 
@@ -13,7 +13,7 @@ import {
 
 const LibraryContainer = () => (
   <div className='library-container'>
-    <ProtectedRoute path="/library" component={LibraryTopNavContainer} />
+    <ProtectedRoute path="/library" component={LibraryTopNav} />
 
     <Switch>
       <ProtectedRoute path="/library/playlists" component={LibraryPlaylistContainer} />
