@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class BrowseSongsIndex extends React.Component {
 
@@ -16,7 +15,9 @@ class BrowseSongsIndex extends React.Component {
     
     let songs = this.props.songs.map(song => {
       return (
-        <li>{song.title}</li>
+        <li key={song.id}>
+          {song.title}
+        </li>
       )
     });
 
