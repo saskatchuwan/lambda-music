@@ -5,7 +5,7 @@ class Api::SongsController < ApplicationController
     elsif params[:artist_id]
       @songs = Artist.find(params[:artist_id]).songs
     else
-      @songs = Song.all
+      @songs = Song.get_all_song_data
     end
     render :index
   end
