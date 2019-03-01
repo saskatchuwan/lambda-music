@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import BrowseSongsIndex from './browse_songs_index';
 
-const mapStateToProps = (state, ownProps) => {
-  let currentUserId = state.session.currentUserId;
-  let currentUser = state.entities.users[currentUserId];
+import { fetchSongs } from '../../../actions/song_actions';
 
+const mapStateToProps = (state, ownProps) => {
+  let songs = Object.values(state.entities.songs); //array
   return ({
-    currentUser
+    songs
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-
+    fetchSongs: () => dispatch(fetchSongs()),
   });
 };
 

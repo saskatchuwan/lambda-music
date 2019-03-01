@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // just for testing
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   // window.fetchAlbums = fetchAlbums;
   // window.fetchAlbum = fetchAlbum;
 
