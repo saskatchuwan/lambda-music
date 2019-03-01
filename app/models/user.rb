@@ -17,6 +17,17 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :owned_playlists,
+    primary_key: :id,
+    foreign_key: :owner_id,
+    class_name: 'Playlist'
+
+  has_many :playlist_saves,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'PlaylistSave'
+
+
   attr_reader :password
 
   def password=(password)

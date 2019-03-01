@@ -23,6 +23,11 @@ class Song < ApplicationRecord
     foreign_key: :artist_id,
     class_name: 'Artist'
 
+  has_many :playlist_songs,
+    primary_key: :id,
+    foreign_key: :song_id,
+    class_name: 'PlaylistSong'
+
   def self.get_all_song_data(song_id=nil)
     if !song_id.nil?
       Song.includes(:artist, :album).find(song_id)
