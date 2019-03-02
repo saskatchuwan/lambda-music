@@ -21,7 +21,6 @@ class PlaylistSongsIndex extends React.Component {
   }
 
   render () {
-    console.log(this.props.artists);
 
     let songItems;
     songItems = this.props.songs.map(song => {
@@ -37,12 +36,16 @@ class PlaylistSongsIndex extends React.Component {
         </li>
       )
     });
+
     
+
     return (
       
       <div className='main-view-spotlight-container'>
 
-        <PlaylistInfoRail />
+        <PlaylistInfoRail 
+          //how to do i get the playlist name out heeerrreeee
+        />
 
         <div className='content-index-display-container-list'>
             <ul className='index-display-section-list'>

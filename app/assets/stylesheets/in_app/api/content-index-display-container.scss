@@ -13,10 +13,11 @@ a, a:visited {
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding-top: 10px;
   padding-left: 32px;
   padding-right: 32px;
   font-size: 16px;
-
+  width: 80%;
 
   h1 {
     letter-spacing: .015em;
@@ -32,7 +33,7 @@ a, a:visited {
 
       strong {
         color: white;
-        font-weight: bold;
+        font-weight: var(--glue-font-weight-bold);
         font-size: 14px;
       }
 
