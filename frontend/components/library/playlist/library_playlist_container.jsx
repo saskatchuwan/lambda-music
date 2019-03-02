@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import LibraryPlayListIndex from './library_playlist_index';
 
-import { fetchSongs } from '../../../actions/song_actions';
+import { fetchUserPlaylists } from '../../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => {
   //arrays
@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-
+    fetchUserPlaylists: (user_id) => dispatch(fetchUserPlaylists(user_id)),
   });
 };
 
