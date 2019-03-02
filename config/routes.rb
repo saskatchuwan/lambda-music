@@ -24,5 +24,6 @@ Rails.application.routes.draw do
 
     resources :playlist_songs, only: [:create, :destroy]
 
+    resources :playlist_saves, only: [:create, :destroy]
   end
 end

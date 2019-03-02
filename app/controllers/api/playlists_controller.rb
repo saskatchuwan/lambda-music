@@ -20,9 +20,14 @@ class Api::PlaylistsController < ApplicationController
     @playlist.owner_id = current_user.id
 
     # hardcode current user id for testing in postman
-    # @playlist.owner_id = 2
+    # @playlist.owner_id = 1
 
     if @playlist.save
+      # save to playlist_save table
+      @playlist_save = PlaylistSave.new(playlist_id: @playlist.id, user_id: @playlist.owner_id)
+
+      @playlist_save.save
+
       render 'api/playlists/show'
     else
       render json: @playlist.errors.full_messages, status: 404

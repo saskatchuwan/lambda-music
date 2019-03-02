@@ -27,6 +27,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: 'PlaylistSave'
 
+  has_many :saved_playlists,
+    through: :playlist_saves,
+    source: :playlist
+
 
   attr_reader :password
 
@@ -53,5 +57,9 @@ class User < ApplicationRecord
     self.session_token = SecureRandom.urlsafe_base64
     self.save!
     self.session_token
+  end
+
+  def self.get_all_saved_playlists(user_id)
+    User.includes(:saved_playlists).find(user_id)
   end
 end
