@@ -11,9 +11,11 @@
 
 .splash-page {
   color: white;
-  background-image: url('https://images.unsplash.com/photo-1470290449668-02dd93d9420a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80');
-  // background-size: cover;
-  // background: darksalmon;
+
+  background-color: #F037A5;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-60%, #F037A5), color-stop(140%, #FAE62D));
+  background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
+
   position: absolute;
   top: 0;
   right: 0;
