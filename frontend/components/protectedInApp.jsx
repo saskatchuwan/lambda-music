@@ -8,6 +8,7 @@ import BottomMusicPlayerContainer from './bottom_music_player/bottom_music_playe
 //dynamic main components
 import Library from './library/library';
 import Browse from './browse/browse';
+import PlaylistContainer from './playlist_spotlight/playlist_container';
 
 
 import {
@@ -23,6 +24,7 @@ const ProtectedInApp = () => (
       <Switch>
         <ProtectedRoute path="/library" component={Library} />
         <ProtectedRoute path="/browse" component={Browse} />
+        <ProtectedRoute path="/playlist/:playlistId" component={PlaylistContainer} />
       </Switch>
     </div>
 
