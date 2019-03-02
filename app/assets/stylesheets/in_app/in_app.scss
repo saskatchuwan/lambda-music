@@ -34,4 +34,16 @@
 }
 
 
+//-----------------------------------------
+// can be found in playlist.jsx, artist.jsx, etc
+//-----------------------------------------
+
+.main-view-spotlight-container{
+  background-image: linear-gradient(to bottom right,  #786E05, #1f1e1e);
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
 

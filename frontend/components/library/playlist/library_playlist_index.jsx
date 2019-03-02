@@ -35,7 +35,9 @@ class LibraryPlayListIndex extends React.Component {
           </strong>
           
             <br />
-          {owner.username}
+
+          {/* page breaks when navigating back to this page from the /playlist/1 page */}
+          {/* {owner.username} */}
         </div>
       )
     });
