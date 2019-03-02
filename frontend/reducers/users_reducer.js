@@ -15,7 +15,7 @@ const usersReducer = (state={}, action) => {
     case RECEIVE_PLAYLISTS:
       return Object.assign(newState, action.payload.owners);
 
-    //broken right now :/
+    //broken right now
     
     // case RECEIVE_PLAYLIST:
     //   let playlistOwner = Object.values(action.payload.owners);

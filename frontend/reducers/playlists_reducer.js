@@ -11,7 +11,7 @@ const playlistsReducer = (state={}, action) => {
     case RECEIVE_PLAYLISTS:
       //currently will overwrite all playlists
       return action.payload.playlists;
-      
+
     case RECEIVE_PLAYLIST:
       let playlistId = Object.keys(action.payload.playlist)[0];
       newState[playlistId] = action.payload.playlist;
