@@ -1,5 +1,5 @@
 // see example: browse_songs_index.jsx
-.content-index-display-container {
+.content-index-display-container-list {
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
     letter-spacing: .015em;
   }
 
-  .songs-list {
+  .index-display-section-list {
     list-style-type: none;
     padding: 0;
 
@@ -37,3 +37,53 @@
     }
   }
 }
+
+// see example: library_playlist_index.jsx
+.content-index-display-container-tile {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+
+
+  .index-display-section-tile {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    // padding: 20px;
+
+    .tile-container {
+      text-align: center;
+      // background-color: fuchsia;
+
+      font-size: 13px;
+      color: #b3b3b3;
+
+      .tile {
+        background-color: rgb(197, 230, 109);
+        height: 180px;
+        width: 180px;
+        margin: 8px;
+      }
+
+      strong {
+        color: white;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: .015em;
+        text-transform: none;
+        font-weight: var(--glue-font-weight-bold);
+      }
+
+    }
+
+    .tile:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      -webkit-transition: background-color 0.45s ease-out;
+    }
+  }
+}
+

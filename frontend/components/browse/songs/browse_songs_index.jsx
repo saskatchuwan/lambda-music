@@ -36,10 +36,8 @@ class BrowseSongsIndex extends React.Component {
 
     return (
 
-      <div className='content-index-display-container'>
-          {/* <h1>Songs curated for {this.props.currentUser.username}</h1> */}
-
-          <ul className='songs-list'>
+      <div className='content-index-display-container-list'>
+          <ul className='index-display-section-list'>
             {songItems}
           </ul>
       </div>

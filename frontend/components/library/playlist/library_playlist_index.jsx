@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import usersReducer from '../../../reducers/users_reducer';
 
 class LibraryPlayListIndex extends React.Component {
 
@@ -8,28 +9,35 @@ class LibraryPlayListIndex extends React.Component {
   }
  
   render () {
-    let { playlists } = this.props;
+    let { playlists, users } = this.props;
 
     let playlistItems;
 
     playlistItems = playlists.map(playlist => {
+
+      let ownerId = playlist.ownerId;
+      let owner = users[ownerId-1];
+
       return (
-        <li key={playlist.id}>
-          {playlist.name}
-        </li>
+        <div className = 'tile-container' key={playlist.id}>
+
+          <li className= 'tile'>
+          
+          </li>
+
+          <strong>{playlist.name}</strong>
+          <br />
+          {owner.username}
+        </div>
       )
     });
 
     return (
-      <div className='content-index-display-container'>
-          <h1>Playlists curated by {this.props.currentUser.username}</h1>
-          
-          <div className='index-display-section'>
-            { playlistItems }
+      <div className='content-index-display-container-tile'>
+          <div className='index-display-section-tile'>
+            {playlistItems}
           </div>
       </div>
-
- 
     );
   }
 }
