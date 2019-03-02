@@ -7,7 +7,6 @@ class Api::PlaylistSavesController < ApplicationController
     if params[:user_id]
       @saved_playlists = User.find(params[:user_id]).saved_playlists
       render :index
-      # render json: @saved_playlists
     else
       render json: ['No playlists unavailable'], status: 404
     end

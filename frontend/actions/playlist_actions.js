@@ -4,6 +4,7 @@ export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 export const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST';
 
+
 export const receivePlaylists = (payload) => ({
   type: RECEIVE_PLAYLISTS,
   payload
@@ -36,6 +37,10 @@ export const updatePlaylist = (playlist) => dispatch => (
   PlaylistApiUtil.updatePlaylist(playlist).then(payload => dispatch(receivePlaylist(payload)))
 );
 
+
+export const fetchUserPlaylists = (user_id) => dispatch => (
+  PlaylistApiUtil.fetchUserPlaylists(user_id).then(payload => dispatch(receivePlaylists(payload)))
+);
 
 //should verify that the .then works here
 export const deletePlaylist = (id) => dispatch => (

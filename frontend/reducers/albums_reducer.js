@@ -23,7 +23,11 @@ const albumsReducer = (state={}, action) => {
       return action.payload.albums;
     
     case RECEIVE_PLAYLISTS:
-      return action.payload.albums;
+      if (action.payload.albums) {
+        return action.payload.albums;
+      } else {
+        return {};
+      }
 
     case RECEIVE_PLAYLIST:
       return Object.assign(newState, action.payload.albums);

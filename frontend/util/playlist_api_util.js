@@ -34,3 +34,10 @@ export const deletePlaylist = (id) => (
     url: `/api/playlists/${id}`,
   })
 )
+
+export const fetchUserPlaylists = (user_id) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/users/${user_id}/playlist_saves`
+  })
+)

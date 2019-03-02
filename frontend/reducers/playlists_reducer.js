@@ -18,7 +18,7 @@ const playlistsReducer = (state={}, action) => {
       return newState;
 
     case REMOVE_PLAYLIST:
-      delete newState[action.playlistId]
+      delete newState[action.playlistId];
       return newState;
 
     default:

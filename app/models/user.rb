@@ -59,7 +59,8 @@ class User < ApplicationRecord
     self.session_token
   end
 
-  def self.get_all_saved_playlists(user_id)
-    User.includes(:saved_playlists).find(user_id)
-  end
+  # doesn't quite work
+  # def self.get_all_saved_playlists(user_id)
+  #   User.includes(:saved_playlists).find(user_id)
+  # end
 end

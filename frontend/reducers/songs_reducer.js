@@ -20,7 +20,11 @@ const songsReducer = (state={}, action) => {
       return newState;
 
     case RECEIVE_PLAYLISTS:
-      return action.payload.songs;
+      if (action.payload.songs) {
+        return action.payload.songs;
+      } else {
+        return {};
+      }
       
     case RECEIVE_PLAYLIST:
       return Object.assign(newState, action.payload.songs);
