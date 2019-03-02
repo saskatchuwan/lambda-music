@@ -3,6 +3,16 @@ class Api::PlaylistSavesController < ApplicationController
   # for testing only!
   # skip_before_action :verify_authenticity_token
 
+  def index
+    if params[:user_id]
+      @saved_playlists = User.find(params[:user_id]).saved_playlists
+      render :index
+      # render json: @saved_playlists
+    else
+      render json: ['No playlists unavailable'], status: 404
+    end
+  end
+
   def create
     @playlist_save = PlaylistSave.new(playlist_id: playlist_save_params[:playlist_id])
 
