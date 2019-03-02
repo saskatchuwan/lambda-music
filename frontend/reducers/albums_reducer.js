@@ -21,21 +21,14 @@ const albumsReducer = (state={}, action) => {
       return newState;
     case RECEIVE_SONGS:
       return action.payload.albums;
-
     
     case RECEIVE_PLAYLISTS:
       return action.payload.albums;
+
     case RECEIVE_PLAYLIST:
-      let playlistAlbums = Object.values(action.payload.albums);
-
-      playlistAlbums.forEach(playlistAlbum => {
-        newState[playlistAlbum.id] = playlistAlbum;
-      });
-
-      return newState;
-
+      return Object.assign(newState, action.payload.albums);
+      
       //do we need one for REMOVE_PLAYLIST?
-
     default:
       return state;
   }

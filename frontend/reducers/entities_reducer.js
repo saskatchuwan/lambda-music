@@ -10,7 +10,7 @@ const entitiesReducer = combineReducers({
   artists: artistsReducer,
   songs: songsReducer,
   albums: albumsReducer,
-  playlists: playlistsReducer
+  playlists: playlistsReducer,
 });
 
 export default entitiesReducer;

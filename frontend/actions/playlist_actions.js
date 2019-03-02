@@ -32,9 +32,6 @@ export const createPlaylist = (playlist) => dispatch => (
   PlaylistApiUtil.createPlaylist(playlist).then(payload => dispatch(receivePlaylist(payload)))
 );
 
-
-//change to payload?
-
 export const updatePlaylist = (playlist) => dispatch => (
   PlaylistApiUtil.updatePlaylist(playlist).then(payload => dispatch(receivePlaylist(payload)))
 );

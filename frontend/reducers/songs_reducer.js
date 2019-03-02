@@ -14,20 +14,16 @@ const songsReducer = (state={}, action) => {
     case RECEIVE_SONGS:
       //currently will overwrite all songs
       return action.payload.songs;
+
     case RECEIVE_SONG:
       newState[action.song.id] = action.song;
       return newState;
 
     case RECEIVE_PLAYLISTS:
       return action.payload.songs;
+      
     case RECEIVE_PLAYLIST:
-      let playlistSongs = Object.values(action.payload.songs);
-
-      playlistSongs.forEach(playlistSong => {
-        newState[playlistSong.id] = playlistSong;
-      });
-
-      return newState;
+      return Object.assign(newState, action.payload.songs);
 
       //do we need one for REMOVE_PLAYLIST?
       
