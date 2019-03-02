@@ -3,6 +3,10 @@
 //-----------------------------------------
 // see example: browse_songs_index.jsx
 
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
 
 .content-index-display-container-list {
   color: #fff;

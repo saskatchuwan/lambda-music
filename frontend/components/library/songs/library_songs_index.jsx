@@ -6,10 +6,10 @@ class LibrarySongsIndex extends React.Component {
  
   render () {
     return (
-      <div className='content-index-display-container'>
+      <div className='content-index-display-container-list'>
           <h1>Songs curated by {this.props.currentUser.username}</h1>
 
-          <div className='index-display-section'>
+          <div className='index-display-section-list'>
 
           </div>
       </div>

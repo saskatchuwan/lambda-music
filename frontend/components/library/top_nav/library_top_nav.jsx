@@ -27,6 +27,11 @@ class LibraryTopNav extends React.Component {
               ALBUMS
             </NavLink>
           </li>
+          {/* <li>
+            <NavLink className='nav-link' to='library/albums'>
+              ANOTHER
+            </NavLink>
+          </li> */}
         </ul>
         
         {/* onclick, opens modal */}

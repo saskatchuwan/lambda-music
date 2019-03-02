@@ -129,7 +129,7 @@
   
   .nav-bar-logout-button, .nav-bar-logout-button:visited {
     text-decoration: none;
-    background-color: #1DB954;
+    background-color: transparent;
     padding: 10px 20px 10px 20px; 
     border-radius: 50px;
     font-size: 14px;
@@ -137,16 +137,17 @@
     letter-spacing: +0.13em;
     color: white;
     width: 180px;
-    border: 0 transparent;
+    border: 1.4px solid #b3b3b3;
     text-transform: uppercase;
   }
   
   
   .nav-bar-logout-button:hover {
     color: white;
-    background-color: rgb(35, 201, 93);
-    border: 0 transparent;
+    background-color: #b3b3b357;
+    // border: 0 transparent;
     cursor: pointer;
+    -webkit-transition: background-color 0.1s;
   }
 }
 

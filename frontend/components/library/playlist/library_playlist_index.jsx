@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import usersReducer from '../../../reducers/users_reducer';
 
 class LibraryPlayListIndex extends React.Component {
@@ -7,6 +7,8 @@ class LibraryPlayListIndex extends React.Component {
   componentDidMount () {
     this.props.fetchUserPlaylists(this.props.currentUser.id);
   }
+
+  // need to clear the data after unmounting this component
  
   render () {
     let { playlists, users } = this.props;
@@ -20,13 +22,19 @@ class LibraryPlayListIndex extends React.Component {
 
       return (
         <div className = 'tile-container' key={playlist.id}>
+          <a href={`/#/playlist/${playlist.id}`}>
+            <div className= 'tile'>
+              {/* will prob insert an image here later */}
+            </div>
+          </a>
 
-          <li className= 'tile'>
+          <strong>
+            <a href={`/#/playlist/${playlist.id}`}>
+            {playlist.name}
+            </a>
+          </strong>
           
-          </li>
-
-          <strong>{playlist.name}</strong>
-          <br />
+            <br />
           {owner.username}
         </div>
       )
