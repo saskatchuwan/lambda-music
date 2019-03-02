@@ -28,6 +28,13 @@ class LibraryTopNav extends React.Component {
             </NavLink>
           </li>
         </ul>
+        
+        {/* onclick, opens modal */}
+        <div className='create-playlist-button-container'>
+          <button className='create-playlist-button'>
+          NEW PLAYLIST
+          </button>
+        </div>
     </div>
     );
   }

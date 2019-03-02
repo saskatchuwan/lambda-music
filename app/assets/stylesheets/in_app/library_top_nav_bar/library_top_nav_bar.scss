@@ -9,13 +9,14 @@
   .library-top-nav-links {
     display: flex;
     list-style-type: none;
-    //comment this in to fix padding
     padding: 0px;
-    
+
+    margin-left: auto;
+
     .nav-link {
       padding-left: 25px;
       padding-right: 25px;
-      font-size: 12.5px;
+      font-size: 12px;
       text-decoration: none;
       color: #b3b3b3;
       font-weight: bold; 
@@ -23,7 +24,7 @@
       display: flex;
       align-items: center;
       -webkit-transition: color 0.2s;
-      
+      padding-bottom: 3px;
     }
     
     .active {
@@ -37,13 +38,43 @@
     }
   
     li {
-      display: block;
-      height: 50px;
+      height: 20px;
       //hack to center text within li
-      line-height: 30px;
+      line-height: 20px;
+      text-align: center;
     }
 
 
   }
-}
 
+
+  .create-playlist-button-container {
+    padding-right: 20px;
+    margin-left: auto;
+
+    .create-playlist-button, .create-playlist-button:visited {
+      text-decoration: none;
+      background-color: #1DB954;
+      padding: 10px 20px 10px 20px; 
+      border-radius: 50px;
+      font-size: 11px;
+      letter-spacing: +0.10em;
+      color: white;
+      width: 140px;
+      border: 0 transparent;
+      text-transform: uppercase;
+      align-self: center;
+
+    }
+  
+    .create-playlist-button:hover {
+      color: white;
+      background-color: rgb(35, 201, 93);
+      border: 0 transparent;
+      cursor: pointer;
+    }
+
+
+  }
+
+  }  

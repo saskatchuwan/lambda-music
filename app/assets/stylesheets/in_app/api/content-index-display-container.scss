@@ -1,4 +1,9 @@
+//-----------------------------------------
+// For use in song index lists
+//-----------------------------------------
 // see example: browse_songs_index.jsx
+
+
 .content-index-display-container-list {
   color: #fff;
   display: flex;
@@ -38,7 +43,11 @@
   }
 }
 
+//-----------------------------------------
+// For tile elements (albums, playlists)
+//-----------------------------------------
 // see example: library_playlist_index.jsx
+
 .content-index-display-container-tile {
   color: #fff;
   display: flex;
@@ -81,8 +90,8 @@
     }
 
     .tile:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-      -webkit-transition: background-color 0.45s ease-out;
+      background-color: rgba(0, 0, 0, 0.4);
+      -webkit-transition: background-color 0.22s;
     }
   }
 }
