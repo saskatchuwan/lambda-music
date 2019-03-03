@@ -21,7 +21,10 @@ const PlaylistInfoRail = props => (
       <a href='#'>add/remove from library (...)</a>
 
       {/* add playlist numbers */}
-      <button onClick={() => props.deletePlaylist(props.match.params.playlistId)}>Delete playlist</button>
+      <button 
+        onClick={() => props
+                        .deletePlaylist(props.match.params.playlistId)
+                        .then(() => props.history.push('/library/playlists'))}>Delete playlist</button>
     </div>
 
   </div>
