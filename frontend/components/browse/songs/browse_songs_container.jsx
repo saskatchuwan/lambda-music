@@ -11,10 +11,13 @@ const mapStateToProps = (state, ownProps) => {
   let currentUserId = state.session.currentUserId;
   let currentUser = state.entities.users[currentUserId];
   
+  let songQueue = state.entities.playlistSongs.playlistSongsQueue;
+
   return ({
     songs: songs,
     artists: state.entities.artists,
     albums: state.entities.albums,
+    songQueue,
     currentUser,
   });
 };

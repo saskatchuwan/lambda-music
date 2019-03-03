@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewPlaylistForm from './new_playlist_form';
-// imoprt add song to playlist modal
+import AddSongToPlaylist from './add_playlist_song';
 
 function Modal({modal, closeModal}) {
 
@@ -16,7 +16,7 @@ function Modal({modal, closeModal}) {
       component = <NewPlaylistForm />;
       break;
     case 'add-song-to-playlist':
-      component = <h2>placeholder</h2>;
+      component = <AddSongToPlaylist />;
       break;
     default:
       return null;
