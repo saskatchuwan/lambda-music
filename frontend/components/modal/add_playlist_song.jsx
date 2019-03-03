@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createPlaylist } from '../../actions/playlist_actions';
+import { createPlaylistSong } from '../../actions/playlist_songs_actions';
 import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
 
@@ -12,18 +12,18 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createPlaylist: (playlist) => dispatch(createPlaylist(playlist)),
+    createPlaylistSong: (playlistSong) => dispatch(createPlaylistSong(playlistSong)),
     closeModal: () => dispatch(closeModal())
   };
 };
 
 
-
-class NewPlaylistForm extends React.Component {
+class AddSongToPlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      song_id: '',
+      playlist_id: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,23 +36,12 @@ class NewPlaylistForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const playlist = Object.assign({}, this.state);
-    this.props.createPlaylist(playlist)
+    const playlistSong = Object.assign({}, this.state);
+    this.props.createPlaylistSong(playlistSong)
         .then(this.props.closeModal)
         .then(() => this.props.history.push('/library/playlists'));
+        //probably need to change this redirect
   }
-
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
 
   render() {
     return (
@@ -92,4 +81,4 @@ class NewPlaylistForm extends React.Component {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(NewPlaylistForm));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AddSongToPlaylist));

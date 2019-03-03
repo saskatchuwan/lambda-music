@@ -10,9 +10,9 @@ const receiveSongs = (payload) => ({
   payload
 });
 
-const receiveSong = (song) => ({
+const receiveSong = (payload) => ({
   type: RECEIVE_SONG,
-  song
+  payload
 });
 
 export const clearSongs = () => ({
@@ -27,7 +27,7 @@ export const fetchSongs = () => dispatch => (
 );
 
 export const fetchSong = (id) => dispatch => (
-  SongApiUtil.fetchSong(id).then(song => dispatch(receiveSong(song)))
+  SongApiUtil.fetchSong(id).then(payload => dispatch(receiveSong(payload)))
 );
 
 export const fetchUserSavedSongs = (user_id) => dispatch => (

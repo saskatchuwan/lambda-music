@@ -3,7 +3,7 @@ import { RECEIVE_ARTISTS,
         CLEAR_ARTISTS,
         } from '../actions/artist_actions';
 
-import { RECEIVE_SONGS, CLEAR_SONGS } from '../actions/song_actions';
+import { RECEIVE_SONGS, RECEIVE_SONG, CLEAR_SONGS } from '../actions/song_actions';
 
 import { RECEIVE_PLAYLISTS,
   RECEIVE_PLAYLIST,
@@ -33,6 +33,9 @@ const artistsReducer = (state={}, action) => {
       //when fetchPosts() thunk action is dispatched, will update artists slice of state with assciated artists to list of songs
     case RECEIVE_SONGS:
       return action.payload.artists;
+
+    // case RECEIVE_SONG:
+    //   return action.payload.artist;
     
     case CLEAR_SONGS:
       return {};

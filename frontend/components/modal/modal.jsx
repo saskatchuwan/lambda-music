@@ -32,7 +32,7 @@ function Modal({modal, closeModal}) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     modal: state.ui.modal
   };

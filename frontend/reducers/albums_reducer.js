@@ -3,7 +3,7 @@ import { RECEIVE_ALBUMS,
         CLEAR_ALBUMS,
       } from '../actions/album_actions';
 
-import { RECEIVE_SONGS, CLEAR_SONGS } from '../actions/song_actions';
+import { RECEIVE_SONGS, RECEIVE_SONG, CLEAR_SONGS } from '../actions/song_actions';
 
 import { RECEIVE_PLAYLISTS,
   RECEIVE_PLAYLIST,
@@ -29,6 +29,9 @@ const albumsReducer = (state={}, action) => {
 
     case RECEIVE_SONGS:
       return action.payload.albums;
+
+    // case RECEIVE_SONG:
+    //   return action.payload.album;
     
     case CLEAR_SONGS:
       return {};

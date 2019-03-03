@@ -25,9 +25,8 @@ const songsReducer = (state={}, action) => {
       //currently will overwrite all songs
       return action.payload.songs;
 
-    case RECEIVE_SONG:
-      newState[action.song.id] = action.song;
-      return newState;
+    // case RECEIVE_SONG:
+    //   return action.payload.song;
     
     case CLEAR_SONGS:
       return {};

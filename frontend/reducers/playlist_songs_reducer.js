@@ -1,17 +1,11 @@
-import { RECEIVE_PLAYLIST_SONG_ACTION } from '../actions/playlist_songs_actions';
+import { combineReducers } from 'redux';
 
+import playlistSongsMsgReducer from './playlist_songs_msg_reducer';
+import playlistSongsQueueReducer from './playlist_songs_queue_reducer';
 
-const playlistSongsReducer = (state={}, action) => {
-  Object.freeze(state);
-  let newState = Object.assign({}, state);
-
-  switch(action.type) {
-    case RECEIVE_PLAYLIST_SONG_ACTION:
-      newState.msg = action.playlistSongMsg;
-      return newState;
-    default:
-      return state;
-  }
-};
+const playlistSongsReducer = combineReducers({
+  playlistSongsMsg: playlistSongsMsgReducer,
+  playlistSongsQueue: playlistSongsQueueReducer,
+});
 
 export default playlistSongsReducer;

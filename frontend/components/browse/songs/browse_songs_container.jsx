@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import BrowseSongsIndex from './browse_songs_index';
 
-import { fetchSongs } from '../../../actions/song_actions';
+import { fetchSongs, fetchSong } from '../../../actions/song_actions';
+import { openModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   //arrays
@@ -21,6 +22,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     fetchSongs: () => dispatch(fetchSongs()),
+    openModal: (modal) => dispatch(openModal(modal)),
+    fetchSong: (id) => dispatch(fetchSong(id)),
   });
 };
 
