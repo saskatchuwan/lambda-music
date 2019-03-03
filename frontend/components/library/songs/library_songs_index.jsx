@@ -11,6 +11,7 @@ class LibrarySongsIndex extends React.Component {
     let songItems;
 
     songItems = this.props.songs.map(song => {
+      
       //this.props.albums  and artists are objects
       let album = this.props.albums[song.albumId];
       let artist = this.props.artists[song.artistId];

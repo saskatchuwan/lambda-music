@@ -5,15 +5,6 @@ import PlaylistInfoRail from './playlist_info_rail';
 
 class PlaylistSongsIndex extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      songs: this.props.songs,
-      artists: this.props.artists,
-      albums: this.props.albums,
-      playlists: this.props.playlists,
-    }
-  }
 
   componentDidMount() {
     let playlistId = this.props.match.params.playlistId;
@@ -24,10 +15,10 @@ class PlaylistSongsIndex extends React.Component {
 
     let songItems;
     songItems = this.props.songs.map(song => {
-      //this.props.albums is a zero-indexed array
-      let album = this.props.albums[song.albumId - 1];
-      let artist = this.props.artists[song.artistId - 1];
-
+      
+      let album = this.props.albums[song.albumId];
+      let artist = this.props.artists[song.artistId];
+    
       return (
         <li key={song.id}>
           <strong>{song.title}</strong>
@@ -37,6 +28,18 @@ class PlaylistSongsIndex extends React.Component {
       )
     });
 
+
+    // let infoRail;
+    // infoRail = this.props.playlists.map(playlist => {
+    //   return (
+    //     <PlaylistInfoRail 
+    //     // playlist={playlist}
+    //     // deletePlaylist={this.props.deletePlaylist}
+    //     />
+    //   )
+    // });
+
+    // console.log(this.props.playlists);
     
 
     return (
@@ -44,8 +47,9 @@ class PlaylistSongsIndex extends React.Component {
       <div className='main-view-spotlight-container'>
 
         <PlaylistInfoRail 
-          //how to do i get the playlist name out heeerrreeee
-        />
+          // playlist={playlist}
+          deletePlaylist={this.props.deletePlaylist}
+          />
 
         <div className='content-index-display-container-list'>
             <ul className='index-display-section-list'>
