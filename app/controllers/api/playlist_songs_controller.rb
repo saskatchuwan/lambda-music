@@ -1,27 +1,30 @@
 class Api::PlaylistSongsController < ApplicationController
+  # just for testing
+  #  skip_before_action :verify_authenticity_token
 
-  # def create
-  #   @playlist_song = PlaylistSong.new()
+  def create
+    @playlist_song = PlaylistSong.new(playlist_song_params)
 
-  #   # hardcode current user id for testing in postman
-  #   # @playlist.owner_id = 2
+    if @playlist_song.save
+      render json: ['Saved song to Your Playlist'], status: 200
+    else
+      render json: ['Unable to save song to Your Playlist'], status: 404
+    end
+  end
 
-  #   if @playlist.save
-  #     render 'api/playlists/show'
-  #   else
-  #     render json: @playlist.errors.full_messages, status: 404
-  #   end
-  # end
+  def destroy
+    @playlist_song = current_user.owned_playlist_songs.find(params[:id])
 
-  # def destroy
-  #   @playlist = current_user.owned_playlists.find(params[:id])
+    # for testing, need to hardcode a user to get owned-playlist-songs
+    # user = User.find(1)
+    # @playlist_song = user.owned_playlist_songs.find(params[:id])
 
-  #   # for testing, need to hardcode a user to get owned-playlists
-  #   # user = User.find(1)
-  #   # @playlist = user.owned_playlists.find(params[:id])
+    @playlist_song.destroy
+    render json: ['Successfully removed song from Your Playlist'], status: 200
+  end
 
-  #   @playlist.destroy
-  #   render 'api/playlists/show'
-  # end
+  def playlist_song_params
+    params.require(:playlist_song).permit(:playlist_id, :song_id)
+  end
 
 end

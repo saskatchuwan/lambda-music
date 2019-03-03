@@ -58,6 +58,10 @@ class User < ApplicationRecord
     through: :song_saves,
     source: :song
 
+  has_many :owned_playlist_songs,
+    through: :owned_playlists,
+    source: :playlist_songs
+
 
   attr_reader :password
 
