@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createPlaylist } from '../../actions/playlist_actions';
-
+import { withRouter } from 'react-router-dom';
+import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -36,7 +37,9 @@ class NewPlaylistForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const playlist = Object.assign({}, this.state);
-    this.props.createPlaylist(playlist).then(this.props.closeModal);
+    this.props.createPlaylist(playlist)
+        .then(this.props.closeModal)
+        .then(() => this.props.history.push('/library/playlists'));
   }
 
   // renderErrors() {
@@ -69,4 +72,4 @@ class NewPlaylistForm extends React.Component {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewPlaylistForm);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(NewPlaylistForm));
