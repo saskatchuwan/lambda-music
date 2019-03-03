@@ -26,4 +26,8 @@ export const fetchSong = (id) => dispatch => (
   SongApiUtil.fetchSong(id).then(song => dispatch(receiveSong(song)))
 );
 
+export const fetchUserSavedSongs = (user_id) => dispatch => (
+  SongApiUtil.fetchUserSavedSongs(user_id).then(payload => dispatch(receiveSongs(payload)))
+);
+
 

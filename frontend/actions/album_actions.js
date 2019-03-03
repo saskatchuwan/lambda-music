@@ -21,4 +21,8 @@ export const fetchAlbum = (id) => dispatch => (
   AlbumApiUtil.fetchAlbum(id).then(album => dispatch(receiveAlbum(album)))
 );
 
+export const fetchUserSavedAlbums = (user_id) => dispatch => (
+  AlbumApiUtil.fetchUserSavedAlbums(user_id).then(payload => dispatch(receiveAlbums(payload)))
+);
+
 

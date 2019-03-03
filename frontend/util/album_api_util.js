@@ -12,3 +12,10 @@ export const fetchAlbum = (id) => (
     url: `/api/albums/${id}`
   })
 );
+
+export const fetchUserSavedAlbums = (user_id) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/users/${user_id}/album_saves`
+  })
+)
