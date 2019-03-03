@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
+import Modal from './modal/modal';
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import Splash from './splash/splash';
@@ -14,6 +15,7 @@ import {
 
 const App = () => (
   <div>
+    <Modal />
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />

@@ -1,6 +1,25 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import { openModal } from '../../../actions/modal_actions';
+
+const mapStateToProps = (state, ownProps) => {
+  let currentUserId = state.session.currentUserId;
+  let currentUser = state.entities.users[currentUserId];
+
+  return ({
+    currentUser
+  });
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    openModal: modal => dispatch(openModal(modal)),
+  });
+};
+
+
 class LibraryTopNav extends React.Component {
 
   render () {
@@ -36,7 +55,8 @@ class LibraryTopNav extends React.Component {
         
         {/* onclick, opens modal */}
         <div className='create-playlist-button-container'>
-          <button className='create-playlist-button'>
+          <button className='create-playlist-button'
+                  onClick={() => this.props.openModal('login')}>
           NEW PLAYLIST
           </button>
         </div>
@@ -45,4 +65,4 @@ class LibraryTopNav extends React.Component {
   }
 }
 
-export default LibraryTopNav;
+export default connect(mapStateToProps,mapDispatchToProps)(LibraryTopNav);
