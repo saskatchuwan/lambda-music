@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import PlaylistIndexItem from './playlist_index_item';
 
 
 class LibraryPlayListIndex extends React.Component {
@@ -23,24 +24,7 @@ class LibraryPlayListIndex extends React.Component {
       let owner = users[ownerId-1];
 
       return (
-        <div className = 'tile-container' key={playlist.id}>
-          <a href={`/#/playlist/${playlist.id}`}>
-            <div className= 'tile'>
-              <img id='nav-icon' src={window.images.playlist_hold} />
-            </div>
-          </a>
-
-          <strong>
-            <a href={`/#/playlist/${playlist.id}`}>
-            {playlist.name}
-            </a>
-          </strong>
-          
-            <br />
-
-          {/* page breaks when navigating back to this page from the /playlist/1 page */}
-          {/* {owner.username} */}
-        </div>
+        <PlaylistIndexItem key={playlist.id} playlist={playlist} />
       )
     });
 

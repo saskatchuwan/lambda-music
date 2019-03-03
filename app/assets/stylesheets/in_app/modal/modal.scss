@@ -25,7 +25,7 @@ button:focus {outline:0;}
 //Create Playlist in-modal container
 //-----------------------------------------
 
-.new-playlist-form-container {
+.new-playlist-form-container, .add-song-playlist-form-container {
   color: white;
   width: 100vw;
   display: flex;
@@ -116,5 +116,18 @@ button:focus {outline:0;}
       transform: scale(1.02);
     }
 
+  }
+}
+
+
+//-----------------------------------------
+//Add song to playlist in-modal container
+//-----------------------------------------
+
+.add-song-playlist-form-container {
+  .in-modal-current-user-playlists {
+    display: flex;
+    background-color: green;
+    flex-wrap: wrap;
   }
 }
