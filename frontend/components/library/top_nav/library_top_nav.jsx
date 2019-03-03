@@ -56,7 +56,7 @@ class LibraryTopNav extends React.Component {
         {/* onclick, opens modal */}
         <div className='create-playlist-button-container'>
           <button className='create-playlist-button'
-                  onClick={() => this.props.openModal('login')}>
+                  onClick={() => this.props.openModal('create-playlist')}>
           NEW PLAYLIST
           </button>
         </div>

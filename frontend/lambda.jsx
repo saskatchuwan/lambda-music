@@ -7,9 +7,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 //testing
-// import { fetchUserSavedSongs } from './actions/song_actions';
-// import { fetchUserSavedArtists } from './actions/artist_actions';
-// import { fetchUserSavedAlbums } from './actions/album_actions';
+// import { createPlaylistSong, deletePlaylistSong } from './actions/playlist_songs_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -30,9 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // just for testing
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
-  // window.fetchUserSavedSongs = fetchUserSavedSongs;
-  // window.fetchUserSavedArtists = fetchUserSavedArtists;
-  // window.fetchUserSavedAlbums = fetchUserSavedAlbums;
+  // window.createPlaylistSong = createPlaylistSong;
+  // window.deletePlaylistSong = deletePlaylistSong;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);

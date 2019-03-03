@@ -3,7 +3,7 @@ class Api::PlaylistsController < ApplicationController
   # require login
 
   # for testing only!
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   def index
     @playlists = Playlist.get_all_playlist_data
