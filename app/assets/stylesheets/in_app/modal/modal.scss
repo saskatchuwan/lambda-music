@@ -1,10 +1,16 @@
+//-----------------------------------------
+//General modal styling
+//-----------------------------------------
+input:focus {outline:0;}
+button:focus {outline:0;}
+
 .modal-background {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 10;
 }
 
@@ -13,4 +19,102 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+//-----------------------------------------
+//Create Playlist in-modal container
+//-----------------------------------------
+
+.new-playlist-form-container {
+  color: white;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .close-modal-button {
+    background-color: transparent;
+    border: 0 transparent;
+    cursor: pointer;
+
+    #close-icon {
+      display: inline-block;
+      width: 30px;
+      height: 35px;
+      object-fit: cover;
+      -webkit-filter: invert(80%);
+      margin-right: 5px;
+    }
+
+    #close-icon:hover {
+      transform: scale(1.2);
+    }
+
+  }
+
+  h1 {
+    font-size: 48px;
+    text-align:center;
+  }
+
+  .create-playlist-form-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .create-playlist-input-container {
+      
+      display: flex;
+      justify-content: center;
+      height: 150px;
+      background-color: #282828;
+
+      .create-playlist-content-spacing {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 800px;
+
+        label {
+          font-size: 13px;
+          font-weight: bold;
+          letter-spacing: 0.03em;
+        }
+
+        .create-playlist-input {
+          background-color: transparent;
+          color: #b3b3b3;
+          height: 55px;
+          width: 100%;
+          font-size: 48px;
+          border: 0 transparent;
+        }
+      }
+    }
+
+
+    .create-submit-button, .create-submit-button:visited {
+      text-decoration: none;
+      background-color: #1DB954;
+      padding: 14px 20px 14px 20px; 
+      border-radius: 50px;
+      font-size: 11px;
+      letter-spacing: +0.10em;
+      color: white;
+      width: 140px;
+      border: 0 transparent;
+      text-transform: uppercase;
+      align-self: center;
+
+    }
+  
+    .create-submit-button:hover {
+      color: white;
+      background-color: rgb(35, 201, 93);
+      border: 0 transparent;
+      cursor: pointer;
+      transform: scale(1.02);
+    }
+
+  }
 }

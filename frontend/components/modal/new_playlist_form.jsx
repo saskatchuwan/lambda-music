@@ -57,14 +57,34 @@ class NewPlaylistForm extends React.Component {
   render() {
     return (
       <div className="new-playlist-form-container">
+        
+        <button className='close-modal-button'
+            onClick={() => this.props.closeModal()}>
+          <img id='close-icon' src={window.images.modal_close} />
+        </button>
+
+        <h1>Create new playlist</h1>
+
         <form onSubmit={this.handleSubmit} className="create-playlist-form-box">
-          <input type="text"
-                  name='playlist[name]'
-                  value={this.state.name}
-                  onChange={this.update('name')}
-                  className="create-playlist-input"
-                />
-          <input type="submit" className="create-submit" value='create' />
+          <div className='create-playlist-input-container'>
+
+            <div className='create-playlist-content-spacing'>
+
+              <label>Playlist Name</label>
+                
+              <input type="text"
+                      className="create-playlist-input"
+                      name='playlist[name]'
+                      value={this.state.name}
+                      placeholder="Start typing..."
+                      onChange={this.update('name')}
+                    />
+            </div>
+
+          </div>
+          <br />
+          <br />
+          <input type="submit" className="create-submit-button" value='CREATE' />
         </form>
       </div>
     );
