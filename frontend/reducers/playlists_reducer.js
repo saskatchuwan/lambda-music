@@ -4,6 +4,8 @@ import { RECEIVE_PLAYLISTS,
           CLEAR_PLAYLISTS,
         } from '../actions/playlist_actions';
 
+// import { CLEAR_ARTISTS } from '../actions/artist_actions';
+
 const playlistsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
@@ -14,7 +16,7 @@ const playlistsReducer = (state={}, action) => {
       return action.payload.playlists;
 
     case RECEIVE_PLAYLIST:
-      return action.payload.playlist;
+      return Object.assign(newState, action.payload.playlist);
 
     case REMOVE_PLAYLIST:
       delete newState[action.playlistId];

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import LibraryArtistsIndex from './library_artists_index';
 
-import { fetchUserSavedArtists } from '../../../actions/artist_actions';
+import { fetchUserSavedArtists, clearArtists } from '../../../actions/artist_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let artists = Object.values(state.entities.artists);
@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     fetchUserSavedArtists: (userId) => dispatch(fetchUserSavedArtists(userId)),
+    clearArtists: () => dispatch(clearArtists()),
   });
 };
 

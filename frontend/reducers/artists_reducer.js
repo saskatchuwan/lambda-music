@@ -1,7 +1,9 @@
 import { RECEIVE_ARTISTS,
-  RECEIVE_ARTIST } from '../actions/artist_actions';
+        RECEIVE_ARTIST,
+        CLEAR_ARTISTS,
+        } from '../actions/artist_actions';
 
-import { RECEIVE_SONGS } from '../actions/song_actions';
+import { RECEIVE_SONGS, CLEAR_SONGS } from '../actions/song_actions';
 
 import { RECEIVE_PLAYLISTS,
   RECEIVE_PLAYLIST,
@@ -10,6 +12,8 @@ import { RECEIVE_PLAYLISTS,
 
 import { RECEIVE_ALBUMS,
           RECEIVE_ALBUM } from '../actions/album_actions';
+
+import { CLEAR_ALBUMS } from '../actions/album_actions';
 
 
 const artistsReducer = (state={}, action) => {
@@ -23,10 +27,15 @@ const artistsReducer = (state={}, action) => {
     case RECEIVE_ARTIST:
       newState[action.artist.id] = action.artist;
       return newState;
+    case CLEAR_ARTISTS:
+      return {};
 
       //when fetchPosts() thunk action is dispatched, will update artists slice of state with assciated artists to list of songs
     case RECEIVE_SONGS:
       return action.payload.artists;
+    
+    case CLEAR_SONGS:
+      return {};
 
     case RECEIVE_PLAYLISTS:
 
@@ -46,6 +55,9 @@ const artistsReducer = (state={}, action) => {
 
     case RECEIVE_ALBUM:
       return action.payload.artist;
+
+    case CLEAR_ALBUMS:
+      return {};
 
     default:
       return state;

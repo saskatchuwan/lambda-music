@@ -6,6 +6,10 @@ class LibraryArtistsIndex extends React.Component {
   componentDidMount () {
     this.props.fetchUserSavedArtists(this.props.currentUser.id);
   }
+
+  componentWillUnmount () {
+    this.props.clearArtists();
+  }
  
   render () {
     let { artists } = this.props;

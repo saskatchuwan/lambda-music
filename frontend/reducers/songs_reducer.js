@@ -1,5 +1,7 @@
 import { RECEIVE_SONGS,
-        RECEIVE_SONG } from '../actions/song_actions';
+        RECEIVE_SONG,
+        CLEAR_SONGS,
+       } from '../actions/song_actions';
 
 import { RECEIVE_PLAYLISTS,
           RECEIVE_PLAYLIST,
@@ -9,6 +11,10 @@ import { RECEIVE_PLAYLISTS,
 
 import { RECEIVE_ALBUMS,
           RECEIVE_ALBUM } from '../actions/album_actions';
+
+import { CLEAR_ARTISTS } from '../actions/artist_actions';
+
+import { CLEAR_ALBUMS } from '../actions/album_actions';
 
 const songsReducer = (state={}, action) => {
   Object.freeze(state);
@@ -22,6 +28,9 @@ const songsReducer = (state={}, action) => {
     case RECEIVE_SONG:
       newState[action.song.id] = action.song;
       return newState;
+    
+    case CLEAR_SONGS:
+      return {};
 
     case RECEIVE_PLAYLISTS:
       if (action.payload.songs) {
@@ -44,6 +53,12 @@ const songsReducer = (state={}, action) => {
       
     case RECEIVE_ALBUM:
       return action.payload.songs;
+    
+    case CLEAR_ARTISTS:
+      return {};
+
+    case CLEAR_ALBUMS:
+      return {};
       
     default:
       return state;

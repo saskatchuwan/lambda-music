@@ -6,6 +6,10 @@ class LibrarySongsIndex extends React.Component {
   componentDidMount () {
     this.props.fetchUserSavedSongs(this.props.currentUser.id);
   }
+
+  componentWillUnmount () {
+    this.props.clearSongs();
+  }
  
   render () {
     let songItems;

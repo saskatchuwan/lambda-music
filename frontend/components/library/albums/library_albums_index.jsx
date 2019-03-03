@@ -6,6 +6,10 @@ class LibraryAlbumsIndex extends React.Component {
   componentDidMount () {
     this.props.fetchUserSavedAlbums(this.props.currentUser.id);
   }
+
+  componentWillUnmount () {
+    this.props.clearAlbums();
+  }
  
   render () {
     let { albums } = this.props;

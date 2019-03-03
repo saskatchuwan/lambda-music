@@ -21,8 +21,8 @@ class BrowseSongsIndex extends React.Component {
 
     songItems = this.props.songs.map(song => {
       //this.props.albums is a zero-indexed array
-      let album = this.props.albums[song.albumId - 1];
-      let artist = this.props.artists[song.artistId - 1];
+      let album = this.props.albums[song.albumId];
+      let artist = this.props.artists[song.artistId];
 
       return (
         <li key={song.id}>

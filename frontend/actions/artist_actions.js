@@ -2,6 +2,7 @@ import * as ArtistApiUtil from '../util/artist_api_util';
 
 export const RECEIVE_ARTISTS = 'RECEIVE_ARTISTS';
 export const RECEIVE_ARTIST = 'RECEIVE_ARTIST';
+export const CLEAR_ARTISTS = 'CLEAR_ARTISTS';
 
 export const receiveArtists = (artists) => ({
   type: RECEIVE_ARTISTS,
@@ -11,6 +12,10 @@ export const receiveArtists = (artists) => ({
 export const receiveArtist = (artist) => ({
   type: RECEIVE_ARTIST,
   artist
+});
+
+export const clearArtists = () => ({
+  type: CLEAR_ARTISTS
 });
 
 export const fetchArtists = () => dispatch => (

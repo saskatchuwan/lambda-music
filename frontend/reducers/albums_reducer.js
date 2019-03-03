@@ -1,12 +1,16 @@
 import { RECEIVE_ALBUMS,
-  RECEIVE_ALBUM } from '../actions/album_actions';
+        RECEIVE_ALBUM,
+        CLEAR_ALBUMS,
+      } from '../actions/album_actions';
 
-import { RECEIVE_SONGS } from '../actions/song_actions';
+import { RECEIVE_SONGS, CLEAR_SONGS } from '../actions/song_actions';
 
 import { RECEIVE_PLAYLISTS,
   RECEIVE_PLAYLIST,
   REMOVE_PLAYLIST,
    } from '../actions/playlist_actions';
+
+import { CLEAR_ARTISTS } from '../actions/artist_actions';
 
 const albumsReducer = (state={}, action) => {
   Object.freeze(state);
@@ -16,11 +20,23 @@ const albumsReducer = (state={}, action) => {
     case RECEIVE_ALBUMS:
       //currently will overwrite all albums
       return action.albums;
+
+    case CLEAR_ALBUMS:
+      return {};
+
     case RECEIVE_ALBUM:
       return action.payload.album;
+
     case RECEIVE_SONGS:
       return action.payload.albums;
     
+    case CLEAR_SONGS:
+      return {};
+
+    case CLEAR_ARTISTS:
+      return {};
+      
+
     case RECEIVE_PLAYLISTS:
       if (action.payload.albums) {
         return action.payload.albums;

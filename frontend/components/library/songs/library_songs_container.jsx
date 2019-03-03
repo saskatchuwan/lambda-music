@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import LibrarySongsIndex from './library_songs_index';
 
-import { fetchUserSavedSongs } from '../../../actions/song_actions';
+import { fetchUserSavedSongs, clearSongs } from '../../../actions/song_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let songs = Object.values(state.entities.songs);
@@ -20,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     fetchUserSavedSongs: (userId) => dispatch(fetchUserSavedSongs(userId)),
+    clearSongs: () => dispatch(clearSongs()),
   });
 };
 
