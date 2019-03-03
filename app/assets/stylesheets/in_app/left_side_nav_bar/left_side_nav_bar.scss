@@ -33,15 +33,15 @@
   align-items: center;
   font-size: 35px;
   font-weight: bold;
-  padding-left: 25px;
+  padding-left: 17px;
 
   li {
-    margin: 3px;
+    padding-right: 5px;
 
-    #splash-lambda-logo {
+    #left-nav-lambda-logo {
       display: inline-block;
-      width: 40px;
-      height: 45px;
+      width: 50px;
+      height: 60px;
       object-fit: cover;
       -webkit-filter: invert(100%);
       

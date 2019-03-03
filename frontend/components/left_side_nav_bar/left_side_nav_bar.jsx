@@ -14,7 +14,8 @@ class LeftSideNavBar extends React.Component {
           <div className='nav-bar-section1'>
 
             <ul className='navbar-logo'>
-              <li><img id='splash-lambda-logo' src={window.images.logo2} /></li>
+              {/* <li><img id='splash-lambda-logo' src={window.images.logo2} /></li> */}
+              <li><img id='left-nav-lambda-logo' src={window.images.doppler_logo_w} /></li>
               <li>lambda</li>
             </ul>
 

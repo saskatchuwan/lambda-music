@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
       <div className='session-form-page'>
 
         <header className='session-form-header'>
-          <a className='session-form-logo' href='/#/'><img id='session-form-lambda-logo' src={window.images.logo2} />lambda</a>
+          <a className='session-form-logo' href='/#/'><img id='session-form-lambda-logo' src={window.images.doppler_logo_w} />lambda</a>
         </header>
 
         <main className='session-form-container'>
