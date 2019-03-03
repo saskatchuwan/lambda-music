@@ -4,6 +4,7 @@ import { RECEIVE_SONGS,
 import { RECEIVE_PLAYLISTS,
           RECEIVE_PLAYLIST,
           REMOVE_PLAYLIST,
+          CLEAR_PLAYLISTS,
            } from '../actions/playlist_actions';
 
 import { RECEIVE_ALBUMS,
@@ -30,9 +31,13 @@ const songsReducer = (state={}, action) => {
       }
       
     case RECEIVE_PLAYLIST:
-      return Object.assign(newState, action.payload.songs);
+      // return Object.assign(newState, action.payload.songs);
+      return action.payload.songs;
 
       //do we need one for REMOVE_PLAYLIST?
+
+    case CLEAR_PLAYLISTS:
+      return {};
       
     case RECEIVE_ALBUM:
       return action.payload.songs;

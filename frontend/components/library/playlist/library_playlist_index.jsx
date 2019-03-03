@@ -8,8 +8,9 @@ class LibraryPlayListIndex extends React.Component {
     this.props.fetchUserPlaylists(this.props.currentUser.id);
   }
 
- 
-  // need to clear the data after unmounting this component
+  componentWillUnmount () {
+    this.props.clearPlaylists();
+  }
  
   render () {
     let { playlists, users } = this.props;

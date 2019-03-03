@@ -29,7 +29,8 @@ const albumsReducer = (state={}, action) => {
       }
 
     case RECEIVE_PLAYLIST:
-      return Object.assign(newState, action.payload.albums);
+      // return Object.assign(newState, action.payload.albums);
+      return action.payload.albums;
       
       //do we need one for REMOVE_PLAYLIST?
     default:

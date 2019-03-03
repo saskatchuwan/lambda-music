@@ -11,6 +11,11 @@ class PlaylistSongsIndex extends React.Component {
     this.props.fetchPlaylist(playlistId);
   }
 
+  componentWillUnmount () {
+    this.props.clearPlaylists();
+  }
+ 
+
   render () {
 
     let songItems;

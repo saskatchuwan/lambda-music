@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PlaylistSongsIndex from '../playlist_spotlight/playlist_songs_index';
 
-import { fetchPlaylist, deletePlaylist } from '../../actions/playlist_actions';
+import { fetchPlaylist, deletePlaylist, clearPlaylists } from '../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let currentUserId = state.session.currentUserId;
@@ -24,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     //need a remove and save to library 
     fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId)),
     deletePlaylist: (playlist_id) => dispatch(deletePlaylist(playlist_id)),
+    clearPlaylists: () => dispatch(clearPlaylists()),
   });
 };
 
