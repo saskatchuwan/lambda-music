@@ -2,6 +2,15 @@ class Api::ArtistSavesController < ApplicationController
   # for testing only!
   # skip_before_action :verify_authenticity_token
 
+  def index
+    if params[:user_id]
+      @saved_artists = User.find(params[:user_id]).saved_artists
+      render :index
+    else
+      render json: ['No artists unavailable'], status: 404
+    end
+  end
+
   def create
     @artist_save = ArtistSave.new(artist_id: artist_save_params[:artist_id])
 

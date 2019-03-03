@@ -1,6 +1,15 @@
 class Api::AlbumSavesController < ApplicationController
   # for testing only!
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
+
+  def index
+    if params[:user_id]
+      @saved_albums = User.find(params[:user_id]).saved_albums
+      render :index
+    else
+      render json: ['No albums unavailable'], status: 404
+    end
+  end
 
   def create
     @album_save = AlbumSave.new(album_id: album_save_params[:album_id])
