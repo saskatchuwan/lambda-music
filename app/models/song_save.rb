@@ -20,4 +20,5 @@ class SongSave < ApplicationRecord
     foreign_key: :song_id,
     class_name: 'Song'
 
+  
 end

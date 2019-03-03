@@ -24,7 +24,7 @@ class LibraryPlayListIndex extends React.Component {
         <div className = 'tile-container' key={playlist.id}>
           <a href={`/#/playlist/${playlist.id}`}>
             <div className= 'tile'>
-              {/* will prob insert an image here later */}
+              <img id='nav-icon' src={window.images.playlist_hold} />
             </div>
           </a>
 
