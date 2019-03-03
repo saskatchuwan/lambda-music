@@ -37,12 +37,12 @@ class LibraryTopNav extends React.Component {
             </NavLink>
           </li>
           <li>
-            <NavLink className='nav-link' to='library/artists'>
+            <NavLink className='nav-link' to='/library/artists'>
               ARTISTS
             </NavLink>
           </li>
           <li>
-            <NavLink className='nav-link' to='library/albums'>
+            <NavLink className='nav-link' to='/library/albums'>
               ALBUMS
             </NavLink>
           </li>
