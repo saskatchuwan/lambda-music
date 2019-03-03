@@ -31,8 +31,11 @@ const songsReducer = (state={}, action) => {
       }
       
     case RECEIVE_PLAYLIST:
-      // return Object.assign(newState, action.payload.songs);
-      return action.payload.songs;
+      if (typeof action.payload.songs === 'undefined') {
+        return {};
+      } else {
+        return action.payload.songs;
+      }
 
       //do we need one for REMOVE_PLAYLIST?
 

@@ -29,14 +29,19 @@ const artistsReducer = (state={}, action) => {
       return action.payload.artists;
 
     case RECEIVE_PLAYLISTS:
+
       if (action.payload.artists) {
         return action.payload.artists;
       } else {
         return {};
       }
+
     case RECEIVE_PLAYLIST:
-      // return Object.assign(newState, action.payload.artists);
-      return action.payload.artists;
+      if (typeof action.payload.artists === 'undefined') {
+        return {};
+      } else {
+        return action.payload.artists;
+      }
       //do we need one for REMOVE_PLAYLIST?
 
     case RECEIVE_ALBUM:
