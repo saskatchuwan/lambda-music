@@ -8,9 +8,9 @@ export const receiveAlbums = (albums) => ({
   albums
 });
 
-export const receiveAlbum = (album) => ({
+export const receiveAlbum = (payload) => ({
   type: RECEIVE_ALBUM,
-  album
+  payload
 });
 
 export const fetchAlbums = () => dispatch => (
@@ -18,7 +18,7 @@ export const fetchAlbums = () => dispatch => (
 );
 
 export const fetchAlbum = (id) => dispatch => (
-  AlbumApiUtil.fetchAlbum(id).then(album => dispatch(receiveAlbum(album)))
+  AlbumApiUtil.fetchAlbum(id).then(payload => dispatch(receiveAlbum(payload)))
 );
 
 export const fetchUserSavedAlbums = (user_id) => dispatch => (

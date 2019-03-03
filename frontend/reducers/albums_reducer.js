@@ -17,8 +17,7 @@ const albumsReducer = (state={}, action) => {
       //currently will overwrite all albums
       return action.albums;
     case RECEIVE_ALBUM:
-      newState[action.album.id] = action.album;
-      return newState;
+      return action.payload.album;
     case RECEIVE_SONGS:
       return action.payload.albums;
     

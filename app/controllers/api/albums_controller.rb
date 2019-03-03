@@ -1,4 +1,7 @@
 class Api::AlbumsController < ApplicationController
+    # for testing only!
+  # skip_before_action :verify_authenticity_token
+
   def index
     if params[:artist_id]
       @albums = Artist.find(params[:artist_id]).albums

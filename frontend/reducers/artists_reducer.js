@@ -8,6 +8,10 @@ import { RECEIVE_PLAYLISTS,
   REMOVE_PLAYLIST,
    } from '../actions/playlist_actions';
 
+import { RECEIVE_ALBUMS,
+          RECEIVE_ALBUM } from '../actions/album_actions';
+
+
 const artistsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
@@ -33,6 +37,9 @@ const artistsReducer = (state={}, action) => {
     case RECEIVE_PLAYLIST:
       return Object.assign(newState, action.payload.artists);
       //do we need one for REMOVE_PLAYLIST?
+
+    case RECEIVE_ALBUM:
+      return action.payload.artist;
 
     default:
       return state;

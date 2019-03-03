@@ -1,4 +1,4 @@
-.playlist-info-rail-container {
+.info-rail-container {
   width: 400px;
   // background-color: salmon;
   display: flex;
@@ -20,7 +20,7 @@
     letter-spacing: 0.01em;
   }
 
-  .playlist-info-rail-links {
+  .info-rail-links {
     display:flex;
     flex-direction: column;
   }
