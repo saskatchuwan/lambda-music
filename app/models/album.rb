@@ -22,6 +22,11 @@ class Album < ApplicationRecord
     foreign_key: :album_id,
     class_name: 'Song'
 
+  has_many :album_saves,
+    primary_key: :id,
+    foreign_key: :album_id,
+    class_name: 'AlbumSave'
+
   def self.get_all_album_data(album_id)
     Album.includes(:songs).find(album_id)
   end

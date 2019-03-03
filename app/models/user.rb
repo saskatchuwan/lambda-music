@@ -31,6 +31,33 @@ class User < ApplicationRecord
     through: :playlist_saves,
     source: :playlist
 
+  has_many :song_saves,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'SongSave'
+
+  has_many :artist_saves,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'ArtistSave'
+
+  has_many :album_saves,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'AlbumSave'
+
+  has_many :saved_artists,
+    through: :artist_saves,
+    source: :artist
+
+  has_many :saved_albums,
+    through: :album_saves,
+    source: :album
+
+  has_many :saved_songs,
+    through: :song_saves,
+    source: :song
+
 
   attr_reader :password
 

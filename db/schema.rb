@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_191348) do
+ActiveRecord::Schema.define(version: 2019_03_03_042132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "album_saves", force: :cascade do |t|
+    t.integer "album_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_album_saves_on_album_id"
+    t.index ["user_id"], name: "index_album_saves_on_user_id"
+  end
 
   create_table "albums", force: :cascade do |t|
     t.string "title", null: false
@@ -22,6 +31,15 @@ ActiveRecord::Schema.define(version: 2019_03_01_191348) do
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_albums_on_artist_id"
     t.index ["title"], name: "index_albums_on_title"
+  end
+
+  create_table "artist_saves", force: :cascade do |t|
+    t.integer "artist_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artist_saves_on_artist_id"
+    t.index ["user_id"], name: "index_artist_saves_on_user_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -56,6 +74,15 @@ ActiveRecord::Schema.define(version: 2019_03_01_191348) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_playlists_on_name"
     t.index ["owner_id"], name: "index_playlists_on_owner_id"
+  end
+
+  create_table "song_saves", force: :cascade do |t|
+    t.integer "song_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_song_saves_on_song_id"
+    t.index ["user_id"], name: "index_song_saves_on_user_id"
   end
 
   create_table "songs", force: :cascade do |t|

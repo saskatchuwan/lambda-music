@@ -22,11 +22,17 @@ class Song < ApplicationRecord
     primary_key: :id,
     foreign_key: :artist_id,
     class_name: 'Artist'
-
+    
+  has_many :song_saves,
+    primary_key: :id,
+    foreign_key: :song_id,
+    class_name: 'SongSave'
+    
   has_many :playlist_songs,
     primary_key: :id,
     foreign_key: :song_id,
     class_name: 'PlaylistSong'
+
 
   def self.get_all_song_data(song_id=nil)
     if !song_id.nil?

@@ -21,6 +21,11 @@ class Artist < ApplicationRecord
     foreign_key: :artist_id,
     class_name: 'Song'
 
+  has_many :artist_saves,
+    primary_key: :id,
+    foreign_key: :artist_id,
+    class_name: 'ArtistSave'
+
   def self.get_all_artist_data(artist_id)
     Artist.includes(:songs, :albums).find(artist_id)
   end
