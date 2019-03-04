@@ -6,15 +6,21 @@ import React from 'react';
 
 //pass in close modal to close out modal once user clicks a song to add to playlist
 
-const AddPlaylistSongIndexItem = ({ playlist, songId }) => {
-    // songId returns id of song that was clicked on
+const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong }) => {
+  // songId returns id of song that was clicked on
+
+  
+  let playlistSong = {song_id: songId, playlist_id: playlist.id};
+  console.log(playlist.id);
+  console.log(playlistSong);
+
   return (
     <div className = 'tile-container'>
         {/* <h1>{playlist.id}</h1>
         <h1>{songId}</h1> */}
-        <a href={`#`}>
+        <a href={`/#/library/playlists`} onClick={() => createPlaylistSong(playlistSong)}>
           <div className= 'tile'>
-            <img id='nav-icon' src={window.images.playlist_hold} />
+            <img src={window.images.playlist_hold} />
           </div>
         </a>
 

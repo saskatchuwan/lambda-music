@@ -83,7 +83,8 @@ class AddSongToPlaylist extends React.Component {
           key={playlist.id} 
           playlist={playlist} 
           songId={songId}
-          />
+          createPlaylistSong={this.props.createPlaylistSong}
+        />
       )
     });
 
