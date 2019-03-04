@@ -28,7 +28,6 @@ class BrowseSongsIndex extends React.Component {
 
 
     return (
-
       <div className='content-index-display-container-list'>
           <ul className='index-display-section-list'>
             {songItems}
