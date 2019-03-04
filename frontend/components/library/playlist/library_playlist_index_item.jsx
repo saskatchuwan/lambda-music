@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const PlaylistIndexItem = ({ playlist }) => {
+const LibraryPlaylistIndexItem = ({ playlist }) => {
   return (
     <div className = 'tile-container'>
         <a href={`/#/playlist/${playlist.id}`}>
@@ -24,4 +24,4 @@ const PlaylistIndexItem = ({ playlist }) => {
    );
 };
 
-export default PlaylistIndexItem;
+export default LibraryPlaylistIndexItem;

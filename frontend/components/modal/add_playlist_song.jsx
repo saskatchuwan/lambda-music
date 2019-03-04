@@ -3,25 +3,31 @@ import { connect } from 'react-redux';
 import { createPlaylistSong } from '../../actions/playlist_songs_actions';
 
 import { fetchSong } from '../../actions/song_actions';
-import { fetchUserPlaylists } from '../../actions/playlist_actions';
+import { fetchUserPlaylists, clearPlaylists } from '../../actions/playlist_actions';
 
 import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
+
+import AddPlaylistSongIndexItem from './add_playlist_song_item';
 
 const mapStateToProps = (state) => {
   //want to turn into array: [{id: 3, title: 'song title'}]
   let songId = state.entities.playlistSongs.playlistSongsQueue;
 
+  let playlists = Object.values(state.entities.playlists);
+
   return {
     currentUserId: state.session.currentUserId,
-    songId
+    songId,
+    playlists,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     createPlaylistSong: (playlistSong) => dispatch(createPlaylistSong(playlistSong)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
   };
 };
 
@@ -41,7 +47,11 @@ class AddSongToPlaylist extends React.Component {
 
   componentDidMount () {
     this.props.fetchUserPlaylists(this.props.currentUserId);
-    this.setState({song_id: this.props.songId, playlist_id: 'OMG'});
+    this.setState({song_id: this.props.songId, playlist_id: 'test'});
+  }
+
+  componentWillUnmount () {
+    this.props.clearPlaylists();
   }
 
 
@@ -61,6 +71,16 @@ class AddSongToPlaylist extends React.Component {
   }
 
   render() {
+    let { playlists } = this.props;
+
+    let playlistItems;
+
+    playlistItems = playlists.map(playlist => {
+      return (
+        <AddPlaylistSongIndexItem key={playlist.id} playlist={playlist} />
+      )
+    });
+
 
 
     return (
@@ -74,8 +94,9 @@ class AddSongToPlaylist extends React.Component {
         <h1>Add song to library</h1>
         <h1>{this.state.songId}</h1>
 
-        <div className="in-modal-current-user-playlists">
 
+        <div className='index-display-section-tile'>
+          {playlistItems}
         </div>
 
       </div>

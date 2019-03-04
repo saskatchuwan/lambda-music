@@ -31,12 +31,12 @@ const songsReducer = (state={}, action) => {
     case CLEAR_SONGS:
       return {};
 
-    case RECEIVE_PLAYLISTS:
-      if (action.payload.songs) {
-        return action.payload.songs;
-      } else {
-        return {};
-      }
+    // case RECEIVE_PLAYLISTS:
+    //   if (action.payload.songs) {
+    //     return action.payload.songs;
+    //   } else {
+    //     return {};
+    //   }
       
     case RECEIVE_PLAYLIST:
       if (typeof action.payload.songs === 'undefined') {

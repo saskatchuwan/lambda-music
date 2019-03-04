@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import PlaylistIndexItem from './playlist_index_item';
+import LibraryPlaylistIndexItem from './library_playlist_index_item';
 
 
 class LibraryPlayListIndex extends React.Component {
@@ -24,7 +24,7 @@ class LibraryPlayListIndex extends React.Component {
       let owner = users[ownerId-1];
 
       return (
-        <PlaylistIndexItem key={playlist.id} playlist={playlist} />
+        <LibraryPlaylistIndexItem key={playlist.id} playlist={playlist} />
       )
     });
 
