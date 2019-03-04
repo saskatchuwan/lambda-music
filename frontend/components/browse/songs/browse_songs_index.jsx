@@ -9,6 +9,7 @@ class BrowseSongsIndex extends React.Component {
   }
 
   render () {
+    // songQueue holds the id of the song that was clicked on
     console.log(this.props.songQueue);
 
     let songItems;

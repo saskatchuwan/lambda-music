@@ -11,7 +11,6 @@ import { closeModal } from '../../actions/modal_actions';
 import AddPlaylistSongIndexItem from './add_playlist_song_item';
 
 const mapStateToProps = (state) => {
-  //want to turn into array: [{id: 3, title: 'song title'}]
   let songId = state.entities.playlistSongs.playlistSongsQueue;
 
   let playlists = Object.values(state.entities.playlists);
@@ -43,11 +42,12 @@ class AddSongToPlaylist extends React.Component {
       playlist_id: ''
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount () {
     this.props.fetchUserPlaylists(this.props.currentUserId);
+
     this.setState({song_id: this.props.songId, playlist_id: 'test'});
   }
 
@@ -57,29 +57,33 @@ class AddSongToPlaylist extends React.Component {
   }
 
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
+  // update(field) {
+  //   return e => this.setState({
+  //     [field]: e.currentTarget.value
+  //   });
+  // }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const playlistSong = Object.assign({}, this.state);
-    this.props.createPlaylistSong(playlistSong)
-        .then(this.props.closeModal)
-        .then(() => this.props.history.push('/library/playlists'));
-        //probably need to change this redirect
-  }
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const playlistSong = Object.assign({}, this.state);
+  //   this.props.createPlaylistSong(playlistSong)
+  //       .then(this.props.closeModal)
+  //       .then(() => this.props.history.push('/library/playlists'));
+  //       //probably need to change this redirect
+  // }
 
   render() {
-    let { playlists } = this.props;
+    let { playlists, songId } = this.props;
 
     let playlistItems;
 
     playlistItems = playlists.map(playlist => {
       return (
-        <AddPlaylistSongIndexItem key={playlist.id} playlist={playlist} />
+        <AddPlaylistSongIndexItem 
+          key={playlist.id} 
+          playlist={playlist} 
+          songId={songId}
+          />
       )
     });
 
@@ -94,11 +98,13 @@ class AddSongToPlaylist extends React.Component {
         </button>
 
         <h1>Add song to library</h1>
-        <h1>{this.state.songId}</h1>
+        {/* <h1>{`${this.props.songId}`}</h1> */}
 
 
         <div className='index-display-section-tile'>
+          {/* make these clickable and on click, to createplaylistsong */}
           {playlistItems}
+
         </div>
 
       </div>
