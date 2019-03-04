@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // just for testing
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   // window.createPlaylistSong = createPlaylistSong;
   // window.deletePlaylistSong = deletePlaylistSong;
 

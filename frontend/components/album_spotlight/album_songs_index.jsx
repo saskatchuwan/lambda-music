@@ -12,19 +12,26 @@ class AlbumSongsIndex extends React.Component {
 
     let songItems;
     songItems = this.props.songs.map(song => {
-      //this.props.albums is a zero-indexed array
       let album = this.props.albums[song.albumId];
-      let artist = this.props.artists[song.artistId];
-
+     
       return (
         <li key={song.id}>
           <strong>{song.title}</strong>
           <br/>
-          {/* {artist.name} - {album.title} */}
+
           <img src={album.coverUrl} />
         </li>
       )
     });
+
+    let infoRail;
+    if (Object.keys(this.props.albums).length > 0 && Object.keys(this.props.artists).length > 0) {
+      infoRail =  <AlbumInfoRail 
+                    album={this.props.albums}
+                    artist={Object.values(this.props.artists)}
+                    />
+    }
+
 
     
 
@@ -32,9 +39,7 @@ class AlbumSongsIndex extends React.Component {
       
       <div className='main-view-spotlight-container'>
 
-        <AlbumInfoRail 
-          //how to do i get the playlist name out heeerrreeee
-        />
+        {infoRail}
 
         <div className='content-index-display-container-list'>
             <ul className='index-display-section-list'>

@@ -3,32 +3,41 @@ import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 
-const PlaylistInfoRail = props => (
-  <div className='info-rail-container'>
+const PlaylistInfoRail = props => {
+  let playlistId = props.match.params.playlistId;
 
-    <div className='img-display-holder'>
-      I will be replaced by an image
+  //only render a TRASH playlist button if the current user is the owner of the playlist
+  let deleteButton;
+  if (props.currentUserId === props.playlist[playlistId].ownerId) {
+    deleteButton = <button className='info-rail-remove-button'
+                          onClick={() => props.deletePlaylist(props.match.params.playlistId)
+                          .then(() => props.history.push('/library/playlists'))}>
+                    REMOVE FROM YOUR LIBRARY</button>
+  }
+  
+  return (
+    <div className='info-rail-container'>
+
+      <div className='img-display-holder'>
+        I will be replaced by an image
+      </div>
+
+      <h1>{props.playlist[playlistId].name}</h1>
+      
+      <br />
+
+      <div className='info-rail-links'>
+        {/* doesn't do anything yet */}
+        <button className='info-rail-play-button'>Play</button>
+
+        {/* this will only show if user is the owner -- and this DELETES the playlist */}
+        {deleteButton}
+
+      </div>
+
     </div>
 
-    {/* <h1>{props.playlist[props.match.params.playlistId].name}</h1> */}
-    <h1>playlist {`${props.match.params.playlistId}`} name</h1>
-    <span>username</span>
-    
-    <br />
-
-    <div className='info-rail-links'>
-      <a href='#'>play</a>
-      <a href='#'>add/remove from library (...)</a>
-
-      {/* add playlist numbers */}
-      <button 
-        onClick={() => props
-                        .deletePlaylist(props.match.params.playlistId)
-                        .then(() => props.history.push('/library/playlists'))}>Delete playlist</button>
-    </div>
-
-  </div>
-
-);
+  )
+};
 
 export default withRouter(PlaylistInfoRail);

@@ -16,12 +16,61 @@
   }
 
   h1 {
+    width: 280px;
     margin: 10px;
     letter-spacing: 0.01em;
+    font-size: 27px;
   }
 
   .info-rail-links {
     display:flex;
     flex-direction: column;
+    margin: 10px;
+
+    .info-rail-play-button, .info-rail-play-button:visited {
+      margin: 20px;
+      text-decoration: none;
+      background-color: #1DB954;
+      padding: 14px 12px 14px 12px; 
+      border-radius: 50px;
+      font-size: 11px;
+      letter-spacing: +0.17em;
+      color: white;
+      width: 140px;
+      border: 0 transparent;
+      text-transform: uppercase;
+      align-self: center;
+    }
+  
+    .info-rail-play-button:hover {
+      color: #fff;
+      background-color: rgb(35, 201, 93);
+      border: 0 transparent;
+      cursor: pointer;
+      transform: scale(1.02);
+    }
+
+    .info-rail-remove-button, .info-rail-remove-button:visited {
+      margin: 20px;
+      width: 200px;
+      min-width: 50px;
+      font-size: 11px;
+      letter-spacing: +0.17em;
+      color: #1DB954;
+      border: 0 transparent;
+      background: transparent;
+    }
+
+    .info-rail-remove-button:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+    }
+
   }
+}
+
+.info-rail-creator {
+  font-size: 13px;
+  letter-spacing: +0.05em;
+  color: #b3b3b3;
 }

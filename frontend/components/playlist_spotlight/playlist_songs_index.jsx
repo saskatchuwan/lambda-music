@@ -34,27 +34,21 @@ class PlaylistSongsIndex extends React.Component {
     });
 
 
-    // let infoRail;
-    // infoRail = this.props.playlists.map(playlist => {
-    //   return (
-    //     <PlaylistInfoRail 
-    //     // playlist={playlist}
-    //     // deletePlaylist={this.props.deletePlaylist}
-    //     />
-    //   )
-    // });
+    let infoRail;
+    if (Object.keys(this.props.playlists).length > 0) {
+      infoRail =  <PlaylistInfoRail 
+                    playlist={this.props.playlists}
+                    deletePlaylist={this.props.deletePlaylist}
+                    currentUserId={this.props.currentUserId}
+                    />
+    }
 
-    // console.log(this.props.playlists);
-    
 
     return (
       
       <div className='main-view-spotlight-container'>
 
-        <PlaylistInfoRail 
-          // playlist={playlist}
-          deletePlaylist={this.props.deletePlaylist}
-          />
+        {infoRail}
 
         <div className='content-index-display-container-list'>
             <ul className='index-display-section-list'>
