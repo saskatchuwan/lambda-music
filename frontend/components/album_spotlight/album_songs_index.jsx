@@ -20,7 +20,8 @@ class AlbumSongsIndex extends React.Component {
         <li key={song.id}>
           <strong>{song.title}</strong>
           <br/>
-          {artist.name} - {album.title}
+          {/* {artist.name} - {album.title} */}
+          <img src={album.coverUrl} />
         </li>
       )
     });

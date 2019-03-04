@@ -12,7 +12,7 @@
 class Album < ApplicationRecord
   validates :title, presence:true
 
-  has_one_attached :photo
+  has_one_attached :cover
 
   belongs_to :artist,
     primary_key: :id,

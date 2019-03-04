@@ -77,8 +77,8 @@ a, a:visited {
     font-size: 13px;
     color: #b3b3b3;
 
+    //for squares (albums, playlists)
     .tile {
-      background-color: #FF4C58;
       height: 180px;
       width: 180px;
       margin: 8px;
@@ -88,6 +88,22 @@ a, a:visited {
         max-height:100%;
       }
     }
+
+    //for circles (artists)
+    .circle {
+      height: 180px;
+      width: 180px;
+      margin: 8px;
+
+      img {
+        max-width:100%;
+        max-height:100%;
+        border-radius: 50%;
+        -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+      }
+    }
+
 
     strong {
       color: white;
@@ -100,10 +116,13 @@ a, a:visited {
 
   }
 
-  .tile:hover {
+  .tile img:hover, .circle img:hover {
     background-color: rgba(0, 0, 0, 0.4);
     -webkit-transition: background-color 0.22s;
   }
 
 }
+
+
+
 

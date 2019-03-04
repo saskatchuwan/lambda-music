@@ -21,8 +21,8 @@ class LibraryArtistsIndex extends React.Component {
       return (
         <div className = 'tile-container' key={artist.id}>
           <a href={`/#/artist/${artist.id}`}>
-            <div className= 'tile'>
-              <img id='nav-icon' src={window.images.playlist_hold} />
+            <div className= 'circle'>
+              <img src={window.images.playlist_hold} />
             </div>
           </a>
 
