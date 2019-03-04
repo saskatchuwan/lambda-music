@@ -42,9 +42,9 @@ class Playlist < ApplicationRecord
 
   def self.get_all_playlist_data(playlist_id=nil)
     if !playlist_id.nil?
-      Playlist.includes(:songs, :artists, :albums, :owner).find(playlist_id)
+      Playlist.includes(:songs, :artists, :albums, :owner, :playlist_songs).find(playlist_id)
     else
-      Playlist.includes(:songs, :artists, :albums, :owner)
+      Playlist.includes(:songs, :artists, :albums, :owner, :playlist_songs)
     end
   end
   

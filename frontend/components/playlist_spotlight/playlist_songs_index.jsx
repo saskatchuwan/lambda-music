@@ -1,6 +1,7 @@
 import React from 'react';
 import PlaylistInfoRail from './playlist_info_rail';
 
+
 class PlaylistSongsIndex extends React.Component {
   componentDidMount() {
     let playlistId = this.props.match.params.playlistId;
@@ -26,8 +27,8 @@ class PlaylistSongsIndex extends React.Component {
             <strong>{song.title}</strong>
             <br/>
             {artist.name} - {album.title}
-            
-            <button>DELETE</button>
+
+            {/* <button onClick={() => this.props.deletePlaylistSong(song.id)}>DELETE</button> */}
           </div>
         </li>
       )

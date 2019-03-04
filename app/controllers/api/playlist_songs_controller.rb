@@ -12,12 +12,13 @@ class Api::PlaylistSongsController < ApplicationController
     end
   end
 
+
   def destroy
     @playlist_song = current_user.owned_playlist_songs.find(params[:id])
 
     # for testing, need to hardcode a user to get owned-playlist-songs
     # user = User.find(1)
-    # @playlist_song = user.owned_playlist_songs.find(params[:id])
+    # @playlist_song = current_user.owned_playlist_songs.find(params[:id])
 
     @playlist_song.destroy
     render json: ['Successfully removed song from Your Playlist'], status: 200

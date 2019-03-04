@@ -42,3 +42,12 @@ json.albums do
     end
   end
 end
+
+json.playlist_songs do
+  @playlist.playlist_songs.each do |playlist_song|
+    json.set! playlist_song.id do 
+      json.id playlist_song.id
+      json.song_id playlist_song.song_id
+    end
+  end
+end
