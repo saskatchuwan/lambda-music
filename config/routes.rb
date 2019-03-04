@@ -36,4 +36,5 @@ Rails.application.routes.draw do
     resources :artist_saves, only: [:create, :destroy]
     resources :album_saves, only: [:create, :destroy]
   end
+
 end

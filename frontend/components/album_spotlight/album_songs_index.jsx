@@ -21,8 +21,7 @@ class AlbumSongsIndex extends React.Component {
           <div className='song-index-info'>
             <strong>{song.title}</strong>
             <br/>
-
-            <img src={`${album.coverUrl}`} />
+            {/* <img src={`${album.coverUrl}`} /> */}
           </div>
         </li>
       )
