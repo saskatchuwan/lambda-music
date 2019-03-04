@@ -84,6 +84,7 @@ class AddSongToPlaylist extends React.Component {
           playlist={playlist} 
           songId={songId}
           createPlaylistSong={this.props.createPlaylistSong}
+          closeModal={this.props.closeModal}
         />
       )
     });

@@ -6,7 +6,7 @@ import React from 'react';
 
 //pass in close modal to close out modal once user clicks a song to add to playlist
 
-const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong }) => {
+const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong, closeModal }) => {
   // songId returns id of song that was clicked on
 
   
@@ -16,24 +16,21 @@ const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong }) => {
 
   return (
     <div className = 'tile-container'>
-        {/* <h1>{playlist.id}</h1>
-        <h1>{songId}</h1> */}
-        <a href={`/#/library/playlists`} onClick={() => createPlaylistSong(playlistSong)}>
+        <a href={`/#/playlist/${playlist.id}`} onClick={() => {createPlaylistSong(playlistSong);
+                                                        closeModal()}}>
           <div className= 'tile'>
             <img src={window.images.playlist_hold} />
           </div>
         </a>
 
         <strong>
-          <a href={`#`}>
+          <a href={`/#/playlist/${playlist.id}`} onClick={() => {createPlaylistSong(playlistSong);
+                                                        closeModal()}}>
           {playlist.name}
           </a>
         </strong>
         
-          <br />
-
-        {/* page breaks when navigating back to this page from the /playlist/1 page */}
-        {/* {owner.username} */}
+          
     </div>
    );
 };
