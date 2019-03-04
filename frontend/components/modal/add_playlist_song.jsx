@@ -28,6 +28,7 @@ const mapDispatchToProps = dispatch => {
     createPlaylistSong: (playlistSong) => dispatch(createPlaylistSong(playlistSong)),
     closeModal: () => dispatch(closeModal()),
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
+    clearPlaylists: () => dispatch(clearPlaylists()),
   };
 };
 
@@ -51,7 +52,8 @@ class AddSongToPlaylist extends React.Component {
   }
 
   componentWillUnmount () {
-    this.props.clearPlaylists();
+    //will clear all slices of state - don't want that.
+    // this.props.clearPlaylists();
   }
 
 
