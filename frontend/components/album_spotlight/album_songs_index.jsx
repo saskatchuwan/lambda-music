@@ -18,10 +18,12 @@ class AlbumSongsIndex extends React.Component {
      
       return (
         <li key={song.id}>
-          <strong>{song.title}</strong>
-          <br/>
+          <div className='song-index-info'>
+            <strong>{song.title}</strong>
+            <br/>
 
-          <img src={album.coverUrl} />
+            <img src={album.coverUrl} />
+          </div>
         </li>
       )
     });

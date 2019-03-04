@@ -14,10 +14,11 @@ a, a:visited {
   flex-direction: column;
   height: 100%;
   padding-top: 10px;
-  padding-left: 32px;
-  padding-right: 32px;
+  // padding-left: 32px;
+  // padding-right: 32px;
   font-size: 16px;
-  width: 80%;
+  width: 90%;
+  margin: auto;
 
   h1 {
     letter-spacing: .015em;
@@ -28,23 +29,53 @@ a, a:visited {
     padding: 0;
 
     li {
-      height: 30px;
-      padding: 18px;
+        height: 30px;
+        padding: 18px;
+        display: flex;
+        justify-content: space-between;
+    
+        font-size: 13px;
+        color: #b3b3b3;
 
-      strong {
-        color: white;
-        font-weight: var(--glue-font-weight-bold);
-        font-size: 14px;
+        strong {
+          color: white;
+          font-weight: var(--glue-font-weight-bold);
+          font-size: 14px;
+        }
+  
+
+
+        .add-song-to-playlist-button, .add-song-to-playlist-button:visited {
+          text-decoration: none;
+          background-color: transparent;
+          padding: 7px 15px 7px 15px; 
+          border-radius: 50px;
+          font-size: 10px;
+          font-weight: bold;
+          letter-spacing: +0.13em;
+          color: white;
+          width: 80px;
+          height: 25px;
+          border: 1.4px solid #b3b3b3;
+          text-transform: uppercase;
+        }
+        
+        
+        .add-song-to-playlist-button:hover {
+          color: white;
+          background-color: #b3b3b357;
+          cursor: pointer;
+          -webkit-transition: background-color 0.1s;
+          
+        }
       }
-
-      font-size: 13px;
-      color: #b3b3b3;
-    }
-
+  
     li:hover {
       background-color: rgba(0, 0, 0, 0.5);
       -webkit-transition: background-color 0.45s ease-out;
     }
+  
+   
   }
 }
 
@@ -77,6 +108,7 @@ a, a:visited {
     font-size: 13px;
     color: #b3b3b3;
 
+
     //for squares (albums, playlists)
     .tile {
       height: 180px;
@@ -88,6 +120,7 @@ a, a:visited {
         max-height:100%;
       }
     }
+
 
     //for circles (artists)
     .circle {

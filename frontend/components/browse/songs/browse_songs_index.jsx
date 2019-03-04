@@ -9,11 +9,7 @@ class BrowseSongsIndex extends React.Component {
   }
 
   render () {
-    // songQueue holds the id of the song that was clicked on
-    console.log(this.props.songQueue);
-
     let songItems;
-
     songItems = this.props.songs.map( song => {
       let album = this.props.albums[song.albumId];
       let artist = this.props.artists[song.artistId];

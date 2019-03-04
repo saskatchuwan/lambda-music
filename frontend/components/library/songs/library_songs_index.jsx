@@ -23,9 +23,11 @@ class LibrarySongsIndex extends React.Component {
 
       return (
         <li key={song.id}>
-          <strong>{song.title}</strong>
-          <br/>
-          {artist.name} - {album.title}
+          <div className='song-index-info'>
+            <strong>{song.title}</strong>
+            <br/>
+            {artist.name} - {album.title}
+          </div>
         </li>
       )
     });

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createPlaylistSong } from '../../actions/playlist_songs_actions';
 
-import { fetchSong } from '../../actions/song_actions';
 import { fetchUserPlaylists, clearPlaylists } from '../../actions/playlist_actions';
 
 import { withRouter } from 'react-router-dom';
@@ -41,13 +40,10 @@ class AddSongToPlaylist extends React.Component {
       song_id: this.props.songId,
       playlist_id: ''
     };
-
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount () {
     this.props.fetchUserPlaylists(this.props.currentUserId);
-
     this.setState({song_id: this.props.songId, playlist_id: 'test'});
   }
 
@@ -56,21 +52,6 @@ class AddSongToPlaylist extends React.Component {
     // this.props.clearPlaylists();
   }
 
-
-  // update(field) {
-  //   return e => this.setState({
-  //     [field]: e.currentTarget.value
-  //   });
-  // }
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const playlistSong = Object.assign({}, this.state);
-  //   this.props.createPlaylistSong(playlistSong)
-  //       .then(this.props.closeModal)
-  //       .then(() => this.props.history.push('/library/playlists'));
-  //       //probably need to change this redirect
-  // }
 
   render() {
     let { playlists, songId } = this.props;
@@ -99,14 +80,10 @@ class AddSongToPlaylist extends React.Component {
           <img id='close-icon' src={window.images.modal_close} />
         </button>
 
-        <h1>Add song to library</h1>
-        {/* <h1>{`${this.props.songId}`}</h1> */}
-
+        <h1>Add to playlist</h1>
 
         <div className='index-display-section-tile'>
-          {/* make these clickable and on click, to createplaylistsong */}
           {playlistItems}
-
         </div>
 
       </div>
