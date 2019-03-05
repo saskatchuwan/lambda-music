@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import PlayBar from './play_bar';
+import { fetchSong } from '../../actions/song_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let currentUserId = state.session.currentUserId;
@@ -14,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-
+    fetchSong: (songId) => dispatch(fetchSong(songId)),
   });
 };
 

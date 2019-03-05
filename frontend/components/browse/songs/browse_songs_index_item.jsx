@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const SongsIndexItem = ({ album, song, artist, openModal, fetchSong }) => {
   return (
     <li className='songs-index-item'>
