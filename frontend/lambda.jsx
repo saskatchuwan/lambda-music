@@ -8,6 +8,7 @@ import configureStore from './store/store';
 
 //testing
 // import { createPlaylistSong, deletePlaylistSong } from './actions/playlist_songs_actions';
+import { fetchPlaylist } from './actions/playlist_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // just for testing
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchPlaylist = fetchPlaylist;
   // window.createPlaylistSong = createPlaylistSong;
   // window.deletePlaylistSong = deletePlaylistSong;
 

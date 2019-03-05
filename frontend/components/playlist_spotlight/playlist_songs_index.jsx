@@ -1,8 +1,20 @@
 import React from 'react';
 import PlaylistInfoRail from './playlist_info_rail';
+import _ from "lodash";
 
 
 class PlaylistSongsIndex extends React.Component {
+
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      removedSong: false
+    };
+
+    this.removeSong = this.removeSong.bind(this);
+  }
+
   componentDidMount() {
     let playlistId = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistId);
@@ -11,16 +23,38 @@ class PlaylistSongsIndex extends React.Component {
   componentWillUnmount () {
     this.props.clearPlaylists();
   }
+
+  // componentDidUpdate (prevProps) {
+  //   if (prevProps.playlistSongs !== this.props.playlistSongs) {
+  //     this.setState({playlistSongs: this.props.playlistSongs});
+  //     // this.props.fetchPlaylist(this.props.match.params.playlistId);
+  //   }
+  // }
+
+  
  
+  removeSong (playlistSongId) {
+    this.props.deletePlaylistSong(playlistSongId);
+    this.props.fetchPlaylist(this.props.match.params.playlistId);
+
+    this.setState({
+      removedSong: true
+    });
+  }
+
 
   render () {
 
     let songItems;
+    let infoRail;
+
     songItems = this.props.songs.map(song => {
       
       let album = this.props.albums[song.albumId];
       let artist = this.props.artists[song.artistId];
-    
+
+      let playlistSongId = _.get(this, `props.playlistSongs[${song.id}].playlistSongId`, "no id");
+
       return (
         <li key={song.id}>
           <div className='song-index-info'>
@@ -28,14 +62,15 @@ class PlaylistSongsIndex extends React.Component {
             <br/>
             {artist.name} - {album.title}
 
-            {/* <button onClick={() => this.props.deletePlaylistSong(song.id)}>DELETE</button> */}
           </div>
+            <button className='delete-song'
+            onClick={() => this.removeSong(playlistSongId)}>DELETE</button>
         </li>
       )
     });
 
 
-    let infoRail;
+
     if (Object.keys(this.props.playlists).length > 0) {
       infoRail =  <PlaylistInfoRail 
                     playlist={this.props.playlists}

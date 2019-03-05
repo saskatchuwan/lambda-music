@@ -8,11 +8,15 @@ const PlaylistInfoRail = props => {
 
   //only render a TRASH playlist button if the current user is the owner of the playlist
   let deleteButton;
+  let editButton;
+
   if (props.currentUserId === props.playlist[playlistId].ownerId) {
     deleteButton = <button className='info-rail-remove-button'
                           onClick={() => props.deletePlaylist(props.match.params.playlistId)
                           .then(() => props.history.push('/library/playlists'))}>
                     REMOVE FROM YOUR LIBRARY</button>
+
+    // insert edit button
   }
   
   return (

@@ -45,7 +45,8 @@ a, a:visited {
   
 
 
-        .add-song-to-playlist-button, .add-song-to-playlist-button:visited {
+        .add-song-to-playlist-button, .add-song-to-playlist-button:visited, .delete-song, .delete-song:visited
+         {
           text-decoration: none;
           background-color: transparent;
           padding: 7px 15px 7px 15px; 
@@ -61,7 +62,7 @@ a, a:visited {
         }
         
         
-        .add-song-to-playlist-button:hover {
+        .add-song-to-playlist-button:hover, .delete-song:hover {
           color: white;
           background-color: #b3b3b357;
           cursor: pointer;
