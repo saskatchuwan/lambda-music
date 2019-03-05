@@ -1,5 +1,5 @@
 import React from 'react';
-import SongsIndexItem from './browse_songs_index_item';
+import SongsIndexItem from '../../song_list_index_item/songs_index_item';
 
 class BrowseSongsIndex extends React.Component {
 
@@ -10,19 +10,26 @@ class BrowseSongsIndex extends React.Component {
 
   render () {
     let songItems;
+    
     songItems = this.props.songs.map( song => {
       let album = this.props.albums[song.albumId];
       let artist = this.props.artists[song.artistId];
 
       return (
-        <SongsIndexItem
-          key={song.id}
-          song={song}
-          album={album}
-          artist={artist}
-          openModal={this.props.openModal}
-          fetchSong={this.props.fetchSong}
-        />
+        <li key={song.id}>
+          <SongsIndexItem
+            song={song}
+            album={album}
+            artist={artist}
+            fetchSong={this.props.fetchSong}
+          />
+
+          <button className='add-song-to-playlist-button'
+              onClick={() => {this.props.fetchSong(song.id);
+                              this.props.openModal('add-song-to-playlist') }}>ADD</button>
+
+        </li>
+
       )
     });
 

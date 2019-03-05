@@ -1,7 +1,7 @@
 import React from 'react';
 import PlaylistInfoRail from './playlist_info_rail';
 import _ from "lodash";
-
+import SongsIndexItem from '../song_list_index_item/songs_index_item';
 
 class PlaylistSongsIndex extends React.Component {
 
@@ -35,29 +35,13 @@ class PlaylistSongsIndex extends React.Component {
   
         return (
           <li key={song.id}>
-          <div className='song-index-item-left'>
-
-            <div className='song-index-play-icon-container'>
-              <img className='song-index-play-icon' 
-                    id='dormant' 
-                    src={window.images.music_note} />
-
-
-              <img className='song-index-play-icon' 
-                      onClick={() => this.props.fetchSong(song.id)}
-                      id='play' 
-                      src={window.images.music_play} />
-
-
-            </div>
-
-            <div className='song-index-info'>
-              <strong>{song.title}</strong>
-              <br/>
-              {artist.name} - {album.title}
-            </div>
-
-          </div>
+          
+            <SongsIndexItem
+              song={song}
+              album={album}
+              artist={artist}
+              fetchSong={this.props.fetchSong}
+            />
 
           <button className='delete-song'
               onClick={() => this.props.deletePlaylistSong(playlistSongId)}>DELETE</button>

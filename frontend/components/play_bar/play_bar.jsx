@@ -5,11 +5,6 @@ class PlayBar extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {
-      currentSongQueueIndex: null,
-      songIdQueue: this.props.songIdQueue,
-    };
-
     this.handleSongEnd = this.handleSongEnd.bind(this);
   }
 
@@ -18,12 +13,13 @@ class PlayBar extends React.Component {
   }
 
   handleSongEnd () {
-    let currentSongQueueIndex = this.props.songIdQueue.indexOf(`${this.props.currSong.song.id}`);
+    let { songIdQueue, currSong, fetchSong } = this.props;
+    let currentSongQueueIndex = songIdQueue.indexOf(`${currSong.song.id}`);
 
     let nextSongQueueIndex = currentSongQueueIndex + 1;
-    let nextSongId = this.props.songIdQueue[nextSongQueueIndex];
+    let nextSongId = songIdQueue[nextSongQueueIndex];
 
-    this.props.fetchSong(nextSongId);
+    fetchSong(nextSongId);
   }
 
   render () {
