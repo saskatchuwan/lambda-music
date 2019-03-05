@@ -24,6 +24,7 @@ json.songs do
       json.set! song.id do 
         json.id song.id
         json.title song.title
+        json.song_url url_for(song.song)
       end
     end
   end
