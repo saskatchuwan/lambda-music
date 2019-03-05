@@ -1,12 +1,11 @@
 import React from 'react';
 
-
 const LibraryPlaylistIndexItem = ({ playlist }) => {
   return (
     <div className = 'tile-container'>
         <a href={`/#/playlist/${playlist.id}`}>
           <div className= 'tile'>
-            <img id='nav-icon' src={window.images.playlist_hold} />
+            <img src={`${playlist.coverUrl}`} />
           </div>
         </a>
 

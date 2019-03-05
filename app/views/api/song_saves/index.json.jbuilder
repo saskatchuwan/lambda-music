@@ -5,6 +5,7 @@ json.songs do
       json.title saved_song.title
       json.artist_id saved_song.artist_id
       json.album_id saved_song.album_id
+      json.song_url url_for(saved_song.song)
     end
   end
 end

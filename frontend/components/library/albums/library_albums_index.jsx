@@ -16,25 +16,28 @@ class LibraryAlbumsIndex extends React.Component {
 
     let albumItems;
 
-    albumItems = albums.map(album => {
+    if (Object.keys(this.props.albums).length > 0) {
 
-      return (
-        <div className = 'tile-container' key={album.id}>
-          <a href={`/#/album/${album.id}`}>
-            <div className= 'tile'>
-              <img src={window.images.playlist_hold} />
-            </div>
-          </a>
-
-          <strong>
+      albumItems = albums.map(album => {
+  
+        return (
+          <div className = 'tile-container' key={album.id}>
             <a href={`/#/album/${album.id}`}>
-            {album.title}
+              <div className= 'tile'>
+                <img src={`${album.coverUrl}`} />
+              </div>
             </a>
-          </strong>
-
-        </div>
-      )
-    });
+  
+            <strong>
+              <a href={`/#/album/${album.id}`}>
+              {album.title}
+              </a>
+            </strong>
+  
+          </div>
+        )
+      });
+    }
 
     return (
       <div className='content-index-display-container-tile'>

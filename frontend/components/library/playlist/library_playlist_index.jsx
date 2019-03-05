@@ -17,16 +17,18 @@ class LibraryPlayListIndex extends React.Component {
     let { playlists, users } = this.props;
 
     let playlistItems;
+    if (Object.keys(this.props.playlists).length > 0) {
+      playlistItems = playlists.map(playlist => {
 
-    playlistItems = playlists.map(playlist => {
-
-      let ownerId = playlist.ownerId;
-      let owner = users[ownerId-1];
-
-      return (
-        <LibraryPlaylistIndexItem key={playlist.id} playlist={playlist} />
-      )
-    });
+        let ownerId = playlist.ownerId;
+        let owner = users[ownerId-1];
+  
+        return (
+          <LibraryPlaylistIndexItem key={playlist.id} playlist={playlist} />
+        )
+      });
+  
+    }
 
     return (
       <div className='content-index-display-container-tile'>

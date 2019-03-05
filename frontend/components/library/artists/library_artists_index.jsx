@@ -22,7 +22,7 @@ class LibraryArtistsIndex extends React.Component {
         <div className = 'tile-container' key={artist.id}>
           <a href={`/#/artist/${artist.id}`}>
             <div className= 'circle'>
-              <img src={window.images.playlist_hold} />
+              <img src={`${artist.coverUrl}`} />
             </div>
           </a>
 

@@ -104,7 +104,6 @@ a, a:visited {
 
   .tile-container {
     text-align: center;
-    // background-color: fuchsia;
 
     font-size: 13px;
     color: #b3b3b3;
@@ -133,8 +132,8 @@ a, a:visited {
         max-width:100%;
         max-height:100%;
         border-radius: 50%;
-        -moz-border-radius:50%;
-        -webkit-border-radius:50%;
+        // -moz-border-radius:50%;
+        // -webkit-border-radius:50%;
       }
     }
 

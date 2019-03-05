@@ -3,7 +3,7 @@ json.playlist do
     json.id @playlist.id
     json.name @playlist.name
     json.owner_id @playlist.owner_id
-    
+    json.cover_url url_for(@playlist.cover)
   end
 end
 

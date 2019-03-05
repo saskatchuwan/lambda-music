@@ -13,6 +13,8 @@
 class Song < ApplicationRecord
   validates :title, presence:true
 
+  has_one_attached :song
+
   belongs_to :album,
     primary_key: :id,
     foreign_key: :album_id,

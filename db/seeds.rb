@@ -11,40 +11,60 @@ require 'open-uri'
 
 # need to attach images and song urls here
 
-# # Users
+#Users
 # User.destroy_all
 user1 = User.create(username: "saskatchuwan", password: "password")
 user2 = User.create(username: "grandmahoopla", password: "hellojello")
 user3 = User.create(username: "ChristianDopper", password: "demouser")
 
-# #Songs
-# Song.destroy_all
-song1 = Song.create(title: "Cannons", album_id: 1, artist_id: 1)
+#Artists
+# Artist.destroy_all
+artist1 = Artist.create(name: "Bjork")
+artistCover1 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/bjork/bjork.jpg')
+artist1.cover.attach(io: artistCover1, filename: 'bjork.jpg')
 
 #Albums
 # Album.destroy_all
-album1 = Album.create(title: "The Year of Hibernation - test", artist_id: 1)
-album_cover1 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/j1EfFLNrkwqD2WdmXr1FFVMx')
-album1.cover.attach(io: album_cover1, filename: 'youth-lagoon-hiberation.jpg')
+album1 = Album.create(title: "Homogenic", artist_id: 1)
+albumCover1 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/bjork/bjork-homogenic.jpg')
+album1.cover.attach(io: albumCover1, filename: 'bjork-homogenic.jpg')
 
-album2 = Album.create(title: "Homogenic", artist_id: 1)
-album_cover2 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/j1EfFLNrkwqD2WdmXr1FFVMx')
-album2.cover.attach(io: album_cover1, filename: 'youth-lagoon-hiberation.jpg')
+#Songs
+# Song.destroy_all
+song1 = Song.create(title: "Hunter", album_id: 1, artist_id: 1)
+songSong1 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/bjork/01+Hunter.mp3')
+song1.song.attach(io: songSong1, filename: '01+Hunter.mp3')
+
+song2 = Song.create(title: "Joga", album_id: 1, artist_id: 1)
+songSong2 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/bjork/02+Jo%CC%80ga.mp3')
+song2.song.attach(io: songSong2, filename: '02+Jo%CC%80ga.mp3')
 
 
-# #Artists
-# Artist.destroy_all
-# artist1 = Artist.create(name: "Youth Lagoon")
 
-
-# #Playlists
+#Playlists
 # Playlist.destroy_all
-playlist1 = Playlist.create(name: "Best Playlist Ever", owner_id: 1)
+playlist1 = Playlist.create(name: "POLLEN", owner_id: 1)
+playlistCover1 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/playlist1.png')
+playlist1.cover.attach(io: playlistCover1, filename: 'playlist1.png')
 
-# #PlaylistSongs
+# PlaylistSongs
 # PlaylistSong.destroy_all
-playlistsong1 = PlaylistSong.create(playlist_id: 1, song_id: 1)
+playlistSong1 = PlaylistSong.create(playlist_id: 1, song_id: 1)
+playlistSong2 = PlaylistSong.create(playlist_id: 1, song_id: 2)
 
-# #PlaylistSongs
+#PlaylistSaves
 # PlaylistSave.destroy_all
-playlistsave1 = PlaylistSave.create(playlist_id: 1, user_id: 1)
+playlistSave1 = PlaylistSave.create(playlist_id: 1, user_id: 1)
+
+#SongSaves
+# SongSave.destroy_all
+songSave1 = SongSave.create(song_id: 1, user_id: 1)
+
+
+#ArtistSaves
+# SongSave.destroy_all
+artistSave1 = ArtistSave.create(artist_id: 1, user_id: 1)
+
+#AlbumSaves
+# AlbumSave.destroy_all
+albumSave1 = AlbumSave.create(album_id: 1, user_id: 1)

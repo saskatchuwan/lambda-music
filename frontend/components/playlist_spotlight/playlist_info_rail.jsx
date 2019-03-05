@@ -23,7 +23,7 @@ const PlaylistInfoRail = props => {
     <div className='info-rail-container'>
 
       <div className='img-display-holder'>
-        I will be replaced by an image
+        <img src={`${props.playlist[playlistId].coverUrl}`} />
       </div>
 
       <h1>{props.playlist[playlistId].name}</h1>
