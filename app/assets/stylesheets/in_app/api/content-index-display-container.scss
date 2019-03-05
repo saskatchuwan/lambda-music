@@ -19,12 +19,16 @@ a, a:visited {
   font-size: 16px;
   width: 90%;
   margin: auto;
+  position: relative;
 
   h1 {
     letter-spacing: .015em;
   }
 
   .index-display-section-list {
+    box-sizing: border-box;
+    overflow: auto;
+    max-height:100%;
     list-style-type: none;
     padding: 0;
 
