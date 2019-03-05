@@ -1,15 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import _ from "lodash";
 
 class PlayBar extends React.Component {
+  constructor (props) {
+    this.state = {
+      currentSongIndex: 0,
+      actualSongId: this.props.songIdQueue[current]
+    };
+  }
  
   render () {
+
+    let currSongUrl = _.get(this, `props.currSong.song.songUrl`, "no song url");
+
     return (
       <div className='play-bar'>
         <div className='play-bar-container'>
-          <audio src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02981452dfa06ba930b5e0cf67d0225a8c23854e/02+Jo-CC-80ga.mp3" controls>
-            <p>Fallback content goes here.</p>
+
+          <audio src={currSongUrl} controls autoPlay>
+            <p>Could not play song.</p>
           </audio>
+
         </div>
       </div>
     );

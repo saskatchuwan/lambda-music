@@ -43,7 +43,6 @@ class PlaylistSongsIndex extends React.Component {
                     src={window.images.music_note} />
 
 
-              {/* add onclick to fetch song */}
               <img className='song-index-play-icon' 
                       onClick={() => this.props.fetchSong(song.id)}
                       id='play' 
