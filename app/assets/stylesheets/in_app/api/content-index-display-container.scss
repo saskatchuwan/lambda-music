@@ -41,14 +41,53 @@ a, a:visited {
         font-size: 13px;
         color: #b3b3b3;
 
-        strong {
-          color: white;
-          font-weight: var(--glue-font-weight-bold);
-          font-size: 14px;
+        .song-index-item-left {
+          display: flex;
+          flex-direction: row;
+
+          .song-index-play-icon-container {
+            height: 100%;
+            width: 25px;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+            margin-right: 10px;
+            -webkit-filter: invert(100%);
+
+            #dormant {
+              display: block;
+            }
+
+            #play {
+              display: none;
+              // display: block;
+            }
+          }
+
+          .song-index-play-icon-container:hover {
+            #dormant {
+              display: none;
+            }
+
+            #play {
+              display: inline;
+              cursor: pointer;
+            }
+          }
+
+          
+          .song-index-info {
+            strong {
+              color: white;
+              font-weight: var(--glue-font-weight-bold);
+              font-size: 14px;
+            }
+          }
+
         }
+
+
   
-
-
         .add-song-to-playlist-button, .add-song-to-playlist-button:visited, .delete-song, .delete-song:visited
          {
           text-decoration: none;
