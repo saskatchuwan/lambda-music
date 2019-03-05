@@ -5,7 +5,6 @@ export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 export const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST';
 export const CLEAR_PLAYLISTS = "CLEAR_PLAYLISTS";
 
-
 export const receivePlaylists = (payload) => ({
   type: RECEIVE_PLAYLISTS,
   payload
@@ -26,7 +25,6 @@ export const removePlaylist = (playlist) => ({
 export const clearPlaylists = () => ({
   type: CLEAR_PLAYLISTS
 });
-
 
 export const fetchPlaylists = () => dispatch => (
   PlaylistApiUtil.fetchPlaylists().then(payload => dispatch(receivePlaylists(payload)))

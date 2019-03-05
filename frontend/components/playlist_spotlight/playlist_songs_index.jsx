@@ -13,7 +13,6 @@ class PlaylistSongsIndex extends React.Component {
   componentDidUpdate (prevProps) {
     if (Object.keys(prevProps.playlistSongsList).length !== Object.keys(this.props.playlistSongsList).length) {
       this.props.fetchPlaylist(this.props.match.params.playlistId);
-      console.log(prevProps);
     }
   }
   componentWillUnmount () {
@@ -43,9 +42,14 @@ class PlaylistSongsIndex extends React.Component {
                     id='dormant' 
                     src={window.images.music_note} />
 
+
+              {/* add onclick to fetch song */}
               <img className='song-index-play-icon' 
-                    id='play' 
-                    src={window.images.music_play} />
+                      onClick={() => this.props.fetchSong(song.id)}
+                      id='play' 
+                      src={window.images.music_play} />
+
+
             </div>
 
             <div className='song-index-info'>

@@ -5,7 +5,7 @@ import songIdQueueReducer from './song_queue_reducer';
 
 const playBarReducer = combineReducers({
   currSong: currSongReducer,
-  songQueue: songIdQueueReducer,
+  songIdQueue: songIdQueueReducer,
 });
 
 export default playBarReducer;
