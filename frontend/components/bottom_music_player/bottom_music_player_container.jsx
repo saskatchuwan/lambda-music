@@ -6,6 +6,9 @@ const mapStateToProps = (state, ownProps) => {
   let currentUserId = state.session.currentUserId;
   let currentUser = state.entities.users[currentUserId];
 
+
+  //need to pass in props from new slice of state with currently queued up song
+
   return ({
     currentUser
   });

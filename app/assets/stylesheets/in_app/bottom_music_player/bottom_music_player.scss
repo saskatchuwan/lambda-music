@@ -1,9 +1,14 @@
-.bottom-music-player {
+.bottom-music-bar {
   height: 90px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   color: white;
   background-color: #282828;
   border-top:  1px solid rgba(0, 0, 0, 0.85);
+
+  .bottom-music-player-container {
+    display: flex;
+    align-items: center;
+  }
+
 }
