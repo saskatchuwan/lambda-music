@@ -22,7 +22,8 @@ class LibraryAlbumsIndex extends React.Component {
         <div className = 'tile-container' key={album.id}>
           <a href={`/#/album/${album.id}`}>
             <div className= 'tile'>
-              <img id='nav-icon' src={window.images.playlist_hold} />
+              
+              <img src={window.images.playlist_hold} />
             </div>
           </a>
 

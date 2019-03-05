@@ -7,7 +7,12 @@ const playlistSongsListReducer = (state={}, action) => {
 
   switch(action.type) {
     case RECEIVE_PLAYLIST:
-      return action.payload.playlistSongs;
+      if (typeof action.payload.playlistSongs !== 'undefined') {
+        return action.payload.playlistSongs;
+      } else {
+        //need this for when we first create a playlist (with no playlistsongs yet)
+        return {};
+      }
 
     case REMOVE_PLAYLIST_SONG:
       let newState = Object.assign({}, state);
