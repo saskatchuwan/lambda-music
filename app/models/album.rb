@@ -9,6 +9,12 @@
 #  updated_at :datetime         not null
 #
 
+#index
+# json.cover_url url_for(album.cover)
+
+#show
+# json.cover_url url_for(@album.cover)
+
 class Album < ApplicationRecord
   validates :title, presence:true
 

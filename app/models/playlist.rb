@@ -9,6 +9,12 @@
 #  updated_at :datetime         not null
 #
 
+#show
+# json.cover_url url_for(@playlist.cover)
+
+#index
+# json.cover_url url_for(playlist.cover)
+
 class Playlist < ApplicationRecord
   validates :name, presence:true
 

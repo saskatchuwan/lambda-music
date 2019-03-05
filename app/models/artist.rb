@@ -8,10 +8,12 @@
 #  updated_at :datetime         not null
 #
 
+# json.cover_url url_for(@artist.cover)
+
 class Artist < ApplicationRecord
   validates :name, presence:true
 
-  has_one_attached :image
+  has_one_attached :cover
 
   has_many :albums,
     primary_key: :id,

@@ -13,13 +13,13 @@ require 'open-uri'
 
 # # Users
 # User.destroy_all
-
-# user1 = User.create(username: "saskatchuwan", password: "password")
-# user2 = User.create(username: "grandmahoopla", password: "hellojello")
+user1 = User.create(username: "saskatchuwan", password: "password")
+user2 = User.create(username: "grandmahoopla", password: "hellojello")
+user3 = User.create(username: "ChristianDopper", password: "demouser")
 
 # #Songs
 # Song.destroy_all
-# song1 = Song.create(title: "Cannons", album_id: 1, artist_id: 1)
+song1 = Song.create(title: "Cannons", album_id: 1, artist_id: 1)
 
 #Albums
 # Album.destroy_all
@@ -27,18 +27,24 @@ album1 = Album.create(title: "The Year of Hibernation - test", artist_id: 1)
 album_cover1 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/j1EfFLNrkwqD2WdmXr1FFVMx')
 album1.cover.attach(io: album_cover1, filename: 'youth-lagoon-hiberation.jpg')
 
+album2 = Album.create(title: "Homogenic", artist_id: 1)
+album_cover2 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/j1EfFLNrkwqD2WdmXr1FFVMx')
+album2.cover.attach(io: album_cover1, filename: 'youth-lagoon-hiberation.jpg')
+
+
 # #Artists
 # Artist.destroy_all
 # artist1 = Artist.create(name: "Youth Lagoon")
 
+
 # #Playlists
 # Playlist.destroy_all
-# playlist1 = Playlist.create(name: "Best Playlist Ever", owner_id: 1)
+playlist1 = Playlist.create(name: "Best Playlist Ever", owner_id: 1)
 
 # #PlaylistSongs
 # PlaylistSong.destroy_all
-# playlistsong1 = PlaylistSong.create(playlist_id: 1, song_id: 1)
+playlistsong1 = PlaylistSong.create(playlist_id: 1, song_id: 1)
 
 # #PlaylistSongs
 # PlaylistSave.destroy_all
-# playlistsave1 = PlaylistSave.create(playlist_id: 1, user_id: 1)
+playlistsave1 = PlaylistSave.create(playlist_id: 1, user_id: 1)
