@@ -24,6 +24,10 @@ artist2 = Artist.create(name: "Clap Your Hands Say Yeah")
 artistCover2 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Clap+Your+Hands+Say+Yeah/cyhsy.jpg')
 artist2.cover.attach(io: artistCover2, filename: 'cyhsy.jpg')
 
+artist3 = Artist.create(name: "Fleetwood Mac")
+artistCover3 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Fleetwood+Mac/fleetwoodmac.jpg')
+artist3.cover.attach(io: artistCover3, filename: 'fleetwoodmac.jpg')
+
 
 # Album.destroy_all
 album1 = Album.create(title: "Homogenic", artist_id: 1)
@@ -33,6 +37,10 @@ album1.cover.attach(io: albumCover1, filename: 'bjork-homogenic.jpg')
 album2 = Album.create(title: "Clap Your Hands Say Yeah", artist_id: 2)
 albumCover2 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Clap+Your+Hands+Say+Yeah/cyhsy-cyhsy.png')
 album2.cover.attach(io: albumCover2, filename: 'cyhsy-cyhsy.png')
+
+album3 = Album.create(title: "Rumours", artist_id: 3)
+albumCover3 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Fleetwood+Mac/fleetword-rumours.jpeg')
+album3.cover.attach(io: albumCover3, filename: 'fleetword-rumours.jpeg')
 
 
 # Song.destroy_all
@@ -87,24 +95,65 @@ songSong12 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Clap+
 song12.song.attach(io: songSong12, filename: '12+Upon+This+Tidal+Wave+of+Young+Blood.mp3')
 
 
+#Fleetwood Mac
+song13 = Song.create(title: "Second Hand News", album_id: 3, artist_id: 3)
+songSong13 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Fleetwood+Mac/01+Second+Hand+News.mp3')
+song13.song.attach(io: songSong13, filename: '01+Second+Hand+News.mp3')
+
+song14 = Song.create(title: "Dreams", album_id: 3, artist_id: 3)
+songSong14 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Fleetwood+Mac/02+Dreams.mp3')
+song14.song.attach(io: songSong14, filename: 'Fleetwood+Mac/02+Dreams.mp3')
+
+song15 = Song.create(title: "Never Going Back Again", album_id: 3, artist_id: 3)
+songSong15 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Fleetwood+Mac/03+Never+Going+Back+Again.mp3')
+song15.song.attach(io: songSong15, filename: '03+Never+Going+Back+Again.mp3')
+
+song16 = Song.create(title: "I Don't Want To Know", album_id: 3, artist_id: 3)
+songSong16 = open("https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Fleetwood+Mac/09+I+Don't+Want+To+Know.mp3")
+song16.song.attach(io: songSong16, filename: "09+I+Don't+Want+To+Know.mp3")
+
+song17 = Song.create(title: "Go Your Own Way", album_id: 3, artist_id: 3)
+songSong17 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Fleetwood+Mac/05+Go+Your+Own+Way.mp3')
+song17.song.attach(io: songSong17, filename: '05+Go+Your+Own+Way.mp3')
+
+song18 = Song.create(title: "You Make Loving Fun", album_id: 3, artist_id: 3)
+songSong18 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Fleetwood+Mac/08+You+Make+Loving+Fun.mp3')
+song18.song.attach(io: songSong18, filename: '08+You+Make+Loving+Fun.mp3')
+
+
 
 # Playlist.destroy_all
 playlist1 = Playlist.create(name: "POLLEN", owner_id: 1)
 playlistCover1 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/playlist1.png')
 playlist1.cover.attach(io: playlistCover1, filename: 'playlist1.png')
 
+playlist2 = Playlist.create(name: "FRESH", owner_id: 1)
+playlistCover2 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/playlist6.jpeg')
+playlist2.cover.attach(io: playlistCover2, filename: 'playlist6.jpeg')
+
 
 # PlaylistSong.destroy_all
-playlistSong1 = PlaylistSong.create(playlist_id: 1, song_id: 1)
+playlistSong1 = PlaylistSong.create(playlist_id: 1, song_id: 16)
 playlistSong2 = PlaylistSong.create(playlist_id: 1, song_id: 2)
 playlistSong3 = PlaylistSong.create(playlist_id: 1, song_id: 12)
 playlistSong4 = PlaylistSong.create(playlist_id: 1, song_id: 3)
 playlistSong5 = PlaylistSong.create(playlist_id: 1, song_id: 10)
-playlistSong6 = PlaylistSong.create(playlist_id: 1, song_id: 6)
+playlistSong6 = PlaylistSong.create(playlist_id: 1, song_id: 15)
+
+playlistSong7 = PlaylistSong.create(playlist_id: 2, song_id: 3)
+playlistSong8 = PlaylistSong.create(playlist_id: 2, song_id: 18)
+playlistSong9 = PlaylistSong.create(playlist_id: 2, song_id: 7)
+playlistSong10 = PlaylistSong.create(playlist_id: 2, song_id: 8)
+playlistSong11 = PlaylistSong.create(playlist_id: 2, song_id: 16)
+playlistSong12 = PlaylistSong.create(playlist_id: 2, song_id: 11)
+
 
 
 # PlaylistSave.destroy_all
 playlistSave1 = PlaylistSave.create(playlist_id: 1, user_id: 1)
+playlistSave2 = PlaylistSave.create(playlist_id: 2, user_id: 1)
+playlistSave3 = PlaylistSave.create(playlist_id: 1, user_id: 3)
+playlistSave4 = PlaylistSave.create(playlist_id: 2, user_id: 3)
 
 
 # SongSave.destroy_all
@@ -131,17 +180,19 @@ songSave6 = SongSave.create(song_id: 6, user_id: 3)
 
 
 
-# SongSave.destroy_all
+# ArtistSave.destroy_all
 artistSave1 = ArtistSave.create(artist_id: 1, user_id: 1)
 artistSave2 = ArtistSave.create(artist_id: 2, user_id: 1)
-
 artistSave3 = ArtistSave.create(artist_id: 1, user_id: 3)
 artistSave4 = ArtistSave.create(artist_id: 2, user_id: 3)
+artistSave5 = ArtistSave.create(artist_id: 3, user_id: 1)
+artistSave6 = ArtistSave.create(artist_id: 3, user_id: 3)
 
 
 # AlbumSave.destroy_all
 albumSave1 = AlbumSave.create(album_id: 1, user_id: 1)
 albumSave2 = AlbumSave.create(album_id: 2, user_id: 1)
-
 albumSave3 = AlbumSave.create(album_id: 1, user_id: 3)
 albumSave4 = AlbumSave.create(album_id: 2, user_id: 3)
+albumSave5 = AlbumSave.create(album_id: 3, user_id: 1)
+albumSave6 = AlbumSave.create(album_id: 3, user_id: 3)
