@@ -5,43 +5,20 @@ import _ from "lodash";
 
 class PlaylistSongsIndex extends React.Component {
 
-  constructor (props) {
-    super(props);
-
-    this.state = {
-      removedSong: false
-    };
-
-    this.removeSong = this.removeSong.bind(this);
-  }
-
   componentDidMount() {
     let playlistId = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistId);
   }
 
-  componentWillUnmount () {
-    this.props.clearPlaylists();
-  }
-
   componentDidUpdate (prevProps) {
-    console.log('prev');
-    console.log(prevProps.playlistSongsList);
-    console.log('current');
-    console.log(this.props.playlistSongsList);
-
     if (Object.keys(prevProps.playlistSongsList).length !== Object.keys(this.props.playlistSongsList).length) {
       this.props.fetchPlaylist(this.props.match.params.playlistId);
       console.log(prevProps);
     }
   }
-
-  
- 
-  removeSong (playlistSongId) {
-    this.props.deletePlaylistSong(playlistSongId);
+  componentWillUnmount () {
+    this.props.clearPlaylists();
   }
-
 
   render () {
 
@@ -66,7 +43,6 @@ class PlaylistSongsIndex extends React.Component {
   
             </div>
               <button className='delete-song'
-              // onClick={() => this.removeSong(playlistSongId)}>DELETE</button>
               onClick={() => this.props.deletePlaylistSong(playlistSongId)}>DELETE</button>
           </li>
         )

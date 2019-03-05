@@ -13,15 +13,14 @@ class AlbumSongsIndex extends React.Component {
     let songItems;
     songItems = this.props.songs.map(song => {
       let album = this.props.albums[song.albumId];
+      let artist = this.props.artists[song.artistId];
 
-      console.log(album);
-     
       return (
         <li key={song.id}>
           <div className='song-index-info'>
             <strong>{song.title}</strong>
             <br/>
-            {/* <img src={`${album.coverUrl}`} /> */}
+            {artist.name} - {album.title}
           </div>
         </li>
       )

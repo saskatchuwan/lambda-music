@@ -9,7 +9,7 @@ const AlbumInfoRail = props => {
     <div className='info-rail-container'>
 
       <div className='img-display-holder'>
-        I will be replaced by an image
+        <img src={`${props.album[albumId].coverUrl}`} />
       </div>
 
       <h1>{props.album[albumId].title}</h1>
