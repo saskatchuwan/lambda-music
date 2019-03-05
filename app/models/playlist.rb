@@ -12,6 +12,8 @@
 class Playlist < ApplicationRecord
   validates :name, presence:true
 
+  has_one_attached :cover
+
   belongs_to :owner,
     primary_key: :id,
     foreign_key: :owner_id,
