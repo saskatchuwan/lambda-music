@@ -1,4 +1,4 @@
-.bottom-music-bar {
+.play-bar {
   height: 90px;
   display: flex;
   justify-content: center;
@@ -6,7 +6,7 @@
   background-color: #282828;
   border-top:  1px solid rgba(0, 0, 0, 0.85);
 
-  .bottom-music-player-container {
+  .play-bar-container {
     display: flex;
     align-items: center;
   }

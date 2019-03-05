@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BottomMusicPlayer from './bottom_music_player';
+import PlayBar from './play_bar';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(BottomMusicPlayer);
+export default connect(mapStateToProps,mapDispatchToProps)(PlayBar);

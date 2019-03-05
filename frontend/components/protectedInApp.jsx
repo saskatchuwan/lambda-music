@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 //persistent components
 import LeftSideNavBarContainer from './left_side_nav_bar/left_side_nav_bar_container';
-import BottomMusicPlayerContainer from './bottom_music_player/bottom_music_player_container';
+import PlayBarContainer from './play_bar/play_bar_container';
 
 //dynamic main components
 import Library from './library/library';
@@ -31,7 +31,7 @@ const ProtectedInApp = () => (
     </div>
 
     <div className='main-view-footer'>
-      <ProtectedRoute path="/" component={BottomMusicPlayerContainer} />
+      <ProtectedRoute path="/" component={PlayBarContainer} />
     </div>
   </div>
 );
