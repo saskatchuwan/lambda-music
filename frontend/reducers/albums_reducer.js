@@ -40,12 +40,12 @@ const albumsReducer = (state={}, action) => {
       return {};
       
 
-    // case RECEIVE_PLAYLISTS:
-    //   if (action.payload.albums) {
-    //     return action.payload.albums;
-    //   } else {
-    //     return {};
-    //   }
+    case RECEIVE_PLAYLISTS:
+      if (action.payload.albums) {
+        return action.payload.albums;
+      } else {
+        return {};
+      }
 
     case RECEIVE_PLAYLIST:
       if (typeof action.payload.albums === 'undefined') {

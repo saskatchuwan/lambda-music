@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import LibraryPlayListIndex from './library_playlist_index';
 
-import { fetchUserPlaylists, clearPlaylists } from '../../../actions/playlist_actions';
+import { fetchSong } from '../../../actions/song_actions';
+
+import { fetchUserPlaylists, clearPlaylists, fetchPlaylist } from '../../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => {
   //arrays
@@ -14,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser,
     playlists,
     users: state.entities.users,
+    songIdQueue: state.playBar.songIdQueue,
   });
 };
 
@@ -21,6 +24,8 @@ const mapDispatchToProps = (dispatch) => {
   return ({
     fetchUserPlaylists: (user_id) => dispatch(fetchUserPlaylists(user_id)),
     clearPlaylists: () => dispatch(clearPlaylists()),
+    fetchSong: (songId) => dispatch(fetchSong(songId)),
+    fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId)),
   });
 };
 

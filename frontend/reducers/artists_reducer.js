@@ -40,13 +40,13 @@ const artistsReducer = (state={}, action) => {
     case CLEAR_SONGS:
       return {};
 
-    // case RECEIVE_PLAYLISTS:
+    case RECEIVE_PLAYLISTS:
 
-    //   if (action.payload.artists) {
-    //     return action.payload.artists;
-    //   } else {
-    //     return {};
-    //   }
+      if (action.payload.artists) {
+        return action.payload.artists;
+      } else {
+        return {};
+      }
 
     case RECEIVE_PLAYLIST:
       if (typeof action.payload.artists === 'undefined') {

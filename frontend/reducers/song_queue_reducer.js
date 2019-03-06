@@ -1,5 +1,6 @@
 import {
-  RECEIVE_PLAYLIST
+  RECEIVE_PLAYLIST,
+  RECEIVE_PLAYLISTS
  } from '../actions/playlist_actions';
 
 import {
@@ -26,6 +27,13 @@ const songIdQueueReducer = (state=[], action) => {
       } else {
         return Object.keys(action.payload.songs);
       }
+
+    // case RECEIVE_PLAYLISTS:
+    //   if (typeof action.payload.songs === 'undefined') {
+    //     return [];
+    //   } else {
+    //     return Object.keys(action.payload.songs);
+    //   }
 
     case RECEIVE_ALBUM:
       return Object.keys(action.payload.songs);

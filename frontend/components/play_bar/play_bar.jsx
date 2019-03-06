@@ -36,12 +36,11 @@ class PlayBar extends React.Component {
   componentDidUpdate (prevProps) {
     // set url of song to local state when there is a new song fetched
     if (prevProps.currSong.song !== this.props.currSong.song) {
-    this.setState({
-      url: this.props.currSong.song.songUrl
-    });
+      this.setState({
+        url: this.props.currSong.song.songUrl
+      });
     }
   }
-
 
 
   togglePlay () {
