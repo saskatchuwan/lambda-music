@@ -8,10 +8,11 @@ class PlayBar extends React.Component {
 
     this.state = {
       url: null,
-      pip: false,
       playing: true,
+      //set to true for testing
       controls: false,
-      volume: 0.8,
+
+      volume: 0.3,
       muted: false,
       played: 0,
       loaded: 0,
@@ -22,6 +23,8 @@ class PlayBar extends React.Component {
 
     this.handleSongEnd = this.handleSongEnd.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
+    this.playNext = this.playNext.bind(this);
+    this.playPrev = this.playPrev.bind(this);
   }
 
   componentDidMount () {
@@ -29,15 +32,12 @@ class PlayBar extends React.Component {
   }
 
   componentDidUpdate (prevProps) {
-    // check prevProps vs this.props
-    // this.setState({
-    //   url: this.props.currSong.url
-    // });
-
-    // if (prevProps.currSong !== this.props.currSong) {
-    //   console.log(prevProps);
-    //   console.log(this.props.currSong);
-    // }
+    // set url of song to local state when there is a new song fetched
+    if (prevProps.currSong.song !== this.props.currSong.song) {
+    this.setState({
+      url: this.props.currSong.song.songUrl
+    });
+    }
   }
 
 
@@ -46,9 +46,7 @@ class PlayBar extends React.Component {
 
   togglePlay () {
     console.log('toggling pause/play');
-
     this.setState({ playing: !this.state.playing });
-    
     console.log(`playing is now: ${!this.state.playing}`);
   }
 
@@ -63,11 +61,31 @@ class PlayBar extends React.Component {
     fetchSong(nextSongId);
   }
 
+  playNext () {
+    let { songIdQueue, currSong, fetchSong } = this.props;
+    let currentSongQueueIndex = songIdQueue.indexOf(`${currSong.song.id}`);
+
+    let nextSongQueueIndex = (currentSongQueueIndex + 1) % songIdQueue.length;
+    let nextSongId = songIdQueue[nextSongQueueIndex];
+
+    fetchSong(nextSongId);
+  }
+
+  playPrev () {
+    let { songIdQueue, currSong, fetchSong } = this.props;
+    let currentSongQueueIndex = songIdQueue.indexOf(`${currSong.song.id}`);
+
+    let nextSongQueueIndex = (currentSongQueueIndex - 1) ;
+    let nextSongId = songIdQueue[nextSongQueueIndex];
+
+    fetchSong(nextSongId);
+  }
+
+
 
 
   render () {
-    let currSongUrl = _.get(this, `props.currSong.song.songUrl`, "no song url");
-
+    console.log(this.state);
 
     return (
       <div className='play-bar'>
@@ -83,11 +101,11 @@ class PlayBar extends React.Component {
 
         <div className='player-wrapper'>
 
-
           <ReactPlayer 
               className='react-player'
-              url={currSongUrl}
+              url={this.state.url}
               // onEnded={this.handleSongEnd}
+              volume={this.state.volume}
               width='100%'
               height='100%'
               playing={this.state.playing}
@@ -95,10 +113,18 @@ class PlayBar extends React.Component {
 
         </div>
         
-        <div className='toggle'>
-          <img id='play' onClick={this.togglePlay} src={window.images.player_play} />
+        <div className='player-main-toggles'>
+
+          <img id='prev' onClick={this.playPrev} src={window.images.player_next} />
+
+          <div className='toggle'>
+            <img id='play' onClick={this.togglePlay} src={window.images.player_play} />
+          </div>
+
+          <img id='next' onClick={this.playNext} src={window.images.player_next} />
+          
         </div>
-         
+ 
       </div>
     );
   }

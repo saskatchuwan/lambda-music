@@ -2,7 +2,6 @@ import React from 'react';
 import _ from "lodash";
 
 const LibraryPlaylistIndexItem = ({ playlist, owner }) => {
-  console.log(owner);
   let ownerUsername = _.get(owner, `username`, "no username");
   
   return (
