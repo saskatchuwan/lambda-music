@@ -49,26 +49,13 @@ class PlaylistSongsIndex extends React.Component {
             </li>
           )
         });
-  
-        // infoRail =  this.props.playlists.map(playlist => {
-        //   let ownerId = playlist.ownerId;
-        //   let owner = users[ownerId];
-      
-        //   return (
-        //       <PlaylistInfoRail 
-        //           playlist={this.props.playlists}
-        //           deletePlaylist={this.props.deletePlaylist}
-        //           currentUserId={this.props.currentUserId}
-        //           owner={owner}
-        //           />
-        //   )
-        // });
 
           infoRail = <PlaylistInfoRail 
                           playlist={this.props.playlists}
                           deletePlaylist={this.props.deletePlaylist}
                           currentUserId={this.props.currentUserId}
-                          
+                          songIdQueue={this.props.songIdQueue}
+                          fetchSong={this.props.fetchSong}
                           />
     }
 

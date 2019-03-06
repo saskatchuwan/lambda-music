@@ -33,6 +33,8 @@ class AlbumSongsIndex extends React.Component {
       infoRail =  <AlbumInfoRail 
                     album={this.props.albums}
                     artist={Object.values(this.props.artists)}
+                    songIdQueue={this.props.songIdQueue}
+                    fetchSong={this.props.fetchSong}
                     />
     }
 

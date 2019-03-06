@@ -20,7 +20,10 @@ const AlbumInfoRail = props => {
 
       <div className='info-rail-links'>
         {/* doesn't do anything yet */}
-        <button className='info-rail-play-button'>Play</button>
+        <button 
+          onClick={() => props.fetchSong(props.songIdQueue[0])}
+          className='info-rail-play-button'>Play
+        </button>
 
       </div>
     </div>

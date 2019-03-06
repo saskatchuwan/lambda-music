@@ -33,7 +33,10 @@ const PlaylistInfoRail = props => {
 
       <div className='info-rail-links'>
         {/* doesn't do anything yet */}
-        <button className='info-rail-play-button'>Play</button>
+        <button 
+          onClick={() => props.fetchSong(props.songIdQueue[0])}
+          className='info-rail-play-button'>Play
+        </button>
 
         {/* this will only show if user is the owner -- and this DELETES the playlist */}
         {deleteButton}

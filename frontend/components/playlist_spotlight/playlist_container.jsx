@@ -23,6 +23,7 @@ const mapStateToProps = (state, ownProps) => {
     albums: state.entities.albums,
     playlistSongsList: state.entities.playlistSongs.playlistSongsList,
     users: state.entities.users,
+    songIdQueue: state.playBar.songIdQueue,
   });
 };
 

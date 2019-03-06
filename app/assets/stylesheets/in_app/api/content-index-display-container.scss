@@ -87,36 +87,44 @@ a, a:visited {
         }
 
 
-  
-        .add-song-to-playlist-button, .add-song-to-playlist-button:visited, .delete-song, .delete-song:visited
-         {
-          text-decoration: none;
-          background-color: transparent;
-          padding: 7px 15px 7px 15px; 
-          border-radius: 50px;
-          font-size: 10px;
-          font-weight: bold;
-          letter-spacing: +0.13em;
-          color: white;
-          width: 80px;
-          height: 25px;
-          border: 1.4px solid #b3b3b3;
-          text-transform: uppercase;
-        }
-        
-        
-        .add-song-to-playlist-button:hover, .delete-song:hover {
-          color: white;
-          background-color: #b3b3b357;
-          cursor: pointer;
-          -webkit-transition: background-color 0.1s;
-          
+
+      .add-song-to-playlist-button, .add-song-to-playlist-button:visited, .delete-song, .delete-song:visited
+        {
+          display:none;
         }
       }
   
     li:hover {
       background-color: rgba(0, 0, 0, 0.5);
       -webkit-transition: background-color 0.45s ease-out;
+
+      .add-song-to-playlist-button, .add-song-to-playlist-button:visited, .delete-song, .delete-song:visited {
+        display: inline;
+        text-decoration: none;
+        background-color: transparent;
+        padding: 7px 15px 7px 15px; 
+        border-radius: 50px;
+        font-size: 10px;
+        font-weight: bold;
+        letter-spacing: +0.13em;
+        width: 80px;
+        height: 25px;
+        border: 1.4px solid #b3b3b3;
+        text-transform: uppercase;
+        color: white;
+        
+      }
+
+
+      .add-song-to-playlist-button:hover, .delete-song:hover {
+        color: white;
+        background-color: #b3b3b357;
+        cursor: pointer;
+        -webkit-transition: background-color 0.1s;
+      }
+
+
+
     }
   
    

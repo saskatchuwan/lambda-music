@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
     songs,
     artists: state.entities.artists,
     albums: state.entities.albums,
+    songIdQueue: state.playBar.songIdQueue,
   });
 };
 
