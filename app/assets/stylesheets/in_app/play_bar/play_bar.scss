@@ -1,55 +1,88 @@
 .play-bar {
   height: 90px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   color: white;
   background-color: #282828;
   border-top:  1px solid rgba(0, 0, 0, 0.85);
 
   .player-wrapper {
-    // display: flex;
-    // align-items: center;
-    position: relative;
-    padding-top: 56.25%;
-    
-      .react-player {
-        background-color: green;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
 
 
   }
 
-  .player-main-toggles {
 
+  .player-current-song-info {
+    
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    .player-album-cover-holder {
+      width: 75px;
+      height: 75px;
+      margin: 8px;
+      padding-bottom: 3px;
+      img {
+        width: 100%;
+        height: 100%;
+        
+      }
+
+    }
+
+    .player-curr-song-info-text {
+      overflow: auto;
+      width: 200px;
+
+      #song-title {
+        color: white;
+        font-size: 13px;
+      }
+
+      #artist-name {
+        font-size: 12px;
+        color: #b3b3b3;
+      }
+    }
+  }
+
+
+  .player-main-toggles {
+    z-index: 10;
     display: flex;
     width: 300px;
     -webkit-filter: invert(75%);
+    justify-content: center;
+    background: green;
 
     .toggle {
       height: 55px;
       width: 55px;
-  
+      
+      margin-left: 15px;
+      margin-right: 15px;
+
       #play {
         width:55px;
         height:55px;
-  
+        
       }
-  
+
       #pause {
         width:40px;
         height:40px;
         
       }
-  
+
     }
 
     #prev, #next {
-      height: 20px;
-      width: 20px;
-      margin-top: 18px;
+      height: 16px;
+      width: 16px;
+      margin-top: 20px;
     }
 
     #prev {
@@ -64,11 +97,61 @@
     }
 
     
-  
+
     img:hover {
       transform: scale(1.05);
       cursor: pointer;
     }
-  
   }
+
+
+  .other-toggles {
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+    .mute-container {
+
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      // .mute-toggle {
+      //   position: absolute;
+      //   opacity: 0;
+      //   cursor: pointer;
+      //   height: 0;
+      //   width: 0;
+      // }
+
+      // .mute-custom {
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   // height: 25px;
+      //   // width: 25px;
+      //   background-color: #eee;
+      //   background: image_url('https://cdn1.iconfinder.com/data/icons/lemu-panel-1/100/speaker_bold_convert-512.png');
+      // }
+  
+
+    }
+
+    .volume-toggle-bar {
+      width: 100px;
+      height: 20px;
+      margin: 10px;
+    }
+  }
+
+  
 }

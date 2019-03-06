@@ -7,15 +7,13 @@ json.song do
 end
 
 json.artist do
-  json.set! @song.artist.id do 
     json.id @song.artist.id
     json.name @song.artist.name
-  end
+    json.cover_url url_for(@song.artist.cover)
 end
 
 json.album do
-  json.set! @song.album.id do 
     json.id @song.album.id
     json.title @song.album.title
-  end
+    json.cover_url url_for(@song.album.cover)
 end

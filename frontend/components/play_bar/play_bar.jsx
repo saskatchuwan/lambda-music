@@ -12,7 +12,7 @@ class PlayBar extends React.Component {
       //set to true for testing
       controls: false,
 
-      volume: 0.3,
+      volume: 0.8,
       muted: false,
       played: 0,
       loaded: 0,
@@ -25,6 +25,8 @@ class PlayBar extends React.Component {
     this.togglePlay = this.togglePlay.bind(this);
     this.playNext = this.playNext.bind(this);
     this.playPrev = this.playPrev.bind(this);
+    this.setVolume = this.setVolume.bind(this);
+    this.toggleMuted = this.toggleMuted.bind(this);
   }
 
   componentDidMount () {
@@ -39,8 +41,6 @@ class PlayBar extends React.Component {
     });
     }
   }
-
-
 
 
 
@@ -81,48 +81,90 @@ class PlayBar extends React.Component {
     fetchSong(nextSongId);
   }
 
+  setVolume (e) {
+    this.setState({ 
+      volume: parseFloat(e.target.value) 
+    });
+  }
 
+  toggleMuted () {
+    this.setState({ 
+      muted: !this.state.muted 
+    });
+  }
 
 
   render () {
     console.log(this.state);
 
+    let { url, volume, playing, muted } = this.state;
+
+    let currSongAlbumUrl = _.get(this, 'props.currSong.album.coverUrl', 'no album url');
+    let currSongArtistName = _.get(this, 'props.currSong.artist.name', '');
+    let currSongTitle = _.get(this, 'props.currSong.song.title', '');
+
     return (
       <div className='play-bar'>
 
-          {/* <audio className='player'
-                src={currSongUrl} 
-                onEnded={this.handleSongEnd} 
-                controls 
-                autoPlay>
-            <p>Could not play song.</p>
-          </audio> */}
+        
+        <div className='player-current-song-info'>
+          <div className='player-album-cover-holder'>
+            <img src={currSongAlbumUrl}/>
+          </div>
 
+          <div className='player-curr-song-info-text'>
+            <span id='song-title'>{currSongTitle}</span>
+            <br />
+            <span id='artist-name'>{currSongArtistName}</span>
+          </div>
+        </div>
+        
 
         <div className='player-wrapper'>
+          <div className='player-main-toggles'>
+              <img id='prev' onClick={this.playPrev} src={window.images.player_next} />
+
+              <div className='toggle'>
+                <img id='play' onClick={this.togglePlay} src={window.images.player_play} />
+              </div>
+
+              <img id='next' onClick={this.playNext} src={window.images.player_next} />
+            </div>
 
           <ReactPlayer 
               className='react-player'
-              url={this.state.url}
+              url={url}
               // onEnded={this.handleSongEnd}
-              volume={this.state.volume}
-              width='100%'
-              height='100%'
-              playing={this.state.playing}
+              volume={volume}
+              muted = {muted}
+              width='0%'
+              height='0%'
+              playing={playing}
           />
-
         </div>
-        
-        <div className='player-main-toggles'>
 
-          <img id='prev' onClick={this.playPrev} src={window.images.player_next} />
 
-          <div className='toggle'>
-            <img id='play' onClick={this.togglePlay} src={window.images.player_play} />
+
+        <div className='other-toggles'>
+          <div className='mute-container'>
+            <input 
+                className='mute-toggle'
+                id='muted' 
+                type='checkbox' 
+                checked={muted} 
+                onChange={this.toggleMuted} />
+            <span className='mute-custom'></span>
+            
           </div>
 
-          <img id='next' onClick={this.playNext} src={window.images.player_next} />
-          
+          <input 
+              className='volume-toggle-bar'
+              type='range' 
+              min={0} 
+              max={1} 
+              step='any' 
+              value={volume} 
+              onChange={this.setVolume} />
         </div>
  
       </div>
