@@ -24,37 +24,52 @@ class PlaylistSongsIndex extends React.Component {
     let songItems;
     let infoRail;
 
-
     if (Object.keys(this.props.playlists).length > 0) {
+
       songItems = this.props.songs.map(song => {
       
         let album = this.props.albums[song.albumId];
         let artist = this.props.artists[song.artistId];
-  
+
+ 
         let playlistSongId = _.get(this, `props.playlistSongsList[${song.id}].playlistSongId`, "no id");
   
         return (
-          <li key={song.id}>
-          
-            <SongsIndexItem
-              song={song}
-              album={album}
-              artist={artist}
-              fetchSong={this.props.fetchSong}
-            />
+            <li key={song.id}>
+            
+              <SongsIndexItem
+                song={song}
+                album={album}
+                artist={artist}
+                fetchSong={this.props.fetchSong}
+              />
 
-          <button className='delete-song'
-              onClick={() => this.props.deletePlaylistSong(playlistSongId)}>DELETE</button>
-          </li>
-        )
-      });
+            <button className='delete-song'
+                onClick={() => this.props.deletePlaylistSong(playlistSongId)}>DELETE</button>
+            </li>
+          )
+        });
   
+        // infoRail =  this.props.playlists.map(playlist => {
+        //   let ownerId = playlist.ownerId;
+        //   let owner = users[ownerId];
+      
+        //   return (
+        //       <PlaylistInfoRail 
+        //           playlist={this.props.playlists}
+        //           deletePlaylist={this.props.deletePlaylist}
+        //           currentUserId={this.props.currentUserId}
+        //           owner={owner}
+        //           />
+        //   )
+        // });
 
-      infoRail =  <PlaylistInfoRail 
-                    playlist={this.props.playlists}
-                    deletePlaylist={this.props.deletePlaylist}
-                    currentUserId={this.props.currentUserId}
-                    />
+          infoRail = <PlaylistInfoRail 
+                          playlist={this.props.playlists}
+                          deletePlaylist={this.props.deletePlaylist}
+                          currentUserId={this.props.currentUserId}
+                          
+                          />
     }
 
 

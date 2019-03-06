@@ -22,7 +22,7 @@ const mapStateToProps = (state, ownProps) => {
     playlists: state.entities.playlists,
     albums: state.entities.albums,
     playlistSongsList: state.entities.playlistSongs.playlistSongsList,
-    
+    users: state.entities.users,
   });
 };
 

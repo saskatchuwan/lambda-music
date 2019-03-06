@@ -6,7 +6,6 @@ import { fetchUserPlaylists, clearPlaylists } from '../../../actions/playlist_ac
 const mapStateToProps = (state, ownProps) => {
   //arrays
   let playlists = Object.values(state.entities.playlists);
-  let users = Object.values(state.entities.users);
 
   let currentUserId = state.session.currentUserId;
   let currentUser = state.entities.users[currentUserId];
@@ -14,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser,
     playlists,
-    users,
+    users: state.entities.users,
   });
 };
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
 import LibraryPlaylistIndexItem from './library_playlist_index_item';
 
 
@@ -17,14 +16,17 @@ class LibraryPlayListIndex extends React.Component {
     let { playlists, users } = this.props;
 
     let playlistItems;
+
     if (Object.keys(this.props.playlists).length > 0) {
       playlistItems = playlists.map(playlist => {
 
         let ownerId = playlist.ownerId;
-        let owner = users[ownerId-1];
-  
+        let owner = users[ownerId];
+    
         return (
-          <LibraryPlaylistIndexItem key={playlist.id} playlist={playlist} />
+          <LibraryPlaylistIndexItem key={playlist.id} 
+                playlist={playlist} 
+                owner={owner}/>
         )
       });
   

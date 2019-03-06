@@ -27,6 +27,7 @@ const PlaylistInfoRail = props => {
       </div>
 
       <h1>{props.playlist[playlistId].name}</h1>
+      {/* <span>{props.owner.username}</span> */}
       
       <br />
 

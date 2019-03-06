@@ -1,11 +1,16 @@
 import React from 'react';
+import _ from "lodash";
 
-const LibraryPlaylistIndexItem = ({ playlist }) => {
+const LibraryPlaylistIndexItem = ({ playlist, owner }) => {
+  console.log(owner);
+  let ownerUsername = _.get(owner, `username`, "no username");
+  
   return (
     <div className = 'tile-container'>
         <a href={`/#/playlist/${playlist.id}`}>
           <div className= 'tile'>
             <img src={`${playlist.coverUrl}`} />
+            <div className='tile-overlay'></div>
           </div>
         </a>
 
@@ -18,7 +23,7 @@ const LibraryPlaylistIndexItem = ({ playlist }) => {
           <br />
 
         {/* page breaks when navigating back to this page from the /playlist/1 page */}
-        {/* {owner.username} */}
+        {ownerUsername}
     </div>
    );
 };
