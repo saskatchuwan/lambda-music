@@ -3,7 +3,9 @@ class Api::PlaylistsController < ApplicationController
   # require login
 
   # for testing only!
-  # skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
+
+
 
   def index
     @playlists = Playlist.get_all_playlist_data
@@ -17,16 +19,18 @@ class Api::PlaylistsController < ApplicationController
 
   def create
     @playlist = Playlist.new(playlist_params)
-    @playlist.owner_id = current_user.id
+    # @playlist.owner_id = current_user.id
 
     # hardcode current user id for testing in postman
-    # @playlist.owner_id = 1
+    @playlist.owner_id = 1
 
     if @playlist.save
       # save to playlist_save table
       @playlist_save = PlaylistSave.new(playlist_id: @playlist.id, user_id: @playlist.owner_id)
-
       @playlist_save.save
+
+      #attach default cover
+      @playlist.cover_nil
 
       render 'api/playlists/show'
     else

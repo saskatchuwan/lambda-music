@@ -140,6 +140,9 @@ a, a:visited {
 
 
 .index-display-section-tile {
+  box-sizing: border-box;
+  overflow: auto;
+  max-height:100%;
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;

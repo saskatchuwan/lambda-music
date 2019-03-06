@@ -6,9 +6,19 @@
   background-color: #282828;
   border-top:  1px solid rgba(0, 0, 0, 0.85);
 
-  .play-bar-container {
+  .player-wrapper {
     display: flex;
     align-items: center;
+    // position: relative;
+    // padding-top: 56.25%;
+    
+      // .react-player {
+      //   background-color: green;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      // }
   }
+
 
 }

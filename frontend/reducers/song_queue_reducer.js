@@ -21,7 +21,12 @@ const songIdQueueReducer = (state=[], action) => {
 
   switch(action.type) {
     case RECEIVE_PLAYLIST:
-      return Object.keys(action.payload.songs);
+      if (typeof action.payload.songs === 'undefined') {
+        return [];
+      } else {
+
+        return Object.keys(action.payload.songs);
+      }
 
     case RECEIVE_ALBUM:
       return Object.keys(action.payload.songs);
