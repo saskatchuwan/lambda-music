@@ -24,7 +24,6 @@ const songIdQueueReducer = (state=[], action) => {
       if (typeof action.payload.songs === 'undefined') {
         return [];
       } else {
-
         return Object.keys(action.payload.songs);
       }
 

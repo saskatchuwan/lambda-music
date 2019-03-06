@@ -8,7 +8,7 @@ const playlistSongsQueueReducer = (state={}, action) => {
   switch(action.type) {
     case RECEIVE_SONG:
       //will just store the song id for the modal for adding songs to playlists
-      return Object.keys(action.payload.song)[0];
+      return action.payload.song.id;
     default:
       return state;
   }
