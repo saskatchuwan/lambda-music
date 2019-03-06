@@ -45,9 +45,9 @@ class PlayBar extends React.Component {
 
 
   togglePlay () {
-    console.log('toggling pause/play');
+    // console.log('toggling pause/play');
     this.setState({ playing: !this.state.playing });
-    console.log(`playing is now: ${!this.state.playing}`);
+    // console.log(`playing is now: ${!this.state.playing}`);
   }
 
 
@@ -95,11 +95,13 @@ class PlayBar extends React.Component {
 
 
   render () {
-    console.log(this.state);
+    // console.log(this.state);
 
     let { url, volume, playing, muted } = this.state;
 
     let currSongAlbumUrl = _.get(this, 'props.currSong.album.coverUrl', 'no album url');
+    let currSongAlbumId = _.get(this, 'props.currSong.album.id', 'no album url');
+
     let currSongArtistName = _.get(this, 'props.currSong.artist.name', '');
     let currSongTitle = _.get(this, 'props.currSong.song.title', '');
 
@@ -109,13 +111,20 @@ class PlayBar extends React.Component {
         
         <div className='player-current-song-info'>
           <div className='player-album-cover-holder'>
-            <img src={currSongAlbumUrl}/>
+            <a href={`/#/album/${currSongAlbumId}`}>
+              <img src={currSongAlbumUrl}/>
+            </a>
           </div>
 
           <div className='player-curr-song-info-text'>
-            <span id='song-title'>{currSongTitle}</span>
+            <a href={`/#/album/${currSongAlbumId}`}>
+              <span id='song-title'>{currSongTitle}</span>
+            </a>
+            
             <br />
+
             <span id='artist-name'>{currSongArtistName}</span>
+
           </div>
         </div>
         
