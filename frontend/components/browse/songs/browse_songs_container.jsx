@@ -25,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     fetchSongs: () => dispatch(fetchSongs()),
-    openModal: (modal) => dispatch(openModal(modal)),
+    openModal: (modal, songId) => dispatch(openModal(modal, songId)),
     fetchSong: (id) => dispatch(fetchSong(id)),
   });
 };

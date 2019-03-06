@@ -1,4 +1,4 @@
-import { RECEIVE_SONG } from '../actions/song_actions';
+import { OPEN_MODAL } from '../actions/modal_actions';
 
 
 const playlistSongsQueueReducer = (state={}, action) => {
@@ -6,9 +6,9 @@ const playlistSongsQueueReducer = (state={}, action) => {
   let newState = Object.assign({}, state);
 
   switch(action.type) {
-    case RECEIVE_SONG:
-      //will just store the song id for the modal for adding songs to playlists
-      return action.payload.song.id;
+
+    case OPEN_MODAL:
+      return action.songId;
     default:
       return state;
   }
