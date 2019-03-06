@@ -28,8 +28,13 @@ class PlayBar extends React.Component {
 
   }
 
-  componentDidUpdate () {
-  
+  componentDidUpdate (prevProps) {
+    check prevProps vs this.props
+    this.setState({
+      url: this.props.currSong.url
+    });
+
+    if (prevProps.currSong !== )
   }
 
 
@@ -38,7 +43,9 @@ class PlayBar extends React.Component {
 
   togglePlay () {
     console.log('toggling pause/play');
+
     this.setState({ playing: !this.state.playing });
+    
     console.log(`playing is now: ${!this.state.playing}`);
   }
 
@@ -58,6 +65,7 @@ class PlayBar extends React.Component {
   render () {
     let currSongUrl = _.get(this, `props.currSong.song.songUrl`, "no song url");
 
+    console.log(this.state);
 
     return (
       <div className='play-bar'>
@@ -69,6 +77,7 @@ class PlayBar extends React.Component {
                 autoPlay>
             <p>Could not play song.</p>
           </audio> */}
+
 
         <div className='player-wrapper'>
 
@@ -87,7 +96,7 @@ class PlayBar extends React.Component {
         <div className='toggle'>
           <img id='play' onClick={this.togglePlay} src={window.images.player_play} />
         </div>
-          
+         
       </div>
     );
   }
