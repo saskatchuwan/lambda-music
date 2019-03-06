@@ -29,12 +29,15 @@ class PlayBar extends React.Component {
   }
 
   componentDidUpdate (prevProps) {
-    check prevProps vs this.props
-    this.setState({
-      url: this.props.currSong.url
-    });
+    // check prevProps vs this.props
+    // this.setState({
+    //   url: this.props.currSong.url
+    // });
 
-    if (prevProps.currSong !== )
+    // if (prevProps.currSong !== this.props.currSong) {
+    //   console.log(prevProps);
+    //   console.log(this.props.currSong);
+    // }
   }
 
 
@@ -65,7 +68,6 @@ class PlayBar extends React.Component {
   render () {
     let currSongUrl = _.get(this, `props.currSong.song.songUrl`, "no song url");
 
-    console.log(this.state);
 
     return (
       <div className='play-bar'>
