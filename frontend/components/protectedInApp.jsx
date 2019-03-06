@@ -10,6 +10,7 @@ import Library from './library/library';
 import Browse from './browse/browse';
 import PlaylistContainer from './playlist_spotlight/playlist_container';
 import AlbumContainer from './album_spotlight/album_container';
+import Search from './search/search';
 
 
 import {
@@ -27,6 +28,7 @@ const ProtectedInApp = () => (
         <ProtectedRoute path="/browse" component={Browse} />
         <ProtectedRoute path="/playlist/:playlistId" component={PlaylistContainer} />
         <ProtectedRoute path="/album/:albumId" component={AlbumContainer} />
+        <ProtectedRoute path="/search" component={Search} />
       </Switch>
     </div>
 

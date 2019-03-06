@@ -7,15 +7,41 @@ class PlayBar extends React.Component {
     super(props);
 
     this.state = {
-      controls: true,
+      url: null,
+      pip: false,
+      playing: true,
+      controls: false,
+      volume: 0.8,
+      muted: false,
+      played: 0,
+      loaded: 0,
+      duration: 0,
+      playbackRate: 1.0,
+      loop: false
     }
 
     this.handleSongEnd = this.handleSongEnd.bind(this);
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
   componentDidMount () {
-    
+
   }
+
+  componentDidUpdate () {
+  
+  }
+
+
+
+
+
+  togglePlay () {
+    console.log('toggling pause/play');
+    this.setState({ playing: !this.state.playing });
+    console.log(`playing is now: ${!this.state.playing}`);
+  }
+
 
   handleSongEnd () {
     let { songIdQueue, currSong, fetchSong } = this.props;
@@ -27,35 +53,41 @@ class PlayBar extends React.Component {
     fetchSong(nextSongId);
   }
 
+
+
   render () {
     let currSongUrl = _.get(this, `props.currSong.song.songUrl`, "no song url");
+
 
     return (
       <div className='play-bar'>
 
-        <div className='player-wrapper'>
-          <audio src={currSongUrl} 
+          {/* <audio className='player'
+                src={currSongUrl} 
                 onEnded={this.handleSongEnd} 
                 controls 
                 autoPlay>
             <p>Could not play song.</p>
-          </audio>
-{/* 
+          </audio> */}
+
+        <div className='player-wrapper'>
+
+
           <ReactPlayer 
               className='react-player'
-              url='https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/bjork/02+Jo%CC%80ga.mp3'
-              // url={currSongUrl} 
-              onEnded={this.handleSongEnd}
+              url={currSongUrl}
+              // onEnded={this.handleSongEnd}
               width='100%'
               height='100%'
-              controls={this.state.controls}
-              playing={true}
-          /> */}
+              playing={this.state.playing}
+          />
+
         </div>
-{/* 
-          <img
-            onClick={} 
-            src={window.images.music_note} /> */}
+        
+        <div className='toggle'>
+          <img id='play' onClick={this.togglePlay} src={window.images.player_play} />
+        </div>
+          
       </div>
     );
   }

@@ -1,0 +1,46 @@
+.search-main-container {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font: inherit;
+
+  .search-bar-container {
+    background-color: #282828;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+
+    .search-bar {
+      background-color: transparent;
+      border: 0px transparent;
+      width: 90%;
+      height: 95%;
+      font-size: 36px;
+      color: inherit;
+      font-weight: bold;
+    }
+  }
+  
+  .search-placecard {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .placecard-info{
+      text-align: center;
+      margin-top: 70px;
+
+      span {
+        font-size: 13px;
+        color: #b3b3b3;
+      }
+
+      h1 {
+        letter-spacing: .015em;
+      }
+    }
+  }
+}

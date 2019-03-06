@@ -7,18 +7,44 @@
   border-top:  1px solid rgba(0, 0, 0, 0.85);
 
   .player-wrapper {
-    display: flex;
-    align-items: center;
-    // position: relative;
-    // padding-top: 56.25%;
+    // display: flex;
+    // align-items: center;
+    position: relative;
+    padding-top: 56.25%;
     
-      // .react-player {
-      //   background-color: green;
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      // }
+      .react-player {
+        background-color: green;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+
   }
 
+  .toggle {
+    height: 55px;
+    width: 55px;
+
+    #play {
+      -webkit-filter: invert(100%);
+      width:55px;
+      height:55px;
+
+    }
+
+    #pause {
+      -webkit-filter: invert(100%);
+      width:40px;
+      height:40px;
+      
+    }
+
+  }
+
+  img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 
 }

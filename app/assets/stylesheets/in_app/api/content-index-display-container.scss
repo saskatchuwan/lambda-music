@@ -175,14 +175,14 @@ a, a:visited {
         width:100%;
         height:100%;
     
-        // transition:all 0.5s ease-in-out;
-        // -webkit-transition:all 0.2s ease-in-out;
+        transition:all 0.2s ease-in-out;
+        -webkit-transition:all 0.2s ease-in-out;
       }
       
       .tile-overlay:hover {
         display: block;
         z-index:100;
-        background-color: orange;
+        background-color: rgba(0, 0, 0, 0.6);
       }
     }
 

@@ -21,8 +21,6 @@ const LibraryPlaylistIndexItem = ({ playlist, owner }) => {
         </strong>
         
           <br />
-
-        {/* page breaks when navigating back to this page from the /playlist/1 page */}
         {ownerUsername}
     </div>
    );

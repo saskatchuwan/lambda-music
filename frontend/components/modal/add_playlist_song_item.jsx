@@ -11,7 +11,7 @@ const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong, closeM
                           closeModal()}}>
 
             <div className= 'tile'>
-              <img src={window.images.playlist_hold} />
+              <img src={playlist.coverUrl} />
             </div>
 
         </a>
