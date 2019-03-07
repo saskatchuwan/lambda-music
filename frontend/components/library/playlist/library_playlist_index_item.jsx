@@ -1,13 +1,13 @@
 import React from 'react';
 import _ from "lodash";
 
-const LibraryPlaylistIndexItem = ({ playlist, playlistId, owner, fetchSong, songIdQueue, fetchPlaylist }) => {
+const LibraryPlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPlaylist }) => {
   let ownerUsername = _.get(owner, `username`, "no username");
   
   return (
     <div className = 'tile-container'>
 
-        {/* <button onClick={() => fetchPlaylist(playlistId)}>i'm a button</button> */}
+        <button onClick={() => fetchPlaybarPlaylist(playlistId)}>i'm a button</button>
 
 
         <a href={`/#/playlist/${playlist.id}`}>

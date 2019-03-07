@@ -13,7 +13,7 @@ class LibraryPlayListIndex extends React.Component {
   }
  
   render () {
-    let { playlists, users, fetchSong, songIdQueue, fetchPlaylist } = this.props;
+    let { playlists, users, fetchSong, songIdQueue, fetchPlaybarPlaylist } = this.props;
 
     let playlistItems;
 
@@ -28,7 +28,7 @@ class LibraryPlayListIndex extends React.Component {
                 playlistId={playlist.id}
                 playlist={playlist} 
                 owner={owner}
-                fetchPlaylist={fetchPlaylist}
+                fetchPlaybarPlaylist={fetchPlaybarPlaylist}
                 fetchSong={fetchSong}
                 songIdQueue={songIdQueue}
           />

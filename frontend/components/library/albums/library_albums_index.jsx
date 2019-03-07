@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class LibraryAlbumsIndex extends React.Component {
 
@@ -22,6 +21,9 @@ class LibraryAlbumsIndex extends React.Component {
   
         return (
           <div className = 'tile-container' key={album.id}>
+            
+            <button onClick={() => this.props.fetchPlaybarAlbum(album.id)}>i'm a button</button>
+
             <a href={`/#/album/${album.id}`}>
               <div className= 'tile'>
                 <img src={`${album.coverUrl}`} />

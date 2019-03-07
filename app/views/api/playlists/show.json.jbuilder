@@ -41,6 +41,7 @@ json.albums do
     json.set! album.id do 
       json.id album.id
       json.title album.title
+      json.cover_url url_for(album.cover)
     end
   end
 end

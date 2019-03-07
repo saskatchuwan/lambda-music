@@ -11,6 +11,11 @@ import {
   RECEIVE_SONGS
  } from '../actions/song_actions';
 
+import {
+  RECEIVE_PLAYBAR_PLAYLIST,
+  RECEIVE_PLAYBAR_ALBUM
+ } from '../actions/play_bar_actions';
+
 
 const songIdQueueReducer = (state=[], action) => {
   Object.freeze(state);
@@ -39,6 +44,12 @@ const songIdQueueReducer = (state=[], action) => {
       return Object.keys(action.payload.songs);
 
     case RECEIVE_SONGS:
+      return Object.keys(action.payload.songs);
+
+    case RECEIVE_PLAYBAR_PLAYLIST:
+      return Object.keys(action.payload.songs);
+
+    case RECEIVE_PLAYBAR_ALBUM:
       return Object.keys(action.payload.songs);
 
     default:
