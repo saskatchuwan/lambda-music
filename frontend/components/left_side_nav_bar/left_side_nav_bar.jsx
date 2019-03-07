@@ -37,7 +37,7 @@ class LeftSideNavBar extends React.Component {
               </li>
 
               <li>
-                <NavLink className='nav-link' to='/search'>
+                <NavLink className='nav-link' to='/search/recent'>
                   <img id='nav-icon-search' src={window.images.search} />
                   Search
                 </NavLink>

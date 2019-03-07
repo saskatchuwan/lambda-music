@@ -35,6 +35,8 @@ Rails.application.routes.draw do
     resources :song_saves, only: [:create, :destroy]
     resources :artist_saves, only: [:create, :destroy]
     resources :album_saves, only: [:create, :destroy]
+
+    resources :searches, only: [:index]
   end
 
 end
