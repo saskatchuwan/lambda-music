@@ -3,6 +3,8 @@ import React from 'react';
 import { fetchSong } from '../../actions/song_actions';
 import SongsIndexItem from '../song_list_index_item/songs_index_item';
 
+import { fetchPlaybarPlaylist, fetchPlaybarAlbum  } from '../../actions/play_bar_actions';
+
 const mapStateToProps = (state) => {
   return ({
     artists: state.search.artists,
@@ -14,7 +16,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchSong: (song_id) => dispatch(fetchSong(song_id)),
+    fetchSong: (songId) => dispatch(fetchSong(songId)),
+    fetchPlaybarAlbum: (albumId) => dispatch(fetchPlaybarAlbum(albumId)),
+    fetchPlaybarPlaylist: (playlistId) => dispatch(fetchPlaybarPlaylist(playlistId)),
   });
 };
 
@@ -63,20 +67,33 @@ class SearchResultsContainer extends React.Component {
       let albumItems = albums.map(album => {
         return (
           <div className = 'tile-container' key={album.id}>
-            <a href={`/#/album/${album.id}`}>
-              <div className= 'tile'>
+            <div className= 'tile'>
+
+              <a href={`/#/album/${album.id}`}  onClick={(e) => e.stopPropagation()}>
+
                 <img src={`${album.coverUrl}`} />
-              </div>
-            </a>
+
+                <div className= 'tile-overlay'>
+                    <img src={window.images.player_play} 
+                      className='play-content-button'
+                      onClick={() => this.props.fetchPlaybarAlbum(album.id)}></img>
+                </div>
+
+              </a>
+
+            </div>
 
             <strong>
               <a href={`/#/album/${album.id}`}>
-              {album.name}
+              {album.title}
               </a>
             </strong>
+
+            <br />
+            {/* {artistName} */}
+  
           </div>
         )
-        
       });
 
       albumsDisplay = <div className='albums-search-result-container'>
@@ -95,18 +112,30 @@ class SearchResultsContainer extends React.Component {
 
       let playlistItems = playlists.map(playlist => {
         return (
-          <div className = 'tile-container' key={playlist.id}>
-            <a href={`/#/playlist/${playlist.id}`}>
-              <div className= 'tile'>
-                <img src={`${playlist.coverUrl}`} />
+          <div className = 'tile-container'>
+
+          {/* hover works but clicking on play button will also redirect to show */}
+          <div className= 'tile'>
+
+            <a href={`/#/playlist/${playlist.id}`} onClick={(e) => e.stopPropagation()}>
+
+              <img src={`${playlist.coverUrl}`} />
+
+              <div className='tile-overlay'>
+                <img src={window.images.player_play} 
+                    className='play-content-button'
+                    onClick={() => this.props.fetchPlaybarPlaylist(playlistId)}></img>
               </div>
+              
             </a>
 
-            <strong>
-              <a href={`/#/playlist/${playlist.id}`}>
-              {playlist.name}
-              </a>
-            </strong>
+          </div>
+
+          <strong>
+            <a href={`/#/playlist/${playlist.id}`}>
+            {playlist.name}
+            </a>
+          </strong>
           </div>
         )
         
