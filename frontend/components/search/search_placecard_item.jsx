@@ -5,7 +5,7 @@ const SearchPlacecard = () => {
     <div className='search-placecard'>
         <div className='placecard-info'>
           <h1>Search lambda</h1>
-          <span>Find your favorite songs, artists, albums, podcasts and playlists.</span>
+          <span>Find your favorite songs, artists, albums and playlists.</span>
         </div>
     </div> 
   )

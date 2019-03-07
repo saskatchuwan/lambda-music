@@ -124,37 +124,37 @@ class SearchResultsContainer extends React.Component {
 
 
 
-    let songsDisplay;
+    // let songsDisplay;
 
-    if (Object.keys(this.props.songs).length !== 0) {
-      let songs = Object.values(this.props.songs);
+    // if (Object.keys(this.props.songs).length !== 0) {
+    //   let songs = Object.values(this.props.songs);
 
-      let songItems = songs.map(song => {
+    //   let songItems = songs.map(song => {
 
-        let album = this.props.albums[song.albumId];
-        let artist = this.props.artists[song.artistId];
+    //     let album = this.props.albums[song.albumId];
+    //     let artist = this.props.artists[song.artistId];
 
-        return (
-          <li key={song.id}>
-            <SongsIndexItem
-              song={song}
-              album={album}
-              artist={artist}
-              fetchSong={this.props.fetchSong}
-            />
-          </li>
-        )
-      });
+    //     return (
+    //       <li key={song.id}>
+    //         <SongsIndexItem
+    //           song={song}
+    //           album={album}
+    //           artist={artist}
+    //           fetchSong={this.props.fetchSong}
+    //         />
+    //       </li>
+    //     )
+    //   });
 
-      songsDisplay = <div className='songs-search-result-container'>
-                              <h1>Songs</h1>
-                              <div className='content-index-display-container-list'>
-                                <div className='index-display-section-list'>
-                                    { songItems }
-                                </div>
-                              </div>
-                      </div>
-    }
+    //   songsDisplay = <div className='songs-search-result-container'>
+    //                           <h1>Songs</h1>
+    //                           <div className='content-index-display-container-list'>
+    //                             <div className='index-display-section-list'>
+    //                                 { songItems }
+    //                             </div>
+    //                           </div>
+    //                   </div>
+    // }
 
 
 
@@ -165,7 +165,7 @@ class SearchResultsContainer extends React.Component {
         {artistsDisplay}
         {albumsDisplay}
         {playlistsDisplay}
-        {songsDisplay}
+        {/* {songsDisplay} */}
       </div>
     );
   }

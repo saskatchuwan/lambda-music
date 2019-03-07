@@ -18,6 +18,7 @@ const Search = () => (
 
     <Switch>
       <ProtectedRoute path="/search/recent" component={SearchPlacecard} />
+      <ProtectedRoute exact path="/search/results/" component={SearchPlacecard} />
       <ProtectedRoute path="/search/results/:searchTerm" component={SearchResultsContainer} />
     </Switch>
 
