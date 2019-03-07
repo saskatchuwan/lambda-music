@@ -1,4 +1,6 @@
-
+// Code references to react-player documentation + demo:
+// https://www.npmjs.com/package/react-player
+// https://github.com/CookPete/react-player/blob/master/src/demo/App.js
 
 import React from 'react';
 import _ from "lodash";
@@ -209,20 +211,29 @@ class PlayBar extends React.Component {
 
           <div className='progress-bar'>
             
-            <div>{this.secondsToMs(playedSeconds)}</div>
-            <progress max={1} value={played} />
-            <div>{this.secondsToMs(duration)}</div>
+            <div id='elapsed-time'>
+            {this.secondsToMs(playedSeconds)}
+            </div>
+
+            <div id='progress-bar-display-container'>
+              <progress className='progress-bar-display' max={1} value={played} />
+            </div>
+
+            <div id='total-duration'>
+              {this.secondsToMs(duration)}
+            </div>
+
           </div>
 
           <ReactPlayer 
               className='react-player'
               ref={ref}
               url={url}
-              // onEnded={this.handleSongEnd}
+              onEnded={this.handleSongEnd}
               volume={volume}
               muted = {muted}
               onProgress={this.onProgress}
-              width='0%'
+              width='60%'
               height='0%'
               playing={playing}
               onDuration={this.onDuration}
