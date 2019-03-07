@@ -8,7 +8,7 @@ require 'open-uri'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-ActiveRecord::Base.transaction do
+
   User.destroy_all
   user1 = User.create(username: "saskatchuwan", password: "password")
   user2 = User.create(username: "grandmahoopla", password: "hellojello")
@@ -196,4 +196,3 @@ ActiveRecord::Base.transaction do
   albumSave4 = AlbumSave.create(album_id: 2, user_id: 3)
   albumSave5 = AlbumSave.create(album_id: 3, user_id: 1)
   albumSave6 = AlbumSave.create(album_id: 3, user_id: 3)
-end

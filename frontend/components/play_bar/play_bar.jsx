@@ -8,10 +8,9 @@ class PlayBar extends React.Component {
 
     this.state = {
       url: null,
-      playing: true,
+      playing: false,
       //set to true for testing
       controls: false,
-
       volume: 0.8,
       muted: false,
       played: 0,
@@ -27,6 +26,12 @@ class PlayBar extends React.Component {
     this.playPrev = this.playPrev.bind(this);
     this.setVolume = this.setVolume.bind(this);
     this.toggleMuted = this.toggleMuted.bind(this);
+    this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
+    this.onSeekChange = this.onSeekChange.bind(this);
+    this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
+    this.ref = this.ref.bind(this);
+    this.onDuration = this.onDuration.bind(this);
+    this.onProgress = this.onProgress.bind(this);
   }
 
   componentDidMount () {
@@ -37,8 +42,29 @@ class PlayBar extends React.Component {
     // set url of song to local state when there is a new song fetched
     if (prevProps.currSong.song !== this.props.currSong.song) {
       this.setState({
-        url: this.props.currSong.song.songUrl
+        url: this.props.currSong.song.songUrl,
+        playing: true
       });
+    }
+  }
+
+  onDuration (duration) {
+    console.log('onDuration', duration);
+    this.setState({ duration });
+  }
+
+  // incrementPlayed () {
+
+  //   this.setState({
+  //     played: 
+  //   });
+  // }
+
+  onProgress (state) {
+    console.log('onProgress', state);
+    // We only want to update time slider if we are not currently seeking
+    if (!this.state.seeking) {
+      this.setState(state);
     }
   }
 
@@ -93,16 +119,38 @@ class PlayBar extends React.Component {
   }
 
 
+  onSeekMouseDown (e) {
+    this.setState({ seeking: true });
+  }
+
+  onSeekChange (e) {
+    this.setState({ played: parseFloat(e.target.value) });
+  }
+  onSeekMouseUp (e) {
+    this.setState({ seeking: false });
+    this.player.seekTo(parseFloat(e.target.value));
+  }
+
+  ref (player) {
+    this.player = player;
+  }
+
   render () {
     // console.log(this.state);
 
-    let { url, volume, playing, muted } = this.state;
+    let { url, volume, playing, muted, played, ref, duration } = this.state;
 
     let currSongAlbumUrl = _.get(this, 'props.currSong.album.coverUrl', 'no album url');
     let currSongAlbumId = _.get(this, 'props.currSong.album.id', 'no album url');
 
     let currSongArtistName = _.get(this, 'props.currSong.artist.name', '');
     let currSongTitle = _.get(this, 'props.currSong.song.title', '');
+
+  
+    const playIcon = (this.state.playing) ? 
+            <img id='pause' onClick={this.togglePlay} src={window.images.player_pause} /> 
+            : <img id='play' onClick={this.togglePlay} src={window.images.player_play} />
+    
 
     return (
       <div className='play-bar'>
@@ -133,21 +181,43 @@ class PlayBar extends React.Component {
               <img id='prev' onClick={this.playPrev} src={window.images.player_next} />
 
               <div className='toggle'>
-                <img id='play' onClick={this.togglePlay} src={window.images.player_play} />
+                {playIcon}
               </div>
 
               <img id='next' onClick={this.playNext} src={window.images.player_next} />
             </div>
 
+            {/* <input
+                  type='range' min={0} max={1} step='any'
+                  value={played}
+                  onMouseDown={this.onSeekMouseDown}
+                  onChange={this.onSeekChange}
+                  onMouseUp={this.onSeekMouseUp}
+                /> */}
+
+            {/* should print time that has elapsd */}
+            {/* <div>{played.toFixed(3)}</div> */}
+
+            {/* prints duration of song */}
+            {/* <div>{duration}</div> */}
+
+            {/* should be progress bar */}
+            <progress max={1} value={played} />
+
+           
+
           <ReactPlayer 
               className='react-player'
+              ref={ref}
               url={url}
               // onEnded={this.handleSongEnd}
               volume={volume}
               muted = {muted}
+              onProgress={this.onProgress}
               width='0%'
               height='0%'
               playing={playing}
+              onDuration={this.onDuration}
           />
         </div>
 
