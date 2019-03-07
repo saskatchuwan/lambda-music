@@ -9,19 +9,17 @@ a, a:visited {
 }
 
 .content-index-display-container-list {
-  // background-color: green;
   flex: 2 0;
   color: #fff;
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-top: 10px;
-  // padding-left: 32px;
-  // padding-right: 32px;
   font-size: 16px;
   width: 90%;
-  margin: auto;
-  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  // position: relative;
+
 
   h1 {
     letter-spacing: .015em;
@@ -33,6 +31,7 @@ a, a:visited {
     max-height:100%;
     list-style-type: none;
     padding: 0;
+   
 
     li {
         height: 30px;
@@ -146,6 +145,7 @@ a, a:visited {
   padding-left: 20px;
   padding-right: 20px;
   font-size: 16px;
+
 }
 
 
