@@ -163,39 +163,48 @@ a, a:visited {
     font-size: 13px;
     color: #b3b3b3;
 
-
-    //for squares (albums, playlists)
-    .tile {
-      height: 180px;
-      width: 180px;
-      margin: 8px;
-      position: relative;
-
-
-      img {
-        max-width:100%;
-        max-height:100%;
-      }
-
-      .tile-overlay {
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-    
-        transition:all 0.2s ease-in-out;
-        -webkit-transition:all 0.2s ease-in-out;
-      }
+      //for squares (albums, playlists)
+      .tile {
+        height: 180px;
+        width: 180px;
+        margin: 8px;
+        position: relative;
+  
+  
+        img {
+          max-width:100%;
+          max-height:100%;
+        }
+  
+        .tile-overlay {
+          position:absolute;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
       
-      .tile-overlay:hover {
-        display: block;
-        z-index:100;
-        background-color: rgba(0, 0, 0, 0.6);
+          transition:all 0.2s ease-in-out;
+          -webkit-transition:all 0.2s ease-in-out;
+        }
+        
+        .tile-overlay:hover {
+          display: block;
+          z-index:10;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .play-content-button {
+          position:absolute;
+          left: 40px;
+          top: 40px;
+          z-index: 15;
+          background-color: green;
+        }
       }
-    }
 
 
+
+  
     //for circles (artists)
     .circle {
       height: 180px;
