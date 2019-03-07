@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import _ from "lodash";
 import ReactPlayer from 'react-player';
@@ -9,15 +11,12 @@ class PlayBar extends React.Component {
     this.state = {
       url: null,
       playing: false,
-      //set to true for testing
-      controls: false,
       volume: 0.8,
       muted: false,
       played: 0,
       loaded: 0,
       duration: 0,
-      playbackRate: 1.0,
-      loop: false
+      playedSeconds: 0,
     }
 
     this.handleSongEnd = this.handleSongEnd.bind(this);
@@ -26,12 +25,13 @@ class PlayBar extends React.Component {
     this.playPrev = this.playPrev.bind(this);
     this.setVolume = this.setVolume.bind(this);
     this.toggleMuted = this.toggleMuted.bind(this);
-    this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
-    this.onSeekChange = this.onSeekChange.bind(this);
-    this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
-    this.ref = this.ref.bind(this);
+    // this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
+    // this.onSeekChange = this.onSeekChange.bind(this);
+    // this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
+    // this.ref = this.ref.bind(this);
     this.onDuration = this.onDuration.bind(this);
     this.onProgress = this.onProgress.bind(this);
+    this.secondsToMs = this.secondsToMs.bind(this);
   }
 
   componentDidMount () {
@@ -49,19 +49,12 @@ class PlayBar extends React.Component {
   }
 
   onDuration (duration) {
-    console.log('onDuration', duration);
     this.setState({ duration });
   }
 
-  // incrementPlayed () {
-
-  //   this.setState({
-  //     played: 
-  //   });
-  // }
 
   onProgress (state) {
-    console.log('onProgress', state);
+    // console.log('onProgress', state);
     // We only want to update time slider if we are not currently seeking
     if (!this.state.seeking) {
       this.setState(state);
@@ -70,9 +63,7 @@ class PlayBar extends React.Component {
 
 
   togglePlay () {
-    // console.log('toggling pause/play');
     this.setState({ playing: !this.state.playing });
-    // console.log(`playing is now: ${!this.state.playing}`);
   }
 
 
@@ -119,26 +110,47 @@ class PlayBar extends React.Component {
   }
 
 
-  onSeekMouseDown (e) {
-    this.setState({ seeking: true });
-  }
+  // onSeekMouseDown (e) {
+  //   this.setState({ seeking: true });
+  // }
 
-  onSeekChange (e) {
-    this.setState({ played: parseFloat(e.target.value) });
-  }
-  onSeekMouseUp (e) {
-    this.setState({ seeking: false });
-    this.player.seekTo(parseFloat(e.target.value));
-  }
+  // onSeekChange (e) {
+  //   this.setState({ played: parseFloat(e.target.value) });
+  // }
+  // onSeekMouseUp (e) {
+  //   this.setState({ seeking: false });
+  //   this.player.seekTo(parseFloat(e.target.value));
+  // }
 
-  ref (player) {
-    this.player = player;
+  // ref (player) {
+  //   this.player = player;
+  // }
+
+  secondsToMs (seconds) {
+    seconds = Number(seconds);
+
+    const m = Math.floor(seconds % 3600 / 60);
+    const s = Math.floor(seconds % 3600 % 60);
+
+    let display;
+    if (m < 10 && s < 10) {
+      display = '0' + m + ':' + '0' + s;
+    } else if (m < 10 && s >= 10) {
+      display = '0' + m + ':' + s;
+    } else if (m >= 10 && s >= 10) {
+      display = m + ':' + s;
+    } else if (m >= 10 && s < 10) {
+      display = m + ':' + '0' + s;
+    } else {
+
+    }
+
+    return display;
   }
 
   render () {
-    // console.log(this.state);
 
-    let { url, volume, playing, muted, played, ref, duration } = this.state;
+    let { url, volume, playing, muted, played, ref, playedSeconds, duration } = this.state;
 
     let currSongAlbumUrl = _.get(this, 'props.currSong.album.coverUrl', 'no album url');
     let currSongAlbumId = _.get(this, 'props.currSong.album.id', 'no album url');
@@ -185,7 +197,7 @@ class PlayBar extends React.Component {
               </div>
 
               <img id='next' onClick={this.playNext} src={window.images.player_next} />
-            </div>
+          </div>
 
             {/* <input
                   type='range' min={0} max={1} step='any'
@@ -195,16 +207,12 @@ class PlayBar extends React.Component {
                   onMouseUp={this.onSeekMouseUp}
                 /> */}
 
-            {/* should print time that has elapsd */}
-            {/* <div>{played.toFixed(3)}</div> */}
-
-            {/* prints duration of song */}
-            {/* <div>{duration}</div> */}
-
-            {/* should be progress bar */}
+          <div className='progress-bar'>
+            
+            <div>{this.secondsToMs(playedSeconds)}</div>
             <progress max={1} value={played} />
-
-           
+            <div>{this.secondsToMs(duration)}</div>
+          </div>
 
           <ReactPlayer 
               className='react-player'
