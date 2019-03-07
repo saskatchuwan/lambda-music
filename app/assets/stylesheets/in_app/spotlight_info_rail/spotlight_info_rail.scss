@@ -1,4 +1,6 @@
 .info-rail-container {
+  // background-color: blue;
+  flex: 1 0;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -9,9 +11,14 @@
   
 
   .img-display-holder {
+    // flex: 1, 0;
     background-color: #ff4c58;
-    height: 280px;
-    width: 280px;
+    // height: 280px;
+    // width: 280px;
+
+    max-height: 350px;
+    max-width: 350px;
+
     margin-top: 25px;
     
     img {

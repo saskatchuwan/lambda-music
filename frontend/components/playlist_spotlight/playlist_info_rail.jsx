@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 const PlaylistInfoRail = props => {
   let playlistId = props.match.params.playlistId;
 
-  //only render a TRASH playlist button if the current user is the owner of the playlist
   let deleteButton;
   let editButton;
 
