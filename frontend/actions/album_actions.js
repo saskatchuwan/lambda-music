@@ -4,9 +4,9 @@ export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
 export const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
 export const CLEAR_ALBUMS = 'CLEAR_ALBUMS';
 
-export const receiveAlbums = (albums) => ({
+export const receiveAlbums = (payload) => ({
   type: RECEIVE_ALBUMS,
-  albums
+  payload
 });
 
 export const receiveAlbum = (payload) => ({
@@ -19,7 +19,7 @@ export const clearAlbums = () => ({
 });
 
 export const fetchAlbums = () => dispatch => (
-  AlbumApiUtil.fetchAlbums().then(albums => dispatch(receiveAlbums(albums)))
+  AlbumApiUtil.fetchAlbums().then(payload => dispatch(receiveAlbums(payload)))
 );
 
 export const fetchAlbum = (id) => dispatch => (

@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser,
     albums,
+    artists: state.entities.artists,
   });
 };
 

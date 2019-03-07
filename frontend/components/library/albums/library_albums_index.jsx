@@ -11,30 +11,43 @@ class LibraryAlbumsIndex extends React.Component {
   }
  
   render () {
-    let { albums } = this.props;
+    let { albums, artists } = this.props;
 
     let albumItems;
 
-    if (Object.keys(this.props.albums).length > 0) {
+
+    if (Object.keys(this.props.albums).length > 0 && Object.keys(this.props.artists).length > 0) {
 
       albumItems = albums.map(album => {
-  
+
+        // let artistName = artists[album.artistId].name;
+
         return (
           <div className = 'tile-container' key={album.id}>
-            
-            <button onClick={() => this.props.fetchPlaybarAlbum(album.id)}>i'm a button</button>
+            <div className= 'tile'>
 
-            <a href={`/#/album/${album.id}`}>
-              <div className= 'tile'>
+              <a href={`/#/album/${album.id}`}  onClick={(e) => e.stopPropagation()}>
+
                 <img src={`${album.coverUrl}`} />
-              </div>
-            </a>
-  
+
+                <div className= 'tile-overlay'>
+                    <img src={window.images.player_play} 
+                      className='play-content-button'
+                      onClick={() => this.props.fetchPlaybarAlbum(album.id)}></img>
+                </div>
+
+              </a>
+
+            </div>
+
             <strong>
               <a href={`/#/album/${album.id}`}>
               {album.title}
               </a>
             </strong>
+
+            <br />
+            {/* {artistName} */}
   
           </div>
         )

@@ -20,7 +20,7 @@ const albumsReducer = (state={}, action) => {
   switch(action.type) {
     case RECEIVE_ALBUMS:
       //currently will overwrite all albums
-      return action.albums;
+      return action.payload.albums;
 
     case CLEAR_ALBUMS:
       return {};

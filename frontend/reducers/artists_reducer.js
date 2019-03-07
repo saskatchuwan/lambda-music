@@ -60,6 +60,9 @@ const artistsReducer = (state={}, action) => {
     case RECEIVE_ALBUM:
       return action.payload.artist;
 
+    case RECEIVE_ALBUMS:
+      return action.payload.artists;
+
     case CLEAR_ALBUMS:
       return {};
 
