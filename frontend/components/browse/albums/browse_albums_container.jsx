@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import BrowseAlbumsIndex from './browse_albums_index';
 
 import { fetchAlbums, clearAlbums } from '../../../actions/album_actions';
+import { fetchPlaybarAlbum } from '../../../actions/play_bar_actions';
 
 const mapStateToProps = (state, ownProps) => {
   //arrays
@@ -20,6 +21,7 @@ const mapDispatchToProps = (dispatch) => {
   return ({
     fetchAlbums: () => dispatch(fetchAlbums()),
     clearAlbums: () => dispatch(clearAlbums()),
+    fetchPlaybarAlbum: (playlistId) => dispatch(fetchPlaybarAlbum(playlistId)),
   });
 };
 

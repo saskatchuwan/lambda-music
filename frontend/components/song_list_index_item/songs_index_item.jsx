@@ -1,6 +1,11 @@
 import React from 'react';
+import _ from 'lodash';
 
 const SongsIndexItem = ({ album, song, artist, fetchSong }) => {
+
+  let artistName = _.get(artist, `name`, "no artist name");
+  let albumTitle = _.get(album, `title`, "no album title");
+
   return (
       <div className='song-index-item-left'>
 
@@ -19,7 +24,7 @@ const SongsIndexItem = ({ album, song, artist, fetchSong }) => {
         <div className='song-index-info'>
           <strong>{song.title}</strong>
           <br/>
-          {artist.name} - {album.title}
+          {artistName} - {albumTitle}
         </div>
 
       </div>

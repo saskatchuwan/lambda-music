@@ -1,0 +1,33 @@
+import { connect } from 'react-redux';
+import BrowsePlayListIndex from './browse_playlists_index';
+
+import { fetchSong } from '../../../actions/song_actions';
+
+import { fetchPlaylists, clearPlaylists } from '../../../actions/playlist_actions';
+import { fetchPlaybarPlaylist } from '../../../actions/play_bar_actions';
+
+const mapStateToProps = (state, ownProps) => {
+  //arrays
+  let playlists = Object.values(state.entities.playlists);
+
+  let currentUserId = state.session.currentUserId;
+  let currentUser = state.entities.users[currentUserId];
+
+  return ({
+    currentUser,
+    playlists,
+    users: state.entities.users,
+    songIdQueue: state.playBar.songIdQueue,
+  });
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    fetchPlaylists: () => dispatch(fetchPlaylists()),
+    clearPlaylists: () => dispatch(clearPlaylists()),
+    fetchSong: (songId) => dispatch(fetchSong(songId)),
+    fetchPlaybarPlaylist: (playlistId) => dispatch(fetchPlaybarPlaylist(playlistId)),
+  });
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(BrowsePlayListIndex);

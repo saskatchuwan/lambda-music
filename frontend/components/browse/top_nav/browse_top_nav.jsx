@@ -8,15 +8,15 @@ class BrowseTopNav extends React.Component {
       <div className='browse-top-nav-container'>
         <ul className='browse-top-nav-links'>
           <li>
+            <NavLink className='nav-link' to='/browse/newreleases'>
+              NEW RELEASES
+            </NavLink>
+          </li>
+          <li>
             <NavLink className='nav-link' to='/browse/featured'>
               FEATURED
             </NavLink>
 
-          </li>
-          <li>
-            <NavLink className='nav-link' to='/browse/newreleases'>
-              NEW RELEASES
-            </NavLink>
           </li>
           <li>
             <NavLink className='nav-link' to='/browse/genres'>

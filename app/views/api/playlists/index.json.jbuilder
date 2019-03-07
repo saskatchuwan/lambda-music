@@ -9,7 +9,7 @@ json.playlists do
   end
 end
 
-json.owners do
+json.users do
   @playlists.each do |playlist|
     json.set! playlist.owner.id do 
       json.id playlist.owner.id
