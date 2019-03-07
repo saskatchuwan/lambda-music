@@ -1,29 +1,18 @@
 import { connect } from 'react-redux';
 import React from 'react';
 
-import { fetchAlbum } from '../../actions/album_actions';
-import { fetchSong } from '../../actions/song_actions';
-
-
-const mapStateToProps = (state, ownProps) => {
-  let currentUserId = state.session.currentUserId;
-  let currentUser = state.entities.users[currentUserId];
-  //arrays
-  let songs = Object.values(state.entities.songs);
-
+const mapStateToProps = (state) => {
   return ({
-    currentUser,
-    currentUserId,
-    songs,
-    artists: state.entities.artists,
-    albums: state.entities.albums,
+    artists: state.search.artists,
+    albums: state.search.albums,
+    playlists: state.search.playlists,
+    songs: state.search.songs,
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId)),
-    fetchSong: (song_id) => dispatch(fetchSong(song_id)),
+
   });
 };
 
@@ -31,8 +20,112 @@ const mapDispatchToProps = (dispatch) => {
 class SearchResultsContainer extends React.Component {
 
   render () {
+    let artistsDisplay;
+
+    if (Object.keys(this.props.artists).length !== 0) {
+      let artists = Object.values(this.props.artists);
+
+      let artistItems = artists.map(artist => {
+        return (
+          <div className = 'tile-container' key={artist.id}>
+            <a href={`/#/artist/${artist.id}`}>
+              <div className= 'circle'>
+                <img src={`${artist.coverUrl}`} />
+              </div>
+            </a>
+
+            <strong>
+              <a href={`/#/artist/${artist.id}`}>
+              {artist.name}
+              </a>
+            </strong>
+          </div>
+        )
+        
+      });
+
+      artistsDisplay = <div className='artists-search-result-container'>
+                              <h1>Artists</h1>
+                              <br />
+                              <div className='index-display-section-tile'>
+                                  { artistItems }
+                              </div>
+                        </div>
+    }
+
+    let albumsDisplay;
+
+    if (Object.keys(this.props.albums).length !== 0) {
+      let albums = Object.values(this.props.albums);
+
+      let albumItems = albums.map(album => {
+        return (
+          <div className = 'tile-container' key={album.id}>
+            <a href={`/#/album/${album.id}`}>
+              <div className= 'tile'>
+                <img src={`${album.coverUrl}`} />
+              </div>
+            </a>
+
+            <strong>
+              <a href={`/#/album/${album.id}`}>
+              {album.name}
+              </a>
+            </strong>
+          </div>
+        )
+        
+      });
+
+      albumsDisplay = <div className='albums-search-result-container'>
+                              <h1>Albums</h1>
+                              <br />
+                              <div className='index-display-section-tile'>
+                                  { albumItems }
+                              </div>
+                        </div>
+    }
+
+    let playlistsDisplay;
+
+    if (Object.keys(this.props.playlists).length !== 0) {
+      let playlists = Object.values(this.props.playlists);
+
+      let playlistItems = playlists.map(playlist => {
+        return (
+          <div className = 'tile-container' key={playlist.id}>
+            <a href={`/#/playlist/${playlist.id}`}>
+              <div className= 'tile'>
+                <img src={`${playlist.coverUrl}`} />
+              </div>
+            </a>
+
+            <strong>
+              <a href={`/#/playlist/${playlist.id}`}>
+              {playlist.name}
+              </a>
+            </strong>
+          </div>
+        )
+        
+      });
+
+      playlistsDisplay = <div className='playlists-search-result-container'>
+                              <h1>Playlists</h1>
+                              <br />
+                              <div className='index-display-section-tile'>
+                                  { playlistItems }
+                              </div>
+                        </div>
+    }
+
+
     return (
-      <h1>hello</h1>
+      <div className='search-results-container'>
+        {artistsDisplay}
+        {albumsDisplay}
+        {playlistsDisplay}
+      </div>
     );
   }
 }

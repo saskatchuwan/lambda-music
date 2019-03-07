@@ -12,7 +12,7 @@ import {
 } from '../../util/route_util';
 
 const Search = () => (
-  <div className='search-main-container'>
+  <div className='main-view-body-central-container'>
 
     <ProtectedRoute path="/search" component={SearchBarContainer} />
 
