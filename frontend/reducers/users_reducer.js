@@ -12,8 +12,15 @@ const usersReducer = (state={}, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.user.id]: action.user });
+
     case RECEIVE_PLAYLISTS:
-      return Object.assign(newState, action.payload.owners);
+      let playlistOwners = Object.values(action.payload.users);
+
+      playlistOwners.forEach(owner => {
+        newState[owner.id] = owner;
+      });
+
+      return newState;
 
     //broken right now
     

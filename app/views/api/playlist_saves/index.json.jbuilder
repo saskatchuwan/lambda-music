@@ -52,3 +52,14 @@ json.albums do
   end
 end
 
+json.users do
+  @saved_playlists.each do |saved_playlist|
+    json.set! saved_playlist.owner.id do
+      json.id saved_playlist.owner.id
+      json.username saved_playlist.owner.username
+    end
+  end
+end
+
+
+

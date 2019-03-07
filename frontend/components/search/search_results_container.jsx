@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { fetchSong } from '../../actions/song_actions';
+import SongsIndexItem from '../song_list_index_item/songs_index_item';
 
 const mapStateToProps = (state) => {
   return ({
@@ -12,7 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-
+    fetchSong: (song_id) => dispatch(fetchSong(song_id)),
   });
 };
 
@@ -120,11 +122,50 @@ class SearchResultsContainer extends React.Component {
     }
 
 
+
+
+    let songsDisplay;
+
+    if (Object.keys(this.props.songs).length !== 0) {
+      let songs = Object.values(this.props.songs);
+
+      let songItems = songs.map(song => {
+
+        let album = this.props.albums[song.albumId];
+        let artist = this.props.artists[song.artistId];
+
+        return (
+          <li key={song.id}>
+            <SongsIndexItem
+              song={song}
+              album={album}
+              artist={artist}
+              fetchSong={this.props.fetchSong}
+            />
+          </li>
+        )
+      });
+
+      songsDisplay = <div className='songs-search-result-container'>
+                              <h1>Songs</h1>
+                              <div className='content-index-display-container-list'>
+                                <div className='index-display-section-list'>
+                                    { songItems }
+                                </div>
+                              </div>
+                      </div>
+    }
+
+
+
+
+
     return (
       <div className='search-results-container'>
         {artistsDisplay}
         {albumsDisplay}
         {playlistsDisplay}
+        {songsDisplay}
       </div>
     );
   }
