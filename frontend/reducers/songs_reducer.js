@@ -16,6 +16,7 @@ import { CLEAR_ARTISTS } from '../actions/artist_actions';
 
 import { CLEAR_ALBUMS } from '../actions/album_actions';
 
+
 const songsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);

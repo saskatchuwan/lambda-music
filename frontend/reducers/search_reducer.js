@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
 
-import artistsReducer from './artists_reducer';
-import albumsReducer from './albums_reducer';
-import songsReducer from './songs_reducer';
-import playlistsReducer from './playlists_reducer';
+import artistsSearchReducer from './artists_search_reducer';
+import albumsSearchReducer from './albums_search_reducer';
+import songsSearchReducer from './songs_search_reducer';
+import playlistsSearchReducer from './playlists_search_reducer';
 
 const searchReducer = combineReducers({
-  artists: artistsReducer,
-  albums: albumsReducer,
-  songs: songsReducer,
-  playlists: playlistsReducer,
+  artists: artistsSearchReducer,
+  albums: albumsSearchReducer,
+  songs: songsSearchReducer,
+  playlists: playlistsSearchReducer,
 });
 
 export default searchReducer;

@@ -12,6 +12,7 @@ import { RECEIVE_PLAYLISTS,
 
 import { CLEAR_ARTISTS } from '../actions/artist_actions';
 
+
 const albumsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
@@ -54,6 +55,9 @@ const albumsReducer = (state={}, action) => {
         return action.payload.albums;
       }
       //do we need one for REMOVE_PLAYLIST?
+
+
+
     default:
       return state;
   }

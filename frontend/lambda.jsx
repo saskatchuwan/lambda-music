@@ -8,7 +8,7 @@ import configureStore from './store/store';
 
 //testing
 
-// import { fetchSearchResults } from './actions/search_actions';
+import { fetchSearchResults } from './actions/search_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // just for testing
   window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  // window.fetchSearchResults = fetchSearchResults;
+  window.dispatch = store.dispatch;
+  window.fetchSearchResults = fetchSearchResults;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);

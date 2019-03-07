@@ -16,6 +16,7 @@ import { RECEIVE_ALBUMS,
 import { CLEAR_ALBUMS } from '../actions/album_actions';
 
 
+
 const artistsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
