@@ -48,7 +48,7 @@ class SearchResultsContainer extends React.Component {
 
       artistsDisplay = <div className='artists-search-result-container'>
                               <h1>Artists</h1>
-                              <br />
+                              
                               <div className='index-display-section-tile'>
                                   { artistItems }
                               </div>
@@ -81,7 +81,7 @@ class SearchResultsContainer extends React.Component {
 
       albumsDisplay = <div className='albums-search-result-container'>
                               <h1>Albums</h1>
-                              <br />
+                              
                               <div className='index-display-section-tile'>
                                   { albumItems }
                               </div>
@@ -114,7 +114,7 @@ class SearchResultsContainer extends React.Component {
 
       playlistsDisplay = <div className='playlists-search-result-container'>
                               <h1>Playlists</h1>
-                              <br />
+                              
                               <div className='index-display-section-tile'>
                                   { playlistItems }
                               </div>
