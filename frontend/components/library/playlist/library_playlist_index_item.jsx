@@ -6,18 +6,17 @@ const LibraryPlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPla
   
   return (
     <div className = 'tile-container'>
-        <div className='tile-attributes-container'>
 
-            <div className= 'tile'>
-              <a href={`/#/playlist/${playlist.id}`} onClick={(e) => e.stopPropagation()}>
-                <img src={`${playlist.coverUrl}`} />
-                <div className='tile-overlay'></div>
-              </a>
-            
-                <button className='play-content-button'
-                    onClick={() => fetchPlaybarPlaylist(playlistId)}>i'm a button</button>
+        {/* hover works but clicking on play button will also redirect to show */}
+        <div className= 'tile'>
+          <a href={`/#/playlist/${playlist.id}`} onClick={(e) => e.stopPropagation()}>
+            <img src={`${playlist.coverUrl}`} />
+            <div className='tile-overlay'>
+              <img src={window.images.player_play} 
+                  className='play-content-button'
+                  onClick={() => fetchPlaybarPlaylist(playlistId)}></img>
             </div>
-
+          </a>
         </div>
 
         <strong>
