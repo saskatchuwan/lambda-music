@@ -30,14 +30,14 @@ class SearchResultsContainer extends React.Component {
       let artistItems = artists.map(artist => {
         return (
           <div className = 'tile-container' key={artist.id}>
-            <a href={`/#/artist/${artist.id}`}>
+            <a href={`/#/search/recent`}>
               <div className= 'circle'>
                 <img src={`${artist.coverUrl}`} />
               </div>
             </a>
 
             <strong>
-              <a href={`/#/artist/${artist.id}`}>
+              <a href={`/#/search/recent`}>
               {artist.name}
               </a>
             </strong>
