@@ -42,6 +42,7 @@ class PlayBar extends React.Component {
 
   componentDidUpdate (prevProps) {
     // set url of song to local state when there is a new song fetched
+
     if (prevProps.currSong.song !== this.props.currSong.song) {
       this.setState({
         url: this.props.currSong.song.songUrl,
@@ -65,7 +66,12 @@ class PlayBar extends React.Component {
 
 
   togglePlay () {
-    this.setState({ playing: !this.state.playing });
+    if (Object.keys(this.props.currSong) !== 0) {
+      this.setState({ 
+        playing: !this.state.playing,
+        url: this.props.currSong.song.songUrl,
+      });
+    }
   }
 
 
@@ -150,6 +156,7 @@ class PlayBar extends React.Component {
     return display;
   }
 
+
   render () {
 
     let { url, volume, playing, muted, played, ref, playedSeconds, duration } = this.state;
@@ -192,7 +199,7 @@ class PlayBar extends React.Component {
 
         <div className='player-wrapper'>
           <div className='player-main-toggles'>
-              <img id='prev' onClick={this.playPrev} src={window.images.player_next} />
+              <img id='prev' onClick={this.playPrev} src={window.images.player_next}/>
 
               <div className='toggle'>
                 {playIcon}
