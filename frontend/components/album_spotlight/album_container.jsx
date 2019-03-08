@@ -3,6 +3,7 @@ import AlbumSongsIndex from '../album_spotlight/album_songs_index';
 
 import { fetchAlbum } from '../../actions/album_actions';
 import { fetchSong } from '../../actions/song_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let currentUserId = state.session.currentUserId;
@@ -25,6 +26,7 @@ const mapDispatchToProps = (dispatch) => {
     //need a remove and save to library 
     fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId)),
     fetchSong: (song_id) => dispatch(fetchSong(song_id)),
+    openModal: (modal, songId) => dispatch(openModal(modal, songId)),
   });
 };
 

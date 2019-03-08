@@ -6,7 +6,7 @@ const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong, closeM
 
   return (
     <div className = 'tile-container'>
-        <a href={`/#/browse/featured`} 
+        <div id='add-to-playlist-click'
           onClick={() => {createPlaylistSong(playlistSong);
                           closeModal()}}>
 
@@ -14,16 +14,16 @@ const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong, closeM
               <img src={playlist.coverUrl} />
             </div>
 
-        </a>
+        </div>
 
         <strong>
-          <a href={`/#/browse/featured`} 
+          <div id='add-to-playlist-click'
               onClick={() => {createPlaylistSong(playlistSong);
                               closeModal()}}>
 
             {playlist.name}
             
-          </a>
+          </div>
         </strong>
         
           

@@ -164,6 +164,10 @@ a, a:visited {
   font-size: 13px;
   color: #b3b3b3;
 
+    #add-to-playlist-click {
+      cursor: pointer;
+    }
+
     //for squares (albums, playlists)
     .tile {
       height: 180px;

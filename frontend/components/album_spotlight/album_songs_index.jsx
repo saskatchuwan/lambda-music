@@ -24,6 +24,8 @@ class AlbumSongsIndex extends React.Component {
             artist={artist}
             fetchSong={this.props.fetchSong}
           />
+          <button className='add-song-to-playlist-button'
+              onClick={() => this.props.openModal('add-song-to-playlist', song.id)}>ADD</button>
         </li>
       )
     });
