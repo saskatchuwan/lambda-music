@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from "lodash";
 
-const LibraryPlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPlaylist }) => {
+const LibraryPlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPlaylist, handleClick }) => {
   let ownerUsername = _.get(owner, `username`, "no username");
   
   return (
@@ -10,7 +10,7 @@ const LibraryPlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPla
         {/* hover works but clicking on play button will also redirect to show */}
         <div className= 'tile'>
 
-          <a href={`/#/playlist/${playlist.id}`} onClick={(e) => e.stopPropagation()}>
+          <a href={`/#/playlist/${playlist.id}`} onClick={handleClick}>
 
             <img src={`${playlist.coverUrl}`} />
 

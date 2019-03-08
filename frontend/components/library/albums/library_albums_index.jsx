@@ -2,12 +2,31 @@ import React from 'react';
 
 class LibraryAlbumsIndex extends React.Component {
 
+  constructor (props) {
+    super(props);
+    // this.handlePlay = this.handlePlay.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount () {
     this.props.fetchUserSavedAlbums(this.props.currentUser.id);
   }
 
   componentWillUnmount () {
     this.props.clearAlbums();
+  }
+
+  handlePlay (albumId) {
+    return e => {
+      this.props.fetchPlaybarAlbum(albumId);
+    };
+  }
+
+  handleClick (e) {
+    //prevent default <a> action if the target is an image tag (play button)
+    if (e.target.nodeName === 'IMG') {
+      e.preventDefault();
+    }
   }
  
   render () {
@@ -26,14 +45,14 @@ class LibraryAlbumsIndex extends React.Component {
           <div className = 'tile-container' key={album.id}>
             <div className= 'tile'>
 
-              <a href={`/#/album/${album.id}`}  onClick={(e) => e.stopPropagation()}>
+              <a href={`/#/album/${album.id}`}  onClick={this.handleClick}>
 
                 <img src={`${album.coverUrl}`} />
 
                 <div className= 'tile-overlay'>
                     <img src={window.images.player_play} 
                       className='play-content-button'
-                      onClick={() => this.props.fetchPlaybarAlbum(album.id)}></img>
+                      onClick={this.handlePlay(album.id)}></img>
                 </div>
 
               </a>

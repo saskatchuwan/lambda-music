@@ -4,12 +4,24 @@ import LibraryPlaylistIndexItem from './library_playlist_index_item';
 
 class LibraryPlayListIndex extends React.Component {
 
+  constructor (props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount () {
     this.props.fetchUserPlaylists(this.props.currentUser.id);
   }
 
   componentWillUnmount () {
     this.props.clearPlaylists();
+  }
+
+  handleClick (e) {
+    //prevent default <a> action if the target is an image tag (play button)
+    if (e.target.nodeName === 'IMG') {
+      e.preventDefault();
+    }
   }
  
   render () {
@@ -31,6 +43,7 @@ class LibraryPlayListIndex extends React.Component {
                 fetchPlaybarPlaylist={fetchPlaybarPlaylist}
                 fetchSong={fetchSong}
                 songIdQueue={songIdQueue}
+                handleClick={this.handleClick}
           />
         )
       });
