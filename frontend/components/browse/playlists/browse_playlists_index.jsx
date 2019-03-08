@@ -31,7 +31,7 @@ class BrowsePlayListIndex extends React.Component {
     let playlistItems;
 
     if (Object.keys(this.props.playlists).length > 0) {
-      playlistItems = _.shuffle(playlists).map(playlist => {
+      playlistItems = playlists.map(playlist => {
 
         let ownerId = playlist.ownerId;
         let owner = users[ownerId];

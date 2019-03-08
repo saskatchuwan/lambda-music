@@ -12,7 +12,7 @@ class BrowseSongsIndex extends React.Component {
   render () {
     let songItems;
     
-    songItems = _.shuffle(this.props.songs).map( song => {
+    songItems = this.props.songs.map( song => {
       let album = this.props.albums[song.albumId];
       let artist = this.props.artists[song.artistId];
 

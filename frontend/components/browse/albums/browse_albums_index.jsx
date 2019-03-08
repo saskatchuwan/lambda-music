@@ -31,7 +31,7 @@ class BrowseAlbumsIndex extends React.Component {
 
     if (Object.keys(this.props.albums).length > 0 && Object.keys(this.props.artists).length > 0) {
 
-      albumItems = _.shuffle(albums).map(album => {
+      albumItems = albums.map(album => {
 
         // let artistName = artists[album.artistId].name;
 

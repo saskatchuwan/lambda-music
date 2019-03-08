@@ -36,10 +36,13 @@ require 'open-uri'
   artistCover5 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Beirut/beirut.jpg')
   artist5.cover.attach(io: artistCover5, filename: 'beirut.jpg')
 
-
   artist6 = Artist.create(name: "Dirty Projectors")
   artistCover6 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Dirty+Projectors/dirty_projectors.jpg')
   artist6.cover.attach(io: artistCover6, filename: 'dirty_projectors.jpg')
+
+  artist7 = Artist.create(name: "King Krule")
+  artistCover7 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/King+Krule/king+krule.jpg')
+  artist7.cover.attach(io: artistCover7, filename: 'king+krule.jpg')
 
 
 
@@ -67,6 +70,10 @@ require 'open-uri'
   album6 = Album.create(title: "Bitte Orca", artist_id: 6)
   albumCover6 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Dirty+Projectors/dirty_projectors-bitte_orca.jpg')
   album6.cover.attach(io: albumCover6, filename: 'dirty_projectors-bitte_orca.jpg')
+
+  album7 = Album.create(title: "6 Feet Beneath The Moon", artist_id: 7)
+  albumCover7 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/King+Krule/king+krule-6+feet.jpg')
+  album7.cover.attach(io: albumCover7, filename: 'king+krule-6+feet.jpg')
 
 
   Song.destroy_all
@@ -186,15 +193,15 @@ require 'open-uri'
   songSong27 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Beirut/05+Mount+Wroclai+(Idle+Days).mp3')
   song27.song.attach(io: songSong27, filename: '05+Mount+Wroclai+(Idle+Days).mp3')
 
-  song28 = Song.create(title: "Rhineland (Heartland)", album_id: 6, artist_id: 6)
+  song28 = Song.create(title: "Rhineland (Heartland)", album_id: 5, artist_id: 5)
   songSong28 = open("https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Beirut/06+Rhineland+(Heartland).mp3")
   song28.song.attach(io: songSong28, filename: "06+Rhineland+(Heartland).mp3")
 
-  song29 = Song.create(title: "Scenic World", album_id: 6, artist_id: 6)
+  song29 = Song.create(title: "Scenic World", album_id: 5, artist_id: 5)
   songSong29 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Beirut/07+Scenic+World.mp3')
   song29.song.attach(io: songSong29, filename: '07+Scenic+World.mp3')
 
-  song30 = Song.create(title: "After The Curtain", album_id: 6, artist_id: 6)
+  song30 = Song.create(title: "After The Curtain", album_id: 5, artist_id: 5)
   songSong30 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Beirut/11+After+the+Curtain.mp3')
   song30.song.attach(io: songSong30, filename: '11+After+the+Curtain.mp3')
 
@@ -218,6 +225,28 @@ require 'open-uri'
   song35 = Song.create(title: "No Intention", album_id: 6, artist_id: 6)
   songSong35 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Dirty+Projectors/07+No+Intention.mp3')
   song35.song.attach(io: songSong35, filename: '07+No+Intention.mp3')
+
+
+  #King Krule
+  song36 = Song.create(title: "Easy Easy", album_id: 7, artist_id: 7)
+  songSong36 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/King+Krule/01+Easy+Easy.mp3')
+  song36.song.attach(io: songSong36, filename: '01+Easy+Easy.mp3')
+
+  song37 = Song.create(title: "Borderline", album_id: 7, artist_id: 7)
+  songSong37 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/King+Krule/02+Border+Line.mp3')
+  song37.song.attach(io: songSong37, filename: '02+Border+Line.mp3')
+
+  song38 = Song.create(title: "Baby Blue", album_id: 7, artist_id: 7)
+  songSong38 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/King+Krule/06+Baby+Blue.mp3')
+  song38.song.attach(io: songSong38, filename: '06+Baby+Blue.mp3')
+
+  song39 = Song.create(title: "The Krockadile", album_id: 7, artist_id: 7)
+  songSong39 = open("https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/King+Krule/12+The+Krockadile.mp3")
+  song39.song.attach(io: songSong39, filename: "12+The+Krockadile.mp3")
+
+  song40 = Song.create(title: "Out Getting Ribs", album_id: 7, artist_id: 7)
+  songSong40 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/King+Krule/13+Out+Getting+Ribs.mp3')
+  song40.song.attach(io: songSong40, filename: '13+Out+Getting+Ribs.mp3')
 
 
 
@@ -266,6 +295,13 @@ require 'open-uri'
   playlistSong19 = PlaylistSong.create(playlist_id: 3, song_id: 9)
   playlistSong20 = PlaylistSong.create(playlist_id: 3, song_id: 23)
   playlistSong21 = PlaylistSong.create(playlist_id: 3, song_id: 20)
+
+  playlistSong22 = PlaylistSong.create(playlist_id: 4, song_id: 22)
+  playlistSong23 = PlaylistSong.create(playlist_id: 4, song_id: 9)
+  playlistSong24 = PlaylistSong.create(playlist_id: 4, song_id: 3)
+  playlistSong25 = PlaylistSong.create(playlist_id: 4, song_id: 14)
+  playlistSong26 = PlaylistSong.create(playlist_id: 4, song_id: 5)
+
 
 
 
@@ -331,6 +367,8 @@ require 'open-uri'
   artistSave10 = ArtistSave.create(artist_id: 4, user_id: 1)
   artistSave11 = ArtistSave.create(artist_id: 5, user_id: 1)
   artistSave12 = ArtistSave.create(artist_id: 6, user_id: 1)
+  artistSave13 = ArtistSave.create(artist_id: 7, user_id: 1)
+  artistSave14 = ArtistSave.create(artist_id: 7, user_id: 3)
 
 
   AlbumSave.destroy_all
@@ -346,3 +384,5 @@ require 'open-uri'
   albumSave10 = AlbumSave.create(album_id: 4, user_id: 1)
   albumSave11 = AlbumSave.create(album_id: 5, user_id: 1)
   albumSave12 = AlbumSave.create(album_id: 6, user_id: 1)
+  albumSave13 = AlbumSave.create(album_id: 7, user_id: 1)
+  albumSave14 = AlbumSave.create(album_id: 7, user_id: 3)
