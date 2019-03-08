@@ -11,7 +11,6 @@ Lambda utilizes **Rails / PostgresQL** for the backend with **React / Reux** on 
 
 
 ## Features
----
 1. Full frontend & backend user authentication
 2. Users are able to create/delete playlists, add/remove songs to playlist and playlists will automatically be saved to their **Library**
 3. Users are able to explore songs, albums and playlists in **Browse**
@@ -33,7 +32,7 @@ This was accomplished by setting up a key (songIdQueue) in a unique slice of sta
 
 
 Frontend slice of state for playBar:
-```
+```js
 playBar: {
   currSong: {
     album: {
@@ -62,7 +61,7 @@ playBar: {
 
 
 Example of a click handler callback function to skip to next song in queue:
-```
+```js
   playNext () {
     let { songIdQueue, currSong, fetchSong } = this.props;
     let currentSongQueueIndex = songIdQueue.indexOf(`${currSong.song.id}`);
