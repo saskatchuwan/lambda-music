@@ -1,5 +1,6 @@
 import React from 'react';
 import SongsIndexItem from '../../song_list_index_item/songs_index_item';
+import _ from 'lodash';
 
 class BrowseSongsIndex extends React.Component {
 
@@ -11,7 +12,7 @@ class BrowseSongsIndex extends React.Component {
   render () {
     let songItems;
     
-    songItems = this.props.songs.map( song => {
+    songItems = _.shuffle(this.props.songs).map( song => {
       let album = this.props.albums[song.albumId];
       let artist = this.props.artists[song.artistId];
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 
 class BrowseAlbumsIndex extends React.Component {
 
@@ -18,7 +19,7 @@ class BrowseAlbumsIndex extends React.Component {
 
     if (Object.keys(this.props.albums).length > 0 && Object.keys(this.props.artists).length > 0) {
 
-      albumItems = albums.map(album => {
+      albumItems = _.shuffle(albums).map(album => {
 
         // let artistName = artists[album.artistId].name;
 

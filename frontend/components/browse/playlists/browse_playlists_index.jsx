@@ -1,6 +1,6 @@
 import React from 'react';
 import LibraryPlaylistIndexItem from '../../library/playlist/library_playlist_index_item';
-
+import _ from 'lodash';
 
 class BrowsePlayListIndex extends React.Component {
 
@@ -18,7 +18,7 @@ class BrowsePlayListIndex extends React.Component {
     let playlistItems;
 
     if (Object.keys(this.props.playlists).length > 0) {
-      playlistItems = playlists.map(playlist => {
+      playlistItems = _.shuffle(playlists).map(playlist => {
 
         let ownerId = playlist.ownerId;
         let owner = users[ownerId];
