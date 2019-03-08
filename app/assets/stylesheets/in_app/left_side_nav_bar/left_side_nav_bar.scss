@@ -72,6 +72,7 @@
     display: flex;
     align-items: center;
     -webkit-transition: color 0.7s ease-out;
+    border-left: 3.5px solid transparent;
   }
   
   .active {
