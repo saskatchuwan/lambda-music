@@ -3,12 +3,24 @@ import _ from 'lodash';
 
 class BrowseAlbumsIndex extends React.Component {
 
+  constructor (props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount () {
     this.props.fetchAlbums();
   }
 
   componentWillUnmount () {
     this.props.clearAlbums();
+  }
+
+  handleClick (e) {
+    //prevent default <a> action if the target is an image tag (play button)
+    if (e.target.nodeName === 'IMG') {
+      e.preventDefault();
+    }
   }
  
   render () {
@@ -27,7 +39,7 @@ class BrowseAlbumsIndex extends React.Component {
           <div className = 'tile-container' key={album.id}>
             <div className= 'tile'>
 
-              <a href={`/#/album/${album.id}`}  onClick={(e) => e.stopPropagation()}>
+              <a href={`/#/album/${album.id}`}  onClick={this.handleClick}>
 
                 <img src={`${album.coverUrl}`} />
 

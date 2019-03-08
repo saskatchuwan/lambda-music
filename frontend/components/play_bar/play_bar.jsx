@@ -223,7 +223,12 @@ class PlayBar extends React.Component {
             </div>
 
             <div id='progress-bar-display-container'>
-              <progress className='progress-bar-display' max={1} value={played} />
+              <progress 
+                  pseudo='-webkit-progress-bar'
+                  className='progress-bar-display' 
+                  max={1} 
+                  value={played} 
+              />
             </div>
 
             <div id='total-duration'>

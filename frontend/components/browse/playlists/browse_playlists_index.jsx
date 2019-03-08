@@ -4,12 +4,25 @@ import _ from 'lodash';
 
 class BrowsePlayListIndex extends React.Component {
 
+  constructor (props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+
   componentDidMount () {
     this.props.fetchPlaylists();
   }
 
   componentWillUnmount () {
     this.props.clearPlaylists();
+  }
+
+  handleClick (e) {
+    //prevent default <a> action if the target is an image tag (play button)
+    if (e.target.nodeName === 'IMG') {
+      e.preventDefault();
+    }
   }
  
   render () {
@@ -31,6 +44,7 @@ class BrowsePlayListIndex extends React.Component {
                 fetchPlaybarPlaylist={fetchPlaybarPlaylist}
                 fetchSong={fetchSong}
                 songIdQueue={songIdQueue}
+                handleClick={this.handleClick}
           />
         )
       });
