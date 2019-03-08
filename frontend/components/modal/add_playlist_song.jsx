@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createPlaylistSong } from '../../actions/playlist_songs_actions';
 
 import { fetchUserPlaylists, clearPlaylists } from '../../actions/playlist_actions';
+import { fetchAlbums } from '../../actions/album_actions';
 
 import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
@@ -27,6 +28,7 @@ const mapDispatchToProps = dispatch => {
     closeModal: () => dispatch(closeModal()),
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     clearPlaylists: () => dispatch(clearPlaylists()),
+    fetchAlbums: () => dispatch(fetchAlbums()),
   };
 };
 
@@ -43,7 +45,7 @@ class AddSongToPlaylist extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchUserPlaylists(this.props.currentUserId);
+    this.props.fetchUserPlaylists(this.props.currentUserId).then(() => this.props.fetchAlbums());
     this.setState({song_id: this.props.songId, playlist_id: 'test'});
   }
 
