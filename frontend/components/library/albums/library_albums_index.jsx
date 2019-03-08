@@ -4,7 +4,6 @@ class LibraryAlbumsIndex extends React.Component {
 
   constructor (props) {
     super(props);
-    // this.handlePlay = this.handlePlay.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -38,8 +37,6 @@ class LibraryAlbumsIndex extends React.Component {
     if (Object.keys(this.props.albums).length > 0 && Object.keys(this.props.artists).length > 0) {
 
       albumItems = albums.map(album => {
-
-        // let artistName = artists[album.artistId].name;
 
         return (
           <div className = 'tile-container' key={album.id}>

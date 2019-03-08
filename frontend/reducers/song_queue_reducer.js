@@ -19,11 +19,6 @@ import {
 
 const songIdQueueReducer = (state=[], action) => {
   Object.freeze(state);
-  let newState = state.slice();
-
-
-  // will have duplicated songs in queue since playlist show and album show are fetching twice upon load
-  // return newState.concat(Object.keys(action.payload.songs));
 
   switch(action.type) {
     case RECEIVE_PLAYLIST:
@@ -32,14 +27,6 @@ const songIdQueueReducer = (state=[], action) => {
       } else {
         return Object.keys(action.payload.songs);
       }
-
-    // case RECEIVE_PLAYLISTS:
-    //   if (typeof action.payload.songs === 'undefined') {
-    //     return [];
-    //   } else {
-    //     return Object.keys(action.payload.songs);
-    //   }
-
     case RECEIVE_ALBUM:
       return Object.keys(action.payload.songs);
 

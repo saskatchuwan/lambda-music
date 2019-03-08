@@ -255,7 +255,7 @@ class PlayBar extends React.Component {
 
 
         <div className='other-toggles'>
-          <div className='mute-container'>
+          {/* <div className='mute-container'>
             <input 
                 className='mute-toggle'
                 id='muted' 
@@ -264,7 +264,7 @@ class PlayBar extends React.Component {
                 onChange={this.toggleMuted} />
             <span className='mute-custom'></span>
             
-          </div>
+          </div> */}
 
           <input 
               className='volume-toggle-bar'
