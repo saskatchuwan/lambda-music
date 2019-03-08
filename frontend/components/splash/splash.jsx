@@ -25,12 +25,12 @@ class Splash extends React.Component {
 
         <main className='hero'>
           <div className='hero-header-content'>
-            <h1>Music for everyone.</h1>
+            <h1>Music on all wavelengths.</h1>
             <h4>Millions of songs. No credit card needed.</h4>
             <br />
             <br />
             
-            <a href='/#/signup' className='get-spotify-button'>GET SPOTIFY FREE</a>
+            <a href='/#/signup' className='get-lambda-button'>GET LAMBDA FREE</a>
           </div>
         </main>
         
