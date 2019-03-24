@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import AlbumsIndex from '../../index/albums_index';
+import AlbumsIndex from '../index/albums_index';
 
-import { fetchUserSavedAlbums, clearAlbums } from '../../../actions/album_actions';
-import { fetchPlaybarAlbum } from '../../../actions/play_bar_actions';
+import { fetchAlbums, clearAlbums } from '../../actions/album_actions';
+import { fetchPlaybarAlbum } from '../../actions/play_bar_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let albums = Object.values(state.entities.albums);
@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchUserSavedAlbums: (userId) => dispatch(fetchUserSavedAlbums(userId)),
+    fetchAlbums: () => dispatch(fetchAlbums()),
     clearAlbums: () => dispatch(clearAlbums()),
     fetchPlaybarAlbum: (playlistId) => dispatch(fetchPlaybarAlbum(playlistId)),
   });

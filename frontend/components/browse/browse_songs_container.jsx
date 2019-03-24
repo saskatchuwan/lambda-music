@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import SongsIndex from '../../index/songs_index';
+import SongsIndex from '../index/songs_index';
 
-import { fetchSongs, fetchSong, clearSongs } from '../../../actions/song_actions';
-import { openModal } from '../../../actions/modal_actions';
+import { fetchSongs, fetchSong, clearSongs } from '../../actions/song_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let songs = Object.values(state.entities.songs);

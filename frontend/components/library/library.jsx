@@ -3,11 +3,11 @@ import { Route, Switch } from 'react-router-dom';
 
 
 //dynamic main components
-import LibraryTopNav from './top_nav/library_top_nav';
-import LibraryPlaylistContainer from './playlist/library_playlist_container';
-import LibrarySongsContainer from './songs/library_songs_container';
+import LibraryTopNav from './library_top_nav';
+import LibraryPlaylistContainer from './library_playlist_container';
+import LibrarySongsContainer from './library_songs_container';
 import LibraryArtistsContainer from './artists/library_artists_container';
-import LibraryAlbumsContainer from './albums/library_albums_container';
+import LibraryAlbumsContainer from './library_albums_container';
 
 import {
   ProtectedRoute

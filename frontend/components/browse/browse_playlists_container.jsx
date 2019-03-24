@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import PlaylistIndex from '../../index/playlists_index';
+import PlaylistIndex from '../index/playlists_index';
 
-import { fetchSong } from '../../../actions/song_actions';
+import { fetchSong } from '../../actions/song_actions';
 
-import { fetchPlaylists, clearPlaylists } from '../../../actions/playlist_actions';
-import { fetchPlaybarPlaylist } from '../../../actions/play_bar_actions';
+import { fetchPlaylists, clearPlaylists } from '../../actions/playlist_actions';
+import { fetchPlaybarPlaylist } from '../../actions/play_bar_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let playlists = Object.values(state.entities.playlists);

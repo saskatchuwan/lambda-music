@@ -3,10 +3,10 @@ import { Switch } from 'react-router-dom';
 
 
 //dynamic main components
-import BrowseTopNav from './top_nav/browse_top_nav';
-import BrowseSongsContainer from './songs/browse_songs_container';
-import BrowseAlbumsContainer from './albums/browse_albums_container';
-import BrowsePlaylistsContainer from './playlists/browse_playlists_container';
+import BrowseTopNav from './browse_top_nav';
+import BrowseSongsContainer from './browse_songs_container';
+import BrowseAlbumsContainer from './browse_albums_container';
+import BrowsePlaylistsContainer from './browse_playlists_container';
 
 import {
   ProtectedRoute

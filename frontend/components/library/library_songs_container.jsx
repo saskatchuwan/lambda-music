@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import SongsIndex from '../../index/songs_index';
+import SongsIndex from '../index/songs_index';
 
-import { fetchUserSavedSongs, clearSongs, fetchSong } from '../../../actions/song_actions';
+import { fetchUserSavedSongs, clearSongs, fetchSong } from '../../actions/song_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let songs = Object.values(state.entities.songs);
