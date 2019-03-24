@@ -6,6 +6,15 @@ const SongsIndexItem = ({ album, song, artist, fetchSong }) => {
   let artistName = _.get(artist, `name`, "no artist name");
   let albumTitle = _.get(album, `title`, "no album title");
 
+  if (artistName === 'no artist name') {
+    artistName = song.artistName;
+  }
+
+  if (albumTitle === 'no album title') {
+    albumTitle = song.albumTitle;
+  }
+
+
   return (
       <div className='song-index-item-left'>
 
