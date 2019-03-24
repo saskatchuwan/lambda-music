@@ -1,11 +1,8 @@
 class Api::PlaylistsController < ApplicationController
-
   # require login
 
   # for testing only!
   # skip_before_action :verify_authenticity_token
-
-
 
   def index
     @playlists = Playlist.get_all_playlist_data
@@ -32,7 +29,6 @@ class Api::PlaylistsController < ApplicationController
       @playlist_save = PlaylistSave.new(playlist_id: @playlist.id, user_id: @playlist.owner_id)
       @playlist_save.save
 
-
       render 'api/playlists/show'
     else
       render json: @playlist.errors.full_messages, status: 404
@@ -50,9 +46,6 @@ class Api::PlaylistsController < ApplicationController
       render 'api/playlists/show'
     else
       render json: @playlist.errors.full_messages, status: 404
-
-      # if the above error does not work...
-      # render json: ['could not update playlist'], status: 404
     end
   end
 

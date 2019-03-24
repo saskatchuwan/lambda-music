@@ -14,7 +14,6 @@ class Api::PlaylistSongsController < ApplicationController
           }.to_json, status: 200
         end
       end
-      # render json: ['Saved song to Your Playlist'], status: 200
     else
       respond_to do |format|
         format.json do
@@ -24,8 +23,6 @@ class Api::PlaylistSongsController < ApplicationController
           }.to_json, status: 404
         end
       end
-
-      # render json: ['Unable to save song to Your Playlist'], status: 404
     end
   end
 
@@ -34,12 +31,7 @@ class Api::PlaylistSongsController < ApplicationController
     @playlist_song = current_user.owned_playlist_songs.find(params[:id])
 
     @playlist_song.destroy
-    # render json: ['Successfully removed song from Your Playlist'], status: 200
-
-    # json_string = {'message' => 'Song was successfully removed'}.to_json
-
-    # render :json {playlist_song: @playlist_song, message: 'Successfully removed song from Your Playlist'}.to_json, status: 200
-
+    
     respond_to do |format|
       format.json do
         render json: {

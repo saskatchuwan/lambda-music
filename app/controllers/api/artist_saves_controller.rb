@@ -13,7 +13,6 @@ class Api::ArtistSavesController < ApplicationController
 
   def create
     @artist_save = ArtistSave.new(artist_id: artist_save_params[:artist_id])
-
     @artist_save.user_id = current_user.id
 
     #testing

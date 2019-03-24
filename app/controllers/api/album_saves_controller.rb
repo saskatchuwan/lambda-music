@@ -13,11 +13,10 @@ class Api::AlbumSavesController < ApplicationController
 
   def create
     @album_save = AlbumSave.new(album_id: album_save_params[:album_id])
-
-    # @album_save.user_id = current_user.id
+    @album_save.user_id = current_user.id
 
     #testing
-    @album_save.user_id = 1
+    # @album_save.user_id = 1
 
     if @album_save.save
       render json: ['Saved to Your Library'], status: 200
@@ -28,10 +27,10 @@ class Api::AlbumSavesController < ApplicationController
 
   def destroy
     #testing
-    @user = User.find(1)
-    @album_save = @user.album_saves.find(params[:id])
+    # @user = User.find(1)
+    # @album_save = @user.album_saves.find(params[:id])
 
-    # @album_save = current_user.album_saves.find(params[:id])
+    @album_save = current_user.album_saves.find(params[:id])
 
     @album_save.destroy
     render json: ['Removed from Your Library'], status: 200

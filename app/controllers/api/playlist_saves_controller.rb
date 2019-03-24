@@ -1,7 +1,6 @@
 class Api::PlaylistSavesController < ApplicationController
-
   # for testing only!
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   def index
     if params[:user_id]
@@ -14,7 +13,6 @@ class Api::PlaylistSavesController < ApplicationController
 
   def create
     @playlist_save = PlaylistSave.new(playlist_id: playlist_save_params[:playlist_id])
-
     @playlist_save.user_id = current_user.id
 
     #testing
