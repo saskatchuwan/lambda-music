@@ -9,13 +9,13 @@ import { fetchPlaybarPlaylist,
   from '../../actions/play_bar_actions';
 
 import SongsIndexItem 
-      from '../song_list_index_item/songs_index_item';
+      from '../index_items/songs_index_item';
 
 import PlaylistIndexItem 
-      from '../playlist_index_item/playlist_index_item';
+      from '../index_items/playlist_index_item';
 
 import AlbumIndexItem 
-      from '../album_index_item/album_index_item';
+      from '../index_items/album_index_item';
 
 
 const mapStateToProps = (state) => {
