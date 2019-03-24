@@ -1,9 +1,7 @@
 import React from 'react';
-import _ from 'lodash';
+import AlbumIndexItem from '../index_items/album_index_item';
 
-import AlbumIndexItem from '../../index_items/album_index_item';
-
-class BrowseAlbumsIndex extends React.Component {
+class AlbumsIndex extends React.Component {
 
   constructor (props) {
     super(props);
@@ -12,11 +10,21 @@ class BrowseAlbumsIndex extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchAlbums();
+    if (this.props.fetchUserSavedAlbums) {
+      this.props.fetchUserSavedAlbums(this.props.currentUser.id);
+    } else {
+      this.props.fetchAlbums();
+    }
   }
 
   componentWillUnmount () {
     this.props.clearAlbums();
+  }
+
+  handlePlay (albumId) {
+    return e => {
+      this.props.fetchPlaybarAlbum(albumId);
+    };
   }
 
   handleClick (e) {
@@ -25,12 +33,6 @@ class BrowseAlbumsIndex extends React.Component {
       e.preventDefault();
     }
   }
-
-  handlePlay (albumId) {
-    return e => {
-      this.props.fetchPlaybarAlbum(albumId);
-    };
-  }
  
   render () {
     let { albums, artists } = this.props;
@@ -38,11 +40,8 @@ class BrowseAlbumsIndex extends React.Component {
     let albumItems;
 
     if (Object.keys(this.props.albums).length > 0 && Object.keys(this.props.artists).length > 0) {
-
       albumItems = albums.map(album => {
-        // let artistName = artists[album.artistId].name;
         return (
-
           <AlbumIndexItem
             key={album.id}
             album={album}
@@ -63,4 +62,4 @@ class BrowseAlbumsIndex extends React.Component {
   }
 }
 
-export default BrowseAlbumsIndex;
+export default AlbumsIndex;
