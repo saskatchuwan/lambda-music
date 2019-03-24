@@ -1,5 +1,5 @@
-import { RECEIVE_SEARCH_RESULTS } from '../actions/search_actions';
-
+import { RECEIVE_SEARCH_RESULTS } 
+        from '../actions/search_actions';
 
 const artistsSearchReducer = (state={}, action) => {
   Object.freeze(state);

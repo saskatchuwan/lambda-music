@@ -1,9 +1,10 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER } 
+        from '../actions/session_actions';
 
 import { RECEIVE_PLAYLISTS,
-  RECEIVE_PLAYLIST,
-  REMOVE_PLAYLIST,
-   } from '../actions/playlist_actions';
+        RECEIVE_PLAYLIST,
+        REMOVE_PLAYLIST } 
+        from '../actions/playlist_actions';
 
 const usersReducer = (state={}, action) => {
   Object.freeze(state);
@@ -32,6 +33,7 @@ const usersReducer = (state={}, action) => {
     //   });
 
     //   return newState;
+
     default:
       return state;
   }

@@ -1,10 +1,8 @@
 import { RECEIVE_PLAYLISTS,
           RECEIVE_PLAYLIST,
           REMOVE_PLAYLIST,
-          CLEAR_PLAYLISTS,
-        } from '../actions/playlist_actions';
-
-// import { CLEAR_ARTISTS } from '../actions/artist_actions';
+          CLEAR_PLAYLISTS, } 
+        from '../actions/playlist_actions';
 
 
 const playlistsReducer = (state={}, action) => {
@@ -13,7 +11,6 @@ const playlistsReducer = (state={}, action) => {
 
   switch(action.type) {
     case RECEIVE_PLAYLISTS:
-      //currently will overwrite all playlists
       return action.payload.playlists;
 
     case RECEIVE_PLAYLIST:
@@ -25,7 +22,6 @@ const playlistsReducer = (state={}, action) => {
 
     case CLEAR_PLAYLISTS:
       return {};
-
 
     default:
       return state;

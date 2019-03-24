@@ -1,20 +1,15 @@
-import {
-  RECEIVE_PLAYLIST,
-  RECEIVE_PLAYLISTS
- } from '../actions/playlist_actions';
+import { RECEIVE_PLAYLIST } 
+        from '../actions/playlist_actions';
 
-import {
-  RECEIVE_ALBUM
- } from '../actions/album_actions';
+import { RECEIVE_ALBUM } 
+        from '../actions/album_actions';
 
-import {
-  RECEIVE_SONGS
- } from '../actions/song_actions';
+import { RECEIVE_SONGS } 
+        from '../actions/song_actions';
 
-import {
-  RECEIVE_PLAYBAR_PLAYLIST,
-  RECEIVE_PLAYBAR_ALBUM
- } from '../actions/play_bar_actions';
+import { RECEIVE_PLAYBAR_PLAYLIST,
+        RECEIVE_PLAYBAR_ALBUM } 
+        from '../actions/play_bar_actions';
 
 
 const songIdQueueReducer = (state=[], action) => {
@@ -26,7 +21,8 @@ const songIdQueueReducer = (state=[], action) => {
         return [];
       } else {
         return Object.keys(action.payload.songs);
-      }
+      };
+      
     case RECEIVE_ALBUM:
       return Object.keys(action.payload.songs);
 

@@ -1,4 +1,5 @@
-import { RECEIVE_SEARCH_RESULTS } from '../actions/search_actions';
+import { RECEIVE_SEARCH_RESULTS } 
+        from '../actions/search_actions';
 
 
 const playlistsSearchReducer = (state={}, action) => {
@@ -10,7 +11,8 @@ const playlistsSearchReducer = (state={}, action) => {
         return {};
       } else {
         return action.payload.playlists;
-      }
+      };
+      
     default:
       return state;
   }

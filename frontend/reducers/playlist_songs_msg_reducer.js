@@ -1,4 +1,6 @@
-import { RECEIVE_PLAYLIST_SONG, REMOVE_PLAYLIST_SONG } from '../actions/playlist_songs_actions';
+import { RECEIVE_PLAYLIST_SONG, 
+        REMOVE_PLAYLIST_SONG } 
+        from '../actions/playlist_songs_actions';
 
 
 const playlistSongsMsgReducer = (state={}, action) => {
@@ -9,9 +11,11 @@ const playlistSongsMsgReducer = (state={}, action) => {
     case RECEIVE_PLAYLIST_SONG:
       newState = action.payload.message;
       return newState;
+
     case REMOVE_PLAYLIST_SONG:
       newState = action.payload.message;
       return newState;
+      
     default:
       return state;
   }
