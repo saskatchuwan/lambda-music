@@ -6,7 +6,6 @@ const PlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPlaylist, 
   
   return (
     <div className = 'tile-container'>
-        {/* hover works but clicking on play button will also redirect to show */}
         <div className= 'tile'>
             <a href={`/#/playlist/${playlist.id}`} onClick={handleClick}>
                 <img src={`${playlist.coverUrl}`} />
