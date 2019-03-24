@@ -1,8 +1,8 @@
 import React from 'react';
-import LibraryPlaylistIndexItem from './library_playlist_index_item';
+import PlaylistIndexItem from '../index_items/playlist_index_item';
 
 
-class LibraryPlayListIndex extends React.Component {
+class PlaylistIndex extends React.Component {
 
   constructor (props) {
     super(props);
@@ -10,7 +10,11 @@ class LibraryPlayListIndex extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchUserPlaylists(this.props.currentUser.id);
+    if (this.props.fetchUserPlaylists) {
+      this.props.fetchUserPlaylists(this.props.currentUser.id);
+    } else {
+      this.props.fetchPlaylists();
+    }
   }
 
   componentWillUnmount () {
@@ -36,7 +40,7 @@ class LibraryPlayListIndex extends React.Component {
         let owner = users[ownerId];
     
         return (
-          <LibraryPlaylistIndexItem key={playlist.id} 
+          <PlaylistIndexItem key={playlist.id} 
                 playlistId={playlist.id}
                 playlist={playlist} 
                 owner={owner}
@@ -60,4 +64,4 @@ class LibraryPlayListIndex extends React.Component {
   }
 }
 
-export default LibraryPlayListIndex;
+export default PlaylistIndex;

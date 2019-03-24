@@ -1,7 +1,7 @@
 import React from 'react';
 import PlaylistInfoRail from './playlist_info_rail';
 import _ from "lodash";
-import SongsIndexItem from '../song_list_index_item/songs_index_item';
+import SongsIndexItem from '../index_items/songs_index_item';
 
 class PlaylistSongsIndex extends React.Component {
 

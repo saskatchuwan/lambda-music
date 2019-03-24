@@ -1,6 +1,6 @@
 import React from 'react';
 import AlbumInfoRail from './album_info_rail';
-import SongsIndexItem from '../song_list_index_item/songs_index_item';
+import SongsIndexItem from '../index_items/songs_index_item';
 import _ from "lodash";
 
 class AlbumSongsIndex extends React.Component {

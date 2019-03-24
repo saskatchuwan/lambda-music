@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import _ from "lodash";
 
@@ -25,7 +24,6 @@ const AlbumInfoRail = props => {
       <br />
 
       <div className='info-rail-links'>
-        {/* doesn't do anything yet */}
         <button 
           onClick={() => props.fetchSong(props.songIdQueue[0])}
           className='info-rail-play-button'>Play

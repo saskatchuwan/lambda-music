@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
-import LibraryAlbumsIndex from './library_albums_index';
+import AlbumsIndex from '../index/albums_index';
 
-import { fetchUserSavedAlbums, clearAlbums } from '../../../actions/album_actions';
-import { fetchPlaybarAlbum } from '../../../actions/play_bar_actions';
+import { fetchUserSavedAlbums, clearAlbums } from '../../actions/album_actions';
+import { fetchPlaybarAlbum } from '../../actions/play_bar_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let albums = Object.values(state.entities.albums);
-
   let currentUserId = state.session.currentUserId;
   let currentUser = state.entities.users[currentUserId];
 
@@ -25,4 +24,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(LibraryAlbumsIndex);
+export default connect(mapStateToProps,mapDispatchToProps)(AlbumsIndex);

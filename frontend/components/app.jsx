@@ -15,11 +15,6 @@ import {
 
 const App = () => (
   <div>
-
-    {/* <div id="note">
-        You smell good. <a id="close">[close]</a>
-    </div> */}
-
     <Modal />
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />

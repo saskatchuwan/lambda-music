@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class LeftSideNavBar extends React.Component {
  
@@ -14,7 +14,6 @@ class LeftSideNavBar extends React.Component {
           <div className='nav-bar-section1'>
 
             <ul className='navbar-logo'>
-              {/* <li><img id='splash-lambda-logo' src={window.images.logo2} /></li> */}
               <li><img id='left-nav-lambda-logo' src={window.images.doppler_logo_w} /></li>
               <li>lambda</li>
             </ul>
@@ -22,7 +21,6 @@ class LeftSideNavBar extends React.Component {
     
             <ul className='side-bar-nav-links'>
               <li>
-                {/* changed to featured for testing */}
                 <NavLink className='nav-link' to='/browse/newreleases'>
                   <img id='nav-icon' src={window.images.home} />
                   Home

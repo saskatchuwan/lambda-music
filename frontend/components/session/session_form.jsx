@@ -20,8 +20,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    //for user auth, the redirect will be handled with protected routes but this is going to be immensely useful for when i create modals that allow me to create a playlist - i can then use history.push to directly redirect users to their newly create playlist
-    // this.props.processForm(user).then(() => this.props.history.push('/'));
     this.props.processForm(user);
   }
 

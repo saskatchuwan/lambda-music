@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-import LibrarySongsIndex from './library_songs_index';
+import SongsIndex from '../index/songs_index';
 
-import { fetchUserSavedSongs, clearSongs, fetchSong } from '../../../actions/song_actions';
+import { fetchSongs, fetchSong, clearSongs } from '../../actions/song_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let songs = Object.values(state.entities.songs);
@@ -19,10 +20,11 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchUserSavedSongs: (userId) => dispatch(fetchUserSavedSongs(userId)),
+    fetchSongs: () => dispatch(fetchSongs()),
     clearSongs: () => dispatch(clearSongs()),
-    fetchSong: (song_id) => dispatch(fetchSong(song_id)),
+    fetchSong: (id) => dispatch(fetchSong(id)),
+    openModal: (modal, songId) => dispatch(openModal(modal, songId)),
   });
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(LibrarySongsIndex);
+export default connect(mapStateToProps,mapDispatchToProps)(SongsIndex);

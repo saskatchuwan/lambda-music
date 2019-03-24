@@ -1,14 +1,20 @@
 import React from 'react';
+import AlbumIndexItem from '../index_items/album_index_item';
 
-class LibraryAlbumsIndex extends React.Component {
+class AlbumsIndex extends React.Component {
 
   constructor (props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
   componentDidMount () {
-    this.props.fetchUserSavedAlbums(this.props.currentUser.id);
+    if (this.props.fetchUserSavedAlbums) {
+      this.props.fetchUserSavedAlbums(this.props.currentUser.id);
+    } else {
+      this.props.fetchAlbums();
+    }
   }
 
   componentWillUnmount () {
@@ -33,39 +39,15 @@ class LibraryAlbumsIndex extends React.Component {
 
     let albumItems;
 
-
     if (Object.keys(this.props.albums).length > 0 && Object.keys(this.props.artists).length > 0) {
-
       albumItems = albums.map(album => {
-
         return (
-          <div className = 'tile-container' key={album.id}>
-            <div className= 'tile'>
-
-              <a href={`/#/album/${album.id}`}  onClick={this.handleClick}>
-
-                <img src={`${album.coverUrl}`} />
-
-                <div className= 'tile-overlay'>
-                    <img src={window.images.player_play} 
-                      className='play-content-button'
-                      onClick={this.handlePlay(album.id)}></img>
-                </div>
-
-              </a>
-
-            </div>
-
-            <strong>
-              <a href={`/#/album/${album.id}`}>
-              {album.title}
-              </a>
-            </strong>
-
-            <br />
-            {/* {artistName} */}
-  
-          </div>
+          <AlbumIndexItem
+            key={album.id}
+            album={album}
+            handlePlay={this.handlePlay}
+            handleClick={this.handleClick}
+          />
         )
       });
     }
@@ -80,4 +62,4 @@ class LibraryAlbumsIndex extends React.Component {
   }
 }
 
-export default LibraryAlbumsIndex;
+export default AlbumsIndex;
