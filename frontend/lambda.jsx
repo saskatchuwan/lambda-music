@@ -6,10 +6,6 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-//testing
-
-// import { fetchSearchResults } from './actions/search_actions';
-
 document.addEventListener('DOMContentLoaded', () => {
 
   let store;
@@ -48,9 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // just for testing
-  window.getState = store.getState;
+  // window.getState = store.getState;
   // window.dispatch = store.dispatch;
-  // window.fetchSearchResults = fetchSearchResults;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);

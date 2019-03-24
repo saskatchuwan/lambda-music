@@ -3,14 +3,14 @@ export const fetchPlaylists = () => (
     method: 'GET',
     url: `/api/playlists`
   })
-)
+);
 
 export const fetchPlaylist = (id) => (
   $.ajax({
     method: 'GET',
     url: `/api/playlists/${id}`
   })
-)
+);
 
 export const createPlaylist = (playlist) => (
   $.ajax({
@@ -18,7 +18,7 @@ export const createPlaylist = (playlist) => (
     url: `/api/playlists`,
     data: { playlist }
   })
-)
+);
 
 export const updatePlaylist = (playlist) => (
   $.ajax({
@@ -26,18 +26,18 @@ export const updatePlaylist = (playlist) => (
     url: `/api/playlists/${playlist.id}`,
     data: { playlist }
   })
-)
+);
 
 export const deletePlaylist = (id) => (
   $.ajax({
     method: 'DELETE',
     url: `/api/playlists/${id}`,
   })
-)
+);
 
 export const fetchUserPlaylists = (user_id) => (
   $.ajax({
     method: 'GET',
     url: `/api/users/${user_id}/playlist_saves`
   })
-)
+);

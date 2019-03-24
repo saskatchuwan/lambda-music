@@ -18,4 +18,4 @@ export const fetchUserSavedArtists = (user_id) => (
     method: 'GET',
     url: `/api/users/${user_id}/artist_saves`
   })
-)
+);

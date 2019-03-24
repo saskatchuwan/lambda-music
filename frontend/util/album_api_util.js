@@ -18,4 +18,4 @@ export const fetchUserSavedAlbums = (user_id) => (
     method: 'GET',
     url: `/api/users/${user_id}/album_saves`
   })
-)
+);
