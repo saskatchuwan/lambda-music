@@ -1,5 +1,5 @@
 import React from 'react';
-import LibraryPlaylistIndexItem from './library_playlist_index_item';
+import PlaylistIndexItem from '../../playlist_index_item/playlist_index_item';
 
 
 class LibraryPlayListIndex extends React.Component {
@@ -36,7 +36,7 @@ class LibraryPlayListIndex extends React.Component {
         let owner = users[ownerId];
     
         return (
-          <LibraryPlaylistIndexItem key={playlist.id} 
+          <PlaylistIndexItem key={playlist.id} 
                 playlistId={playlist.id}
                 playlist={playlist} 
                 owner={owner}

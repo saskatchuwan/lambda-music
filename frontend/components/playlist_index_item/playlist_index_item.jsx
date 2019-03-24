@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from "lodash";
 
-const LibraryPlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPlaylist, handleClick }) => {
+const PlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPlaylist, handleClick }) => {
   let ownerUsername = _.get(owner, `username`, "no username");
   
   return (
@@ -36,4 +36,4 @@ const LibraryPlaylistIndexItem = ({ playlist, playlistId, owner, fetchPlaybarPla
    );
 };
 
-export default LibraryPlaylistIndexItem;
+export default PlaylistIndexItem;
