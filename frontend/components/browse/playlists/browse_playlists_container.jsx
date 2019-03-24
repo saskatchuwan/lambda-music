@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BrowsePlayListIndex from './browse_playlists_index';
+import PlaylistIndex from '../../index/playlists_index';
 
 import { fetchSong } from '../../../actions/song_actions';
 
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(BrowsePlayListIndex);
+export default connect(mapStateToProps,mapDispatchToProps)(PlaylistIndex);

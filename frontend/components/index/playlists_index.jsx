@@ -1,17 +1,20 @@
 import React from 'react';
-import PlaylistIndexItem from '../../index_items/playlist_index_item';
-import _ from 'lodash';
+import PlaylistIndexItem from '../index_items/playlist_index_item';
 
-class BrowsePlayListIndex extends React.Component {
+
+class PlaylistIndex extends React.Component {
 
   constructor (props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
-
   componentDidMount () {
-    this.props.fetchPlaylists();
+    if (this.props.fetchUserPlaylists) {
+      this.props.fetchUserPlaylists(this.props.currentUser.id);
+    } else {
+      this.props.fetchPlaylists();
+    }
   }
 
   componentWillUnmount () {
@@ -42,6 +45,8 @@ class BrowsePlayListIndex extends React.Component {
                 playlist={playlist} 
                 owner={owner}
                 fetchPlaybarPlaylist={fetchPlaybarPlaylist}
+                fetchSong={fetchSong}
+                songIdQueue={songIdQueue}
                 handleClick={this.handleClick}
           />
         )
@@ -59,4 +64,4 @@ class BrowsePlayListIndex extends React.Component {
   }
 }
 
-export default BrowsePlayListIndex;
+export default PlaylistIndex;
