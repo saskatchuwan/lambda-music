@@ -1,9 +1,14 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchSong } from '../../actions/song_actions';
-import SongsIndexItem from '../song_list_index_item/songs_index_item';
 
-import { fetchPlaybarPlaylist, fetchPlaybarAlbum  } from '../../actions/play_bar_actions';
+import { fetchSong } 
+      from '../../actions/song_actions';
+import SongsIndexItem 
+      from '../song_list_index_item/songs_index_item';
+
+import { fetchPlaybarPlaylist, 
+        fetchPlaybarAlbum  } 
+        from '../../actions/play_bar_actions';
 
 const mapStateToProps = (state) => {
   return ({
