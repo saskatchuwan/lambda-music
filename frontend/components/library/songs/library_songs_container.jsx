@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import LibrarySongsIndex from './library_songs_index';
+import SongsIndex from '../../index/songs_index';
 
 import { fetchUserSavedSongs, clearSongs, fetchSong } from '../../../actions/song_actions';
 
@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(LibrarySongsIndex);
+export default connect(mapStateToProps,mapDispatchToProps)(SongsIndex);

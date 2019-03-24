@@ -1,33 +1,30 @@
 import { connect } from 'react-redux';
-import BrowseSongsIndex from './browse_songs_index';
+import SongsIndex from '../../index/songs_index';
 
-import { fetchSongs, fetchSong } from '../../../actions/song_actions';
+import { fetchSongs, fetchSong, clearSongs } from '../../../actions/song_actions';
 import { openModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  //arrays
   let songs = Object.values(state.entities.songs);
 
   let currentUserId = state.session.currentUserId;
   let currentUser = state.entities.users[currentUserId];
-  
-  let songQueue = state.entities.playlistSongs.playlistSongsQueue;
 
   return ({
-    songs: songs,
-    artists: state.entities.artists,
-    albums: state.entities.albums,
-    songQueue,
     currentUser,
+    songs,
+    albums: state.entities.albums,
+    artists: state.entities.artists,
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
     fetchSongs: () => dispatch(fetchSongs()),
-    openModal: (modal, songId) => dispatch(openModal(modal, songId)),
+    clearSongs: () => dispatch(clearSongs()),
     fetchSong: (id) => dispatch(fetchSong(id)),
+    openModal: (modal, songId) => dispatch(openModal(modal, songId)),
   });
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(BrowseSongsIndex);
+export default connect(mapStateToProps,mapDispatchToProps)(SongsIndex);

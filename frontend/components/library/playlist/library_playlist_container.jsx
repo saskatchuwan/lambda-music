@@ -7,7 +7,6 @@ import { fetchUserPlaylists, clearPlaylists } from '../../../actions/playlist_ac
 import { fetchPlaybarPlaylist } from '../../../actions/play_bar_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  //arrays
   let playlists = Object.values(state.entities.playlists);
 
   let currentUserId = state.session.currentUserId;
