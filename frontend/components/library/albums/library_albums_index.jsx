@@ -1,5 +1,5 @@
 import React from 'react';
-import AlbumIndexItem from '../../album_index_item/album_index_item';
+import AlbumIndexItem from '../../index_items/album_index_item';
 
 class LibraryAlbumsIndex extends React.Component {
 

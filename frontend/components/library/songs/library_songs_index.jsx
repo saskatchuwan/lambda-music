@@ -1,5 +1,5 @@
 import React from 'react';
-import SongsIndexItem from '../../song_list_index_item/songs_index_item';
+import SongsIndexItem from '../../index_items/songs_index_item';
 
 class LibrarySongsIndex extends React.Component {
 

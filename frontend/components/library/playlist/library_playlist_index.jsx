@@ -1,5 +1,5 @@
 import React from 'react';
-import PlaylistIndexItem from '../../playlist_index_item/playlist_index_item';
+import PlaylistIndexItem from '../../index_items/playlist_index_item';
 
 
 class LibraryPlayListIndex extends React.Component {

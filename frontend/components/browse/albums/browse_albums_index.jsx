@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import AlbumIndexItem from '../../album_index_item/album_index_item';
+import AlbumIndexItem from '../../index_items/album_index_item';
 
 class BrowseAlbumsIndex extends React.Component {
 
