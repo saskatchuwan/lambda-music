@@ -3,12 +3,20 @@ import React from 'react';
 
 import { fetchSong } 
       from '../../actions/song_actions';
+
+import { fetchPlaybarPlaylist, 
+  fetchPlaybarAlbum  } 
+  from '../../actions/play_bar_actions';
+
 import SongsIndexItem 
       from '../song_list_index_item/songs_index_item';
 
-import { fetchPlaybarPlaylist, 
-        fetchPlaybarAlbum  } 
-        from '../../actions/play_bar_actions';
+import PlaylistIndexItem 
+      from '../playlist_index_item/playlist_index_item';
+
+import AlbumIndexItem 
+      from '../album_index_item/album_index_item';
+
 
 const mapStateToProps = (state) => {
   return ({
@@ -16,6 +24,8 @@ const mapStateToProps = (state) => {
     albums: state.search.albums,
     playlists: state.search.playlists,
     songs: state.search.songs,
+    songIdQueue: state.playBar.songIdQueue,
+    users: state.entities.users,
   });
 };
 
@@ -29,6 +39,25 @@ const mapDispatchToProps = (dispatch) => {
 
 
 class SearchResultsContainer extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+  }
+
+  handleClick (e) {
+    //prevent default <a> action if the target is an image tag (play button)
+    if (e.target.nodeName === 'IMG') {
+      e.preventDefault();
+    }
+  }
+
+  handlePlay (albumId) {
+    return e => {
+      this.props.fetchPlaybarAlbum(albumId);
+    };
+  }
 
   render () {
     let artistsDisplay;
@@ -71,39 +100,17 @@ class SearchResultsContainer extends React.Component {
 
       let albumItems = albums.map(album => {
         return (
-          <div className = 'tile-container' key={album.id}>
-            <div className= 'tile'>
-
-              <a href={`/#/album/${album.id}`}  onClick={(e) => e.stopPropagation()}>
-
-                <img src={`${album.coverUrl}`} />
-
-                <div className= 'tile-overlay'>
-                    <img src={window.images.player_play} 
-                      className='play-content-button'
-                      onClick={() => this.props.fetchPlaybarAlbum(album.id)}></img>
-                </div>
-
-              </a>
-
-            </div>
-
-            <strong>
-              <a href={`/#/album/${album.id}`}>
-              {album.title}
-              </a>
-            </strong>
-
-            <br />
-            {/* {artistName} */}
-  
-          </div>
+          <AlbumIndexItem
+            key={album.id}
+            album={album}
+            handlePlay={this.handlePlay}
+            handleClick={this.handleClick}
+          />
         )
       });
 
       albumsDisplay = <div className='albums-search-result-container'>
                               <h1>Albums</h1>
-                              
                               <div className='index-display-section-tile'>
                                   { albumItems }
                               </div>
@@ -116,32 +123,18 @@ class SearchResultsContainer extends React.Component {
       let playlists = Object.values(this.props.playlists);
 
       let playlistItems = playlists.map(playlist => {
+
+        let ownerId = playlist.ownerId;
+        let owner = this.props.users[ownerId];
+
         return (
-          <div className = 'tile-container'>
-
-          {/* hover works but clicking on play button will also redirect to show */}
-          <div className= 'tile'>
-
-            <a href={`/#/playlist/${playlist.id}`} onClick={(e) => e.stopPropagation()}>
-
-              <img src={`${playlist.coverUrl}`} />
-
-              <div className='tile-overlay'>
-                <img src={window.images.player_play} 
-                    className='play-content-button'
-                    onClick={() => this.props.fetchPlaybarPlaylist(playlistId)}></img>
-              </div>
-              
-            </a>
-
-          </div>
-
-          <strong>
-            <a href={`/#/playlist/${playlist.id}`}>
-            {playlist.name}
-            </a>
-          </strong>
-          </div>
+          <PlaylistIndexItem key={playlist.id} 
+                playlistId={playlist.id}
+                playlist={playlist} 
+                owner={owner}
+                fetchPlaybarPlaylist={this.props.fetchPlaybarPlaylist}
+                handleClick={this.handleClick}
+          />
         )
         
       });

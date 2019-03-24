@@ -42,8 +42,6 @@ class BrowsePlayListIndex extends React.Component {
                 playlist={playlist} 
                 owner={owner}
                 fetchPlaybarPlaylist={fetchPlaybarPlaylist}
-                fetchSong={fetchSong}
-                songIdQueue={songIdQueue}
                 handleClick={this.handleClick}
           />
         )
