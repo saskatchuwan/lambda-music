@@ -58,7 +58,7 @@ class Playlist < ApplicationRecord
 
   def cover_nil
     if !self.cover.attached?
-        self.cover.attach(io: File.open('app/assets/images/content/playlist_images/default.png'), filename: 'default.png')
+        self.cover.attach(io: File.open('app/assets/images/content/default.png'), filename: 'default.png')
     end
   end
 

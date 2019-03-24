@@ -11,7 +11,7 @@ import { closeModal } from '../../actions/modal_actions';
 import AddPlaylistSongIndexItem from './add_playlist_song_item';
 
 const mapStateToProps = (state) => {
-  let songId = state.entities.playlistSongs.playlistSongsQueue;
+  let songId = state.entities.playlistSongs.playlistSongSelected;
 
   let playlists = Object.values(state.entities.playlists);
 
@@ -45,8 +45,9 @@ class AddSongToPlaylist extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchUserPlaylists(this.props.currentUserId).then(() => this.props.fetchAlbum(this.props.match.params.albumId));
-    this.setState({song_id: this.props.songId, playlist_id: 'test'});
+    this.props.fetchUserPlaylists(this.props.currentUserId);
+    // .then(() => this.props.fetchAlbum(this.props.match.params.albumId));
+    // this.setState({song_id: this.props.songId, playlist_id: 'test'});
   }
 
   componentWillUnmount () {
