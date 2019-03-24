@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class LibraryArtistsIndex extends React.Component {
 
@@ -31,18 +30,6 @@ class LibraryArtistsIndex extends React.Component {
             {artist.name}
             </a>
           </strong>
-
-          {/* <a href={`/#/artist/${artist.id}`}>
-            <div className= 'circle'>
-              <img src={`${artist.coverUrl}`} />
-            </div>
-          </a>
-
-          <strong>
-            <a href={`/#/artist/${artist.id}`}>
-            {artist.name}
-            </a>
-          </strong> */}
 
         </div>
       )

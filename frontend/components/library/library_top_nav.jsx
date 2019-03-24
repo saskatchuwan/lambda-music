@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
@@ -46,14 +46,8 @@ class LibraryTopNav extends React.Component {
               ALBUMS
             </NavLink>
           </li>
-          {/* <li>
-            <NavLink className='nav-link' to='library/albums'>
-              ANOTHER
-            </NavLink>
-          </li> */}
         </ul>
         
-        {/* onclick, opens modal */}
         <div className='create-playlist-button-container'>
           <button className='create-playlist-button'
                   onClick={() => this.props.openModal('create-playlist')}>

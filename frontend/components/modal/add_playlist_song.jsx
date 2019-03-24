@@ -46,8 +46,6 @@ class AddSongToPlaylist extends React.Component {
 
   componentDidMount () {
     this.props.fetchUserPlaylists(this.props.currentUserId);
-    // .then(() => this.props.fetchAlbum(this.props.match.params.albumId));
-    // this.setState({song_id: this.props.songId, playlist_id: 'test'});
   }
 
   componentWillUnmount () {

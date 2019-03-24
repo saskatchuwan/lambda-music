@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
-
 //dynamic main components
 import BrowseTopNav from './browse_top_nav';
 import BrowseSongsContainer from './browse_songs_container';
