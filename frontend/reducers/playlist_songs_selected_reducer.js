@@ -1,7 +1,7 @@
 import { OPEN_MODAL } from '../actions/modal_actions';
 
 
-const playlistSongsQueueReducer = (state={}, action) => {
+const playlistSongSelectedReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
 
@@ -14,4 +14,4 @@ const playlistSongsQueueReducer = (state={}, action) => {
   }
 };
 
-export default playlistSongsQueueReducer;
+export default playlistSongSelectedReducer;
