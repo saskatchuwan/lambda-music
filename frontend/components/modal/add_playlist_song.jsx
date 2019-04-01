@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createPlaylistSong } from '../../actions/playlist_songs_actions';
+import { createPlaylistSong, removeClearRemoveSongErrors } from '../../actions/playlist_songs_actions';
 
 import { fetchUserPlaylists, clearPlaylists } from '../../actions/playlist_actions';
 import { fetchAlbum } from '../../actions/album_actions';
@@ -29,6 +29,7 @@ const mapDispatchToProps = dispatch => {
     fetchUserPlaylists: (userId) => dispatch(fetchUserPlaylists(userId)),
     clearPlaylists: () => dispatch(clearPlaylists()),
     fetchAlbum: () => dispatch(fetchAlbum()),
+    removeClearRemoveSongErrors:  () => dispatch(removeClearRemoveSongErrors()),
   };
 };
 
@@ -53,9 +54,22 @@ class AddSongToPlaylist extends React.Component {
     // this.props.clearPlaylists();
   }
 
+  showNotification () {
+    document.getElementById("note").style.display = "block";
+
+    let prom = new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        document.getElementById("note").style.display = "none";
+        resolve("Stuff worked!");
+      }, 2000);
+    });
+
+    return prom;
+  }
+
 
   render() {
-    let { playlists, songId } = this.props;
+    let { playlists, songId, removeClearRemoveSongErrors } = this.props;
 
     let playlistItems;
 
@@ -66,6 +80,8 @@ class AddSongToPlaylist extends React.Component {
           playlist={playlist} 
           songId={songId}
           createPlaylistSong={this.props.createPlaylistSong}
+          showNotification={this.showNotification}
+          removeClearRemoveSongErrors = {removeClearRemoveSongErrors}
           closeModal={this.props.closeModal}
         />
       )

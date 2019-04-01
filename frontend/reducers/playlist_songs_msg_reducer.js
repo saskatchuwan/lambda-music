@@ -1,20 +1,26 @@
 import { RECEIVE_PLAYLIST_SONG, 
-        REMOVE_PLAYLIST_SONG } 
+        REMOVE_PLAYLIST_SONG,
+        RECEIVE_REMOVE_SONG_ERROR,
+        CLEAR_REMOVE_SONG_ERRORS
+       } 
         from '../actions/playlist_songs_actions';
 
 
-const playlistSongsMsgReducer = (state={}, action) => {
+const playlistSongsMsgReducer = (state="", action) => {
   Object.freeze(state);
-  let newState = Object.assign({}, state);
 
   switch(action.type) {
     case RECEIVE_PLAYLIST_SONG:
-      newState = action.payload.message;
-      return newState;
+      return action.payload.message;
 
     case REMOVE_PLAYLIST_SONG:
-      newState = action.payload.message;
-      return newState;
+      return action.payload.message;
+    
+    case RECEIVE_REMOVE_SONG_ERROR:
+      return action.error.message;
+
+    case CLEAR_REMOVE_SONG_ERRORS:
+      return action.error;
       
     default:
       return state;

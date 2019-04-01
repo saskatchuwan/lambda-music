@@ -5,6 +5,11 @@ import SongsIndexItem from '../index_items/songs_index_item';
 
 class PlaylistSongsIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     let playlistId = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistId);
@@ -17,6 +22,24 @@ class PlaylistSongsIndex extends React.Component {
   }
   componentWillUnmount () {
     this.props.clearPlaylists();
+  }
+
+  showNotification () {
+    document.getElementById("note").style.display = "block";
+
+    let prom = new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        document.getElementById("note").style.display = "none";
+        resolve("Stuff worked!");
+      }, 2000);
+    });
+
+    return prom;
+  }
+
+  handleClick (playlistSongId) {
+    this.props.deletePlaylistSong(playlistSongId);
+    this.showNotification().then(() => this.props.removeClearRemoveSongErrors());
   }
 
   render () {
@@ -45,7 +68,7 @@ class PlaylistSongsIndex extends React.Component {
               />
 
             <button className='delete-song'
-                onClick={() => this.props.deletePlaylistSong(playlistSongId)}>DELETE</button>
+                onClick={() => this.handleClick(playlistSongId)}>DELETE</button>
             </li>
           )
         });

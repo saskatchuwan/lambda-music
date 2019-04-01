@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 //persistent components
 import LeftSideNavBarContainer from './left_side_nav_bar/left_side_nav_bar_container';
@@ -17,25 +18,41 @@ import {
   ProtectedRoute
 } from '../util/route_util';
 
-const ProtectedInApp = () => (
-  <div className='main-view-container'>
+const mapStateToProps = state => {
+  return({
+    userActionMsg: state.entities.playlistSongs.playlistSongsMsg,
+  });
+};
 
-    <div className='main-view-body-container'>
-      <ProtectedRoute path="/" component={LeftSideNavBarContainer} />
 
-      <Switch>
-        <ProtectedRoute path="/library" component={Library} />
-        <ProtectedRoute path="/browse" component={Browse} />
-        <ProtectedRoute path="/playlist/:playlistId" component={PlaylistContainer} />
-        <ProtectedRoute path="/album/:albumId" component={AlbumContainer} />
-        <ProtectedRoute path="/search" component={Search} />
-      </Switch>
-    </div>
+class ProtectedInApp extends React.Component {
 
-    <div className='main-view-footer'>
-      <ProtectedRoute path="/" component={PlayBarContainer} />
-    </div>
-  </div>
-);
+  render() {
+    return (
+      <div className='main-view-container'>
+      
+        <div id="note">
+          {this.props.userActionMsg}
+        </div>
+    
+        <div className='main-view-body-container'>
+          <ProtectedRoute path="/" component={LeftSideNavBarContainer} />
+    
+          <Switch>
+            <ProtectedRoute path="/library" component={Library} />
+            <ProtectedRoute path="/browse" component={Browse} />
+            <ProtectedRoute path="/playlist/:playlistId" component={PlaylistContainer} />
+            <ProtectedRoute path="/album/:albumId" component={AlbumContainer} />
+            <ProtectedRoute path="/search" component={Search} />
+          </Switch>
+        </div>
+    
+        <div className='main-view-footer'>
+          <ProtectedRoute path="/" component={PlayBarContainer} />
+        </div>
+      </div>
+    );
+  }
+};
 
-export default ProtectedInApp;
+export default connect(mapStateToProps, null)(ProtectedInApp);
