@@ -1,6 +1,6 @@
 class Api::PlaylistSongsController < ApplicationController
   # just for testing
-   skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   rescue_from ActiveRecord::RecordNotFound, with: :dude_wheres_my_record
 
