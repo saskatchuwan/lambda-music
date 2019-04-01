@@ -184,6 +184,11 @@
     justify-content: flex-end;
     align-items: center;
 
+    #volume {
+      -webkit-filter: invert(75%);
+      width: 23px;
+    }
+
 
     .mute-container {
 

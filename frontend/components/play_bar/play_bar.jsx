@@ -266,6 +266,8 @@ class PlayBar extends React.Component {
             
           </div> */}
 
+          <img id='volume' src={window.images.player_volume} /> 
+
           <input 
               className='volume-toggle-bar'
               type='range' 
