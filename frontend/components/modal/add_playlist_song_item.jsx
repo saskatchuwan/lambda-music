@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong, closeModal, showNotification }) => {
+const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong, closeModal, showNotification, removeClearRemoveSongErrors }) => {
 
   let playlistSong = {song_id: songId, playlist_id: playlist.id};
 
@@ -9,7 +9,7 @@ const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong, closeM
         <div id='add-to-playlist-click'
           onClick={() => {createPlaylistSong(playlistSong);
                           closeModal();
-                          showNotification();
+                          showNotification().then(() => removeClearRemoveSongErrors());
                           }}>
 
             <div className= 'tile'>
@@ -22,7 +22,7 @@ const AddPlaylistSongIndexItem = ({ playlist, songId, createPlaylistSong, closeM
           <div id='add-to-playlist-click'
               onClick={() => {createPlaylistSong(playlistSong);
                               closeModal();
-                              showNotification();
+                              showNotification().then(() => removeClearRemoveSongErrors());
                               }}>
 
             {playlist.name}

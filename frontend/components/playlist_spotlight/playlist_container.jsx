@@ -3,7 +3,7 @@ import PlaylistSongsIndex from '../playlist_spotlight/playlist_songs_index';
 
 
 import { fetchPlaylist, deletePlaylist, clearPlaylists } from '../../actions/playlist_actions';
-import { deletePlaylistSong } from '../../actions/playlist_songs_actions';
+import { deletePlaylistSong, removeClearRemoveSongErrors } from '../../actions/playlist_songs_actions';
 
 import { fetchSong } from '../../actions/song_actions';
 
@@ -35,6 +35,7 @@ const mapDispatchToProps = (dispatch) => {
     clearPlaylists: () => dispatch(clearPlaylists()),
     deletePlaylistSong: (playlist_song_id) => dispatch(deletePlaylistSong(playlist_song_id)),
     fetchSong: (song_id) => dispatch(fetchSong(song_id)),
+    removeClearRemoveSongErrors:  () => dispatch(removeClearRemoveSongErrors()),
   });
 };
 

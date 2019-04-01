@@ -26,14 +26,20 @@ class PlaylistSongsIndex extends React.Component {
 
   showNotification () {
     document.getElementById("note").style.display = "block";
-    setTimeout(function(){
-      document.getElementById("note").style.display = "none";
-    }, 2000);
+
+    let prom = new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        document.getElementById("note").style.display = "none";
+        resolve("Stuff worked!");
+      }, 2000);
+    });
+
+    return prom;
   }
 
   handleClick (playlistSongId) {
     this.props.deletePlaylistSong(playlistSongId);
-    this.showNotification();
+    this.showNotification().then(() => this.props.removeClearRemoveSongErrors());
   }
 
   render () {
