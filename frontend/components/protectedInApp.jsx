@@ -28,10 +28,9 @@ const mapStateToProps = state => {
 class ProtectedInApp extends React.Component {
 
   render() {
-    console.log(this.props.userActionMsg);
-
     return (
       <div className='main-view-container'>
+      
         <div id="note">
           {this.props.userActionMsg}
         </div>

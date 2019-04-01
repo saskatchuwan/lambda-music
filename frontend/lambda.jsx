@@ -6,6 +6,9 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
+// import {deletePlaylistSong} from './actions/playlist_songs_actions';
+import {deletePlaylistSong, createPlaylistSong} from './util/playlist_songs_api_util';
+
 document.addEventListener('DOMContentLoaded', () => {
 
   let store;
@@ -44,8 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // just for testing
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.deletePlaylistSong = deletePlaylistSong;
+  window.createPlaylistSong = createPlaylistSong;
+
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);

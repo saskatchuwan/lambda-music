@@ -2,6 +2,7 @@ class Api::PlaylistSavesController < ApplicationController
   # for testing only!
   # skip_before_action :verify_authenticity_token
 
+
   def index
     if params[:user_id]
       @saved_playlists = User.find(params[:user_id]).saved_playlists
@@ -34,6 +35,10 @@ class Api::PlaylistSavesController < ApplicationController
 
     @playlist_save.destroy
     render json: ['Removed from Your Library'], status: 200
+  end
+
+  def dude_wheres_my_record
+    render json: ['nacho'], status: 404
   end
 
   private
