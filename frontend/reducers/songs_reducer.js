@@ -27,12 +27,13 @@ const songsReducer = (state={}, action) => {
     case CLEAR_SONGS:
       return {};
 
-    case RECEIVE_PLAYLISTS:
-      if (action.payload.songs) {
-        return action.payload.songs;
-      } else {
-        return {};
-      };
+    // removed since this will load all user's saved songs when opening add song to playlist modal
+    // case RECEIVE_PLAYLISTS:
+    //   if (action.payload.songs) {
+    //     return action.payload.songs;
+    //   } else {
+    //     return {};
+    //   };
       
     case RECEIVE_PLAYLIST:
       if (typeof action.payload.songs === 'undefined') {
