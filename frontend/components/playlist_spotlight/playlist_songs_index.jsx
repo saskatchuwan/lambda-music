@@ -5,6 +5,11 @@ import SongsIndexItem from '../index_items/songs_index_item';
 
 class PlaylistSongsIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     let playlistId = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistId);

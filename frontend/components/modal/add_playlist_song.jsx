@@ -53,6 +53,13 @@ class AddSongToPlaylist extends React.Component {
     // this.props.clearPlaylists();
   }
 
+  showNotification () {
+    document.getElementById("note").style.display = "block";
+    setTimeout(function(){
+      document.getElementById("note").style.display = "none";
+    }, 2000);
+  }
+
 
   render() {
     let { playlists, songId } = this.props;
@@ -66,6 +73,7 @@ class AddSongToPlaylist extends React.Component {
           playlist={playlist} 
           songId={songId}
           createPlaylistSong={this.props.createPlaylistSong}
+          showNotification={this.showNotification}
           closeModal={this.props.closeModal}
         />
       )
