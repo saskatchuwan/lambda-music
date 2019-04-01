@@ -19,6 +19,18 @@ class PlaylistSongsIndex extends React.Component {
     this.props.clearPlaylists();
   }
 
+  showNotification () {
+    document.getElementById("note").style.display = "block";
+    setTimeout(function(){
+      document.getElementById("note").style.display = "none";
+    }, 2000);
+  }
+
+  handleClick (playlistSongId) {
+    this.props.deletePlaylistSong(playlistSongId);
+    this.showNotification();
+  }
+
   render () {
 
     let songItems;
@@ -45,7 +57,7 @@ class PlaylistSongsIndex extends React.Component {
               />
 
             <button className='delete-song'
-                onClick={() => this.props.deletePlaylistSong(playlistSongId)}>DELETE</button>
+                onClick={() => this.handleClick(playlistSongId)}>DELETE</button>
             </li>
           )
         });
