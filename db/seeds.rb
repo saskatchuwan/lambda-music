@@ -366,7 +366,7 @@ require 'open-uri'
   songSong58 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Cursive/Art+Is+Hard.mp3')
   song58.song.attach(io: songSong58, filename: 'Art+Is+Hard.mp3')
 
-  song59 = Song.create(title: "Driftwoord-A Fairy Tale", album_id: 11, artist_id: 11)
+  song59 = Song.create(title: "Driftwood - A Fairy Tale", album_id: 11, artist_id: 11)
   songSong59 = open('https://s3-us-west-1.amazonaws.com/lambda-music-app-dev/Cursive/Driftwood-+A+Fairy+Tale.mp3')
   song59.song.attach(io: songSong59, filename: 'Driftwood-+A+Fairy+Tale.mp3')
 
